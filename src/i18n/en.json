@@ -5,12 +5,20 @@
   },
   "nav": {
     "services": "Services",
+    "blog": "Blog",
+    "publications": "Publications",
     "about": "About",
     "contact": "Contact"
   },
   "footer": {
     "copyright": "Valeris Coaching - Geneva, Switzerland",
     "legal": "Legal"
+  },
+  "blog": {
+    "subtitle": "Thoughts on technology leadership, AI, and organisational transformation.",
+    "readArticle": "Read article",
+    "onSubstack": "on Substack",
+    "noArticles": "No articles yet."
   },
   "cta": {
     "primary": "Book a conversation",

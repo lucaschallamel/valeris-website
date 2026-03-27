@@ -31,6 +31,8 @@ const routeMap: Record<string, Record<Lang, string>> = {
   '/services/gouvernance-ia/': { fr: '/services/gouvernance-ia/', de: '/de/leistungen/ki-governance/', en: '/en/services/ai-governance/' },
   '/services/performance-equipes/': { fr: '/services/performance-equipes/', de: '/de/leistungen/team-performance/', en: '/en/services/team-performance/' },
   '/services/coaching-executif/': { fr: '/services/coaching-executif/', de: '/de/leistungen/executive-coaching/', en: '/en/services/executive-coaching/' },
+  '/blog/': { fr: '/blog/', de: '/de/blog/', en: '/en/blog/' },
+  '/publications/': { fr: '/publications/', de: '/de/publikationen/', en: '/en/publications/' },
   '/a-propos/': { fr: '/a-propos/', de: '/de/ueber-mich/', en: '/en/about/' },
   '/contact/': { fr: '/contact/', de: '/de/kontakt/', en: '/en/contact/' },
   '/mentions-legales/': { fr: '/mentions-legales/', de: '/de/impressum/', en: '/en/legal/' },

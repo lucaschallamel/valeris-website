@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogGrid from '../../components/BlogGrid.astro';
+import { t } from '../../i18n';
+
+const i18n = t('de');
+---
+
+<BaseLayout title={`${i18n.nav.blog} - ${i18n.site.title}`}>
+  <BlogGrid lang="de" />
+</BaseLayout>

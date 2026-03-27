@@ -5,12 +5,20 @@
   },
   "nav": {
     "services": "Leistungen",
+    "blog": "Blog",
+    "publications": "Publikationen",
     "about": "Ueber mich",
     "contact": "Kontakt"
   },
   "footer": {
     "copyright": "Valeris Coaching - Genf, Schweiz",
     "legal": "Impressum"
+  },
+  "blog": {
+    "subtitle": "Gedanken zu Technologie-Leadership, KI und organisatorischer Transformation.",
+    "readArticle": "Artikel lesen",
+    "onSubstack": "auf Substack",
+    "noArticles": "Noch keine Artikel vorhanden."
   },
   "cta": {
     "primary": "Gespraech vereinbaren",

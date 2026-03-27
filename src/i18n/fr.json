@@ -5,12 +5,20 @@
   },
   "nav": {
     "services": "Services",
+    "blog": "Blog",
+    "publications": "Publications",
     "about": "A propos",
     "contact": "Contact"
   },
   "footer": {
     "copyright": "Valeris Coaching - Geneve, Suisse",
     "legal": "Mentions legales"
+  },
+  "blog": {
+    "subtitle": "Reflexions sur le leadership technologique, l'IA et la transformation des organisations.",
+    "readArticle": "Lire l'article",
+    "onSubstack": "sur Substack",
+    "noArticles": "Aucun article pour le moment."
   },
   "cta": {
     "primary": "Reserver un echange",

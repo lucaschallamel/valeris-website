@@ -1,0 +1,168 @@
+---
+// BlogGrid - Shared component for the blog page with podcast filters
+// Used by all 3 language versions (FR/DE/EN)
+
+import Section from './ui/Section.astro';
+import Row from './ui/Row.astro';
+import Col from './ui/Col.astro';
+import { fetchSubstackPosts } from '../lib/substack';
+import { podcasts, getPodcast } from '../lib/podcasts';
+import type { Lang } from '../i18n';
+import { t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const i18n = t(lang);
+const posts = await fetchSubstackPosts();
+
+const dateLocale = lang === 'fr' ? 'fr-FR' : lang === 'de' ? 'de-DE' : 'en-GB';
+
+// Build podcast descriptions data for client-side JS
+const podcastDescriptions = Object.fromEntries(
+  podcasts.map((p) => [p.slug, p.descriptions[lang]])
+);
+---
+
+<Section padding="both">
+  <Row>
+    <Col span="12" align="center" classes="mb-8">
+      <h1 class="mb-4 font-headings text-4xl font-bold text-neutral-900">{i18n.nav.blog}</h1>
+      <p id="blog-subtitle" class="mx-auto max-w-2xl text-lg text-neutral-500">{i18n.blog.subtitle}</p>
+    </Col>
+  </Row>
+
+  <!-- Podcast filters -->
+  <Row>
+    <Col span="12" classes="mb-10">
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button
+          data-filter="all"
+          class="filter-btn is-active rounded-full px-5 py-2 text-sm font-medium transition-colors"
+        >
+          {lang === 'fr' ? 'Tous' : lang === 'de' ? 'Alle' : 'All'}
+        </button>
+        {podcasts.map((podcast) => (
+          <button
+            data-filter={podcast.slug}
+            class="filter-btn rounded-full px-5 py-2 text-sm font-medium transition-colors"
+          >
+            {podcast.name}
+          </button>
+        ))}
+      </div>
+    </Col>
+  </Row>
+
+  {posts.length === 0 ? (
+    <Row>
+      <Col span="12" align="center">
+        <p class="text-neutral-400">{i18n.blog.noArticles}</p>
+      </Col>
+    </Row>
+  ) : (
+    <div class="blog-grid mx-auto grid max-w-7xl grid-cols-1 gap-6 px-6 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => {
+        const podcast = getPodcast(post.podcastSlug);
+        return (
+          <a href={post.link} target="_blank" rel="noopener noreferrer"
+             class="blog-card group block overflow-hidden rounded-lg border border-neutral-200 transition-shadow hover:shadow-lg"
+             data-podcast={post.podcastSlug}>
+            {post.imageUrl && (
+              <div class="aspect-video overflow-hidden bg-neutral-100">
+                <img src={post.imageUrl} alt="" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+              </div>
+            )}
+            <div class="p-6">
+              {podcast && (
+                <span class="mb-2 inline-block rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-600">
+                  {podcast.name}
+                </span>
+              )}
+              <time class="mb-2 block text-sm text-neutral-400" datetime={post.pubDate.toISOString()}>
+                {post.pubDate.toLocaleDateString(dateLocale, { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+              <h2 class="mb-2 font-headings text-xl font-bold text-neutral-900 group-hover:text-primary-500">
+                {post.title}
+              </h2>
+              <p class="mb-4 text-sm text-neutral-500">{post.description}...</p>
+              <span class="text-sm font-medium text-primary-500">
+                {i18n.blog.readArticle} {i18n.blog.onSubstack} &rarr;
+              </span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  )}
+</Section>
+
+<!-- Pass podcast descriptions to client-side JS -->
+<script id="podcast-data" type="application/json" set:html={JSON.stringify({
+  defaultSubtitle: i18n.blog.subtitle,
+  descriptions: podcastDescriptions,
+})} />
+
+<style>
+  /* Filter button styles - no variant issues, pure CSS */
+  .filter-btn {
+    border: 1px solid var(--color-neutral-200);
+    color: var(--color-neutral-600);
+    background: white;
+    cursor: pointer;
+  }
+  .filter-btn:hover {
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-500);
+  }
+  .filter-btn.is-active {
+    background: var(--color-primary-500);
+    color: white;
+    border-color: var(--color-primary-500);
+  }
+  .filter-btn.is-active:hover {
+    background: var(--color-primary-600);
+    border-color: var(--color-primary-600);
+    color: white;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+    const cards = document.querySelectorAll<HTMLElement>('.blog-card');
+    const subtitle = document.getElementById('blog-subtitle');
+
+    // Load podcast descriptions
+    const dataEl = document.getElementById('podcast-data');
+    const data = dataEl ? JSON.parse(dataEl.textContent || '{}') : {};
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active button
+        buttons.forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        // Update subtitle with podcast description
+        if (subtitle && data.descriptions) {
+          subtitle.textContent = filter === 'all'
+            ? data.defaultSubtitle
+            : data.descriptions[filter!] || data.defaultSubtitle;
+        }
+
+        // Filter cards
+        cards.forEach((card) => {
+          if (filter === 'all' || card.dataset.podcast === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
