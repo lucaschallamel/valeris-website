@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* === Valeris Brand Fonts === */
+
+@font-face {
+  font-family: "Cerebri Sans";
+  src: url("../assets/fonts/CerebriSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cerebri Sans";
+  src: url("../assets/fonts/CerebriSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cerebri Sans";
+  src: url("../assets/fonts/CerebriSans-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Valeris Design Tokens (Tailwind v4 theme) === */
+
+@theme {
+  /* Brand colours */
+  --color-valeris-pink: #ffa6c9;
+  --color-valeris-rose: #fe8dc6;
+  --color-valeris-blush: #fed1c7;
+  --color-valeris-white: #ffffff;
+  --color-valeris-text: #1a1a1a;
+  --color-valeris-bg: #fafaf8;
+  --color-valeris-navy: #1e2a3a;
+  --color-valeris-teal: #2d6a6a;
+
+  /* Typography */
+  --font-sans: "Cerebri Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Montserrat", "Cerebri Sans", system-ui, sans-serif;
+}
