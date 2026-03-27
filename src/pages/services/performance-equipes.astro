@@ -37,9 +37,9 @@ const i18n = t('fr');
       <Col span="8">
         <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Le problème que vous rencontrez</h2>
         <div class="space-y-4 text-neutral-600">
-          <p>Vos sprints se terminent avec des stories non finies. Le time-to-market s'allonge. Les incidents en production augmentent. Les meilleurs développeurs commencent à partir.</p>
-          <p>Vous avez essayé d'ajouter des outils, de changer de framework, de recruter plus. Mais le problème n'est pas technique - il est organisationnel. La façon dont votre équipe travaille, communique et prend des décisions est le vrai levier.</p>
-          <p>Ce n'est pas un problème de compétences individuelles. C'est un problème de système.</p>
+          <p>Vos sprints se terminent avec des stories non finies. Les incidents en production et les régressions s'accumulent. La dette technique croît plus vite qu'elle ne se résorbe. Les meilleurs développeurs commencent à partir.</p>
+          <p>Vos équipes expérimentent l'IA chacune dans leur coin : Copilot ici, ChatGPT là, sans méthode commune, sans mesure du gain réel. La documentation legacy est obsolète ou inexistante. Le trade-off qualité vs vélocité n'est jamais résolu.</p>
+          <p>Vous avez essayé d'ajouter des outils, de changer de framework, de recruter plus. Mais le problème n'est pas technique : c'est la façon dont votre équipe spécifie, développe, teste et livre qui est le vrai levier.</p>
         </div>
       </Col>
       <Col span="2" />
@@ -51,23 +51,130 @@ const i18n = t('fr');
     <Row>
       <Col span="2" />
       <Col span="8">
-        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Mon approche</h2>
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Mon approche : Coach-Craft</h2>
+        <p class="mb-4 text-neutral-600">
+          Je mesure avant d'agir. Mon approche s'appuie sur les métriques DORA, l'observation des processus, et des entretiens individuels pour construire un diagnostic factuel. Puis je coache votre équipe sur des sprints réels, pas dans une salle de formation.
+        </p>
         <p class="mb-8 text-neutral-600">
-          Je mesure avant d'agir. Mon approche s'appuie sur les métriques DORA, l'observation des processus, et des entretiens individuels pour construire un diagnostic factuel - pas des opinions.
+          La méthode Coach-Craft suit 4 étapes : <strong>démonstration</strong> (je montre sur vos projets réels), <strong>pratique guidée</strong> (pair programming, revues pédagogiques), <strong>autonomie progressive</strong> (les tech leads prennent le relais), <strong>ancrage durable</strong> (champions internes formés pour pérenniser). L'objectif est l'autonomie, pas la dépendance.
         </p>
         <div class="grid gap-8 md:grid-cols-2">
-          <Feature icon="heroicons:chart-bar" title="Health Check" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Entretiens, métriques DORA, observation des processus, benchmarking sectoriel.</p>
+          <Feature icon="heroicons:magnifying-glass" title="Phase 1 : Diagnostic (1-2 semaines)" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Entretiens individuels, métriques DORA, observation des processus, cartographie de l'écosystème (outils, flux, initiatives IA, interdépendances). Identification des quick wins et benchmarking sectoriel.</p>
           </Feature>
-          <Feature icon="heroicons:bolt" title="Accélération de la delivery" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">3 mois de coaching embarqué, refonte des processus, mise en place de métriques.</p>
+          <Feature icon="heroicons:bolt" title="Phase 2 : Coaching embarqué (4-8 semaines)" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Pair programming sur des projets réels. Revues de code pédagogiques. Introduction du Specification-Driven Development (SDD) : spécifier d'abord, générer ensuite. Mise en place CI/CD, quality gates, couverture de tests.</p>
           </Feature>
-          <Feature icon="heroicons:light-bulb" title="Workshops culture" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">3 demi-journées sur un thème spécifique (code review, incident management, etc.), enquête avant/après.</p>
+          <Feature icon="heroicons:arrow-trending-up" title="Phase 3 : Autonomie (4 semaines)" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Les tech leads prennent le relais. Mesure des KPIs finaux. Transfert complet des pratiques. Documentation des workflows validés. L'équipe continue sans moi.</p>
           </Feature>
-          <Feature icon="heroicons:map" title="Leadership offsite" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Journée complète de facilitation pour l'équipe de direction technique. Vision, priorités, alignement.</p>
+          <Feature icon="heroicons:cpu-chip" title="Méthodologie SDD" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Specification-Driven Development : l'IA est un exécuteur qui transforme des spécifications en code, pas un oracle qui devine l'intention. Accélération : 5-10 user stories/jour, cycle de delivery -30%, couverture tests 80%+.</p>
           </Feature>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Philosophie -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Philosophie : "Code is Cattle, Context is King"</h2>
+        <p class="mb-6 text-neutral-600">
+          L'IA peut générer du code plus vite et moins cher que n'importe quel humain. La valeur n'est plus dans le code lui-même : c'est un <strong>dérivé régénérable</strong>. Vos véritables actifs sont vos <strong>spécifications</strong> et vos <strong>tests</strong>. Si vos specs sont précises et vos tests complets, vous pouvez régénérer l'intégralité de votre codebase à la demande.
+        </p>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-lg border border-neutral-200 p-5 text-center">
+            <p class="mb-1 font-headings text-lg font-bold text-secondary-600">Spécifications</p>
+            <p class="text-xs text-neutral-500">Actif primaire. Le "quoi" et le "pourquoi". Source de vérité.</p>
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-5 text-center">
+            <p class="mb-1 font-headings text-lg font-bold text-secondary-600">Tests</p>
+            <p class="text-xs text-neutral-500">Actif primaire. Le filet de sécurité. Ce qui garantit le "comment".</p>
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-5 text-center">
+            <p class="mb-1 font-headings text-lg font-bold text-neutral-400">Code</p>
+            <p class="text-xs text-neutral-500">Dérivé. Régénérable. Plus un actif, un artefact.</p>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- 4 douleurs legacy -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Les 4 douleurs que tout DSI connaît</h2>
+        <p class="mb-6 text-neutral-600">
+          Chaque engagement de transformation part des mêmes réalités terrain, validées auprès de dizaines de DSI en finance, assurance et secteur public :
+        </p>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-lg border-l-4 border-secondary-400 bg-white p-5">
+            <h3 class="mb-1 font-headings font-bold text-neutral-900">1. Comprendre</h3>
+            <p class="text-sm text-neutral-500">"Qu'est-ce que ce système fait réellement, dans sa totalité ?" Pas une connexion, une fonction ou une procédure stockée oubliée.</p>
+          </div>
+          <div class="rounded-lg border-l-4 border-secondary-400 bg-white p-5">
+            <h3 class="mb-1 font-headings font-bold text-neutral-900">2. Documenter</h3>
+            <p class="text-sm text-neutral-500">"Comment capturer la connaissance avant qu'elle ne parte à la retraite ?" Plus de connaissance tribale qui sort par la porte.</p>
+          </div>
+          <div class="rounded-lg border-l-4 border-secondary-400 bg-white p-5">
+            <h3 class="mb-1 font-headings font-bold text-neutral-900">3. Sécuriser</h3>
+            <p class="text-sm text-neutral-500">"Où se cachent les vulnérabilités dans ce legacy ?" Chaque évolution est un risque tant que le périmètre n'est pas maîtrisé.</p>
+          </div>
+          <div class="rounded-lg border-l-4 border-secondary-400 bg-white p-5">
+            <h3 class="mb-1 font-headings font-bold text-neutral-900">4. Évoluer</h3>
+            <p class="text-sm text-neutral-500">"Comment faire évoluer sans tout casser ?" L'approche Onion Model : moderniser de l'extérieur vers l'intérieur, couche par couche.</p>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Résultats mesurés -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Résultats mesurés sur des missions réelles</h2>
+        <div class="grid gap-4 md:grid-cols-4">
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">5% → 65%</p>
+            <p class="text-xs text-neutral-500">couverture de tests</p>
+          </div>
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">-70%</p>
+            <p class="text-xs text-neutral-500">régressions en prod</p>
+          </div>
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">-96%</p>
+            <p class="text-xs text-neutral-500">lead time (2j → 2h)</p>
+          </div>
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">-73%</p>
+            <p class="text-xs text-neutral-500">dette technique</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-neutral-400">Résultats mesurés sur une mission de coaching technique de 6 mois (agence digitale, 30 développeurs).</p>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <div class="rounded-lg bg-neutral-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-neutral-700">x4-x5</p>
+            <p class="text-xs text-neutral-500">productivité avec SDD</p>
+          </div>
+          <div class="rounded-lg bg-neutral-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-neutral-700">3-5 jours</p>
+            <p class="text-xs text-neutral-500">time to first sprint (vs 3-5 semaines)</p>
+          </div>
+          <div class="rounded-lg bg-neutral-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-neutral-700">80%+</p>
+            <p class="text-xs text-neutral-500">couverture tests cible</p>
+          </div>
         </div>
       </Col>
       <Col span="2" />
@@ -75,40 +182,72 @@ const i18n = t('fr');
   </Section>
 
   <!-- Packages -->
-  <Section padding="both">
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8">
         <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Formats d'engagement</h2>
         <div class="grid gap-6 md:grid-cols-2">
           <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
-            <p class="mb-1 text-xs font-medium uppercase tracking-widest text-secondary-500">Point d'entrée</p>
-            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Engineering Health Check</h3>
-            <p class="mb-4 text-sm text-neutral-500">Un diagnostic factuel qui donne au CTO les arguments pour investir dans l'amélioration.</p>
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Point d'entrée</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Diagnostic flash</h3>
+            <p class="mb-4 text-sm text-neutral-500">Cartographie de l'écosystème, benchmarks de maturité, 5-8 recommandations concrètes, roadmap chiffrée à 3, 6 et 12 mois. Le CTO repart avec les arguments pour investir.</p>
             <List type="checklist" listItems={[
-              { listItem: "5-6 jours" },
-              { listItem: "Livrable: rapport + benchmarks + recommandations" },
-              { listItem: "À partir de CHF 9 000" },
+              { listItem: "3-5 jours (dont 1 jour sur site)" },
+              { listItem: "Livrable : rapport + benchmarks + roadmap" },
+              { listItem: "CHF 5 500 - 9 000" },
             ]} />
           </div>
           <div class="rounded-lg border border-neutral-200 p-6">
-            <p class="mb-1 text-xs font-medium uppercase tracking-widest text-neutral-400">Parcours complet</p>
-            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Transformation de la delivery</h3>
-            <p class="mb-4 text-sm text-neutral-500">Health check, puis accélération 3 mois, workshops culture, offsite annuel.</p>
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Transformation</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Coaching embarqué 12 semaines</h3>
+            <p class="mb-4 text-sm text-neutral-500">Coaching sur des sprints réels. Pair programming, revues de code, SDD, CI/CD, quality gates. Métriques DORA mesurables dès le mois 3.</p>
             <List type="checklist" listItems={[
-              { listItem: "12 mois" },
-              { listItem: "CHF 40 000 - 50 000 la première année" },
-              { listItem: "Métriques DORA mesurables dès le mois 3" },
+              { listItem: "12 semaines (3j/sem puis 2j/sem)" },
+              { listItem: "CHF 45 000 - 55 000" },
+              { listItem: "KPIs mesurés : qualité, vélocité, efficacité" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Ponctuel</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Workshop culture</h3>
+            <p class="mb-4 text-sm text-neutral-500">3 demi-journées sur un thème spécifique (code review, incident management, testing, IA pour développeurs). Enquête avant/après.</p>
+            <List type="checklist" listItems={[
+              { listItem: "5-6 jours de préparation + animation" },
+              { listItem: "CHF 9 500 - 11 000" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Ponctuel</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Leadership offsite</h3>
+            <p class="mb-4 text-sm text-neutral-500">Journée complète de facilitation pour l'équipe de direction technique. Vision, priorités, alignement, plan d'action.</p>
+            <List type="checklist" listItems={[
+              { listItem: "3 jours (préparation + animation)" },
+              { listItem: "CHF 5 500" },
             ]} />
           </div>
         </div>
+        <!-- SDLC Assessment -->
+        <div class="mt-6 rounded-lg border border-neutral-200 p-6">
+          <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Nouveau</p>
+          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Assessment SDLC</h3>
+          <p class="mb-4 text-sm text-neutral-500">Cartographie complète de votre cycle de développement (spécifications, design, build, test, deploy, operate). Identification des accélérations IA par étape. Roadmap de transformation avec priorités et premier pas vendable.</p>
+          <List type="checklist" listItems={[
+            { listItem: "2-3 semaines" },
+            { listItem: "Livrable : roadmap SDLC + use cases prioritaires" },
+            { listItem: "CHF 15 000 - 25 000" },
+          ]} />
+        </div>
+        <p class="mt-6 text-sm text-neutral-400">
+          Parcours complet (diagnostic + coaching 12 semaines + workshops + offsite annuel) : CHF 40 000 - 55 000 la première année.
+        </p>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
   <!-- Pour qui -->
-  <Section padding="both" classes="bg-neutral-50">
+  <Section padding="both">
     <Row>
       <Col span="2" />
       <Col span="8">
@@ -116,19 +255,19 @@ const i18n = t('fr');
         <div class="grid gap-6 md:grid-cols-2">
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">CTO / VP Engineering</h3>
-            <p class="text-sm text-neutral-500">Qui savent que leur équipe peut mieux faire mais n'arrivent pas à identifier les leviers concrets.</p>
+            <p class="text-sm text-neutral-500">Qui savent que leur équipe peut mieux faire mais n'arrivent pas à identifier les leviers concrets. Besoin d'un diagnostic factuel et d'un coaching sur des sprints réels.</p>
           </div>
           <div>
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Head of IT / DSI</h3>
-            <p class="text-sm text-neutral-500">Qui font face à des problèmes de livraison récurrents et cherchent un regard externe objectif.</p>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Équipes qui adoptent l'IA</h3>
+            <p class="text-sm text-neutral-500">Qui expérimentent Copilot ou ChatGPT chacun dans leur coin et ont besoin d'une méthode commune (SDD) pour que l'IA accélère réellement la delivery.</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Scale-ups en croissance</h3>
-            <p class="text-sm text-neutral-500">Dont les processus artisanaux ne tiennent plus à l'échelle et qui doivent professionnaliser leur engineering.</p>
+            <p class="text-sm text-neutral-500">Dont les processus artisanaux ne tiennent plus à l'échelle et qui doivent professionnaliser leur engineering sans perdre en agilité.</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Post-acquisition / fusion</h3>
-            <p class="text-sm text-neutral-500">Qui doivent aligner des équipes techniques issues de cultures différentes.</p>
+            <p class="text-sm text-neutral-500">Qui doivent aligner des équipes techniques issues de cultures différentes, harmoniser les pratiques et les outils.</p>
           </div>
         </div>
       </Col>
@@ -137,14 +276,14 @@ const i18n = t('fr');
   </Section>
 
   <!-- CTA -->
-  <Section padding="both">
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="1" />
       <Col span="10">
         <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
           <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
           <p class="mx-auto mb-6 max-w-xl text-secondary-100">
-            Un échange de 30 minutes, pas un pitch commercial.
+            Un échange de 30 minutes pour comprendre où vous en êtes et identifier les prochaines étapes concrètes.
           </p>
           <Button type="link" size="lg" style="white" variation="outline" link="/contact/">
             {i18n.cta.primary}
