@@ -1,95 +1,92 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Row from '../components/ui/Row.astro';
+import Col from '../components/ui/Col.astro';
+import Button from '../components/ui/Button.astro';
 import { t } from '../i18n';
 
 const i18n = t('fr');
 ---
 
 <BaseLayout title={`${i18n.site.title} - ${i18n.hero.headline}`}>
-  <section class="hero">
-    <h1>{i18n.hero.headline}</h1>
-    <p class="subheadline">{i18n.hero.subheadline}</p>
-    <a href="/contact/" class="cta-primary">{i18n.cta.primary}</a>
-  </section>
+  <!-- Hero -->
+  <Section id="hero" padding="top" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-6xl">
+          {i18n.hero.headline}
+        </h1>
+        <p class="mx-auto mb-8 max-w-2xl text-lg text-neutral-500">
+          {i18n.hero.subheadline}
+        </p>
+        <Button type="link" size="lg" style="primary" link="/contact/" elevated>
+          {i18n.cta.primary}
+        </Button>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
 
-  <section class="services-preview">
-    <div class="service-card">
-      <h3>{i18n.services.aiGovernance.name}</h3>
-      <p>{i18n.services.aiGovernance.tagline}</p>
-      <a href="/services/gouvernance-ia/">{i18n.cta.secondary}</a>
-    </div>
-    <div class="service-card">
-      <h3>{i18n.services.teamPerformance.name}</h3>
-      <p>{i18n.services.teamPerformance.tagline}</p>
-      <a href="/services/performance-equipes/">{i18n.cta.secondary}</a>
-    </div>
-    <div class="service-card">
-      <h3>{i18n.services.executiveCoaching.name}</h3>
-      <p>{i18n.services.executiveCoaching.tagline}</p>
-      <a href="/services/coaching-executif/">{i18n.cta.secondary}</a>
-    </div>
-  </section>
+  <!-- Services -->
+  <Section id="services" padding="both">
+    <Row>
+      <Col span="12" align="center" classes="mb-12">
+        <h2 class="font-headings text-3xl font-bold text-neutral-900">Services</h2>
+      </Col>
+    </Row>
+    <Row>
+      <Col span="4">
+        <div class="rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-lg">
+          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">
+            {i18n.services.aiGovernance.name}
+          </h3>
+          <p class="mb-4 text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
+          <Button type="link" style="primary" variation="link" link="/services/gouvernance-ia/">
+            {i18n.cta.secondary} &rarr;
+          </Button>
+        </div>
+      </Col>
+      <Col span="4">
+        <div class="rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-lg">
+          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">
+            {i18n.services.teamPerformance.name}
+          </h3>
+          <p class="mb-4 text-neutral-500">{i18n.services.teamPerformance.tagline}</p>
+          <Button type="link" style="primary" variation="link" link="/services/performance-equipes/">
+            {i18n.cta.secondary} &rarr;
+          </Button>
+        </div>
+      </Col>
+      <Col span="4">
+        <div class="rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-lg">
+          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">
+            {i18n.services.executiveCoaching.name}
+          </h3>
+          <p class="mb-4 text-neutral-500">{i18n.services.executiveCoaching.tagline}</p>
+          <Button type="link" style="primary" variation="link" link="/services/coaching-executif/">
+            {i18n.cta.secondary} &rarr;
+          </Button>
+        </div>
+      </Col>
+    </Row>
+  </Section>
+
+  <!-- CTA -->
+  <Section id="cta" padding="both" classes="bg-primary-500">
+    <Row>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <h2 class="mb-4 font-headings text-3xl font-bold text-white">{i18n.cta.primary}</h2>
+        <p class="mx-auto mb-8 max-w-xl text-primary-100">
+          {i18n.hero.subheadline}
+        </p>
+        <Button type="link" size="lg" style="white" variation="outline" link="/contact/" elevated>
+          {i18n.cta.primary}
+        </Button>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
 </BaseLayout>
-
-<style>
-  .hero {
-    text-align: center;
-    padding: 4rem 0;
-  }
-
-  .hero h1 {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-  }
-
-  .subheadline {
-    font-size: 1.25rem;
-    color: #555;
-    max-width: 40rem;
-    margin: 0 auto 2rem;
-  }
-
-  .cta-primary {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    background: var(--color-accent);
-    color: white;
-    text-decoration: none;
-    border-radius: 0.375rem;
-    font-weight: 500;
-  }
-
-  .services-preview {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-  }
-
-  .service-card {
-    padding: 2rem;
-    border: 1px solid #e5e5e3;
-    border-radius: 0.5rem;
-  }
-
-  .service-card h3 {
-    font-family: var(--font-serif);
-    font-size: 1.25rem;
-    color: var(--color-primary);
-    margin-top: 0;
-  }
-
-  .service-card p {
-    color: #555;
-    font-size: 0.95rem;
-  }
-
-  .service-card a {
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 500;
-  }
-</style>

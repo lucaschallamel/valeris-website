@@ -1,0 +1,56 @@
+---
+// Column
+// ------------
+// Description: Represents a column in a 12 column grid.
+// Properties:
+// - Span: the span of the column (1 to 12) at lg breakpoint
+// - SpanMobile: the span of the column on mobile (1 to 12)
+// - Align: the horizontal alignment of the column (start, center, end)
+// - Classes: additional classes
+
+// Props
+type Props = {
+	span?: string
+	spanMobile?: string
+	align?: string
+	classes?: string
+}
+const { span = '12', spanMobile = '12', align, classes } = Astro.props
+
+const hasContent = Astro.slots.default
+
+const alignClass = align === 'center' ? 'text-center' : align === 'end' ? 'text-right' : ''
+---
+
+<div
+	class:list={[
+		'col',
+		alignClass,
+		classes
+	]}
+	style={`--col-span: ${spanMobile}; --col-span-lg: ${span};`}
+>
+	{hasContent ? <slot /> : <div class="col__placeholder" />}
+</div>
+
+<style>
+	.col {
+		grid-column: span var(--col-span) / span var(--col-span);
+	}
+	@media (min-width: 1024px) {
+		.col {
+			grid-column: span var(--col-span-lg) / span var(--col-span-lg);
+		}
+	}
+	.col:has(.col__placeholder) {
+		display: none;
+	}
+	@media (min-width: 1024px) {
+		.col:has(.col__placeholder) {
+			display: block;
+		}
+	}
+	.col__placeholder {
+		display: none;
+	}
+</style>

@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import { t, getLangFromUrl, getLocalePath, languages, type Lang } from '../i18n';
+import { Image } from 'astro:assets';
+import roseIcon from '../assets/logos/valeris-icon-primary.svg';
 
 interface Props {
   title?: string;
@@ -17,38 +19,66 @@ const alternateLinks = (Object.keys(languages) as Lang[]).map((l) => ({
   lang: l,
   href: `${Astro.site}${getLocalePath(currentPath, l).slice(1)}`,
 }));
+
+// Home link for current language
+const homeLink = lang === 'fr' ? '/' : `/${lang}/`;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class="font-sans text-neutral-700 antialiased">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     {alternateLinks.map((alt) => (
       <link rel="alternate" hreflang={alt.lang} href={alt.href} />
     ))}
     <link rel="alternate" hreflang="x-default" href={`${Astro.site}`} />
     <title>{title}</title>
   </head>
-  <body>
-    <header>
-      <nav>
-        <a href={getLocalePath(currentPath, lang).replace(/\/[^/]+\/$/, '/')} class="logo">
-          Valeris
+  <body class="m-0 flex min-h-dvh flex-col bg-white">
+    <header class="sticky top-0 z-20 border-b border-neutral-100 bg-white/90 backdrop-blur-sm">
+      <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-6">
+        <!-- Logo -->
+        <a href={homeLink} class="flex items-center gap-3">
+          <img src={roseIcon.src} alt="" class="h-10 w-auto" />
+          <span class="font-headings text-2xl font-extrabold tracking-wide text-neutral-900">valeris</span>
         </a>
-        <ul>
-          <li><a href={getLocalePath('/services/', lang)}>{i18n.nav.services}</a></li>
-          <li><a href={getLocalePath('/a-propos/', lang)}>{i18n.nav.about}</a></li>
-          <li><a href={getLocalePath('/contact/', lang)}>{i18n.nav.contact}</a></li>
+
+        <!-- Navigation -->
+        <ul class="hidden items-center gap-8 font-medium md:flex">
+          <li>
+            <a href={getLocalePath('/services/', lang)}
+               class="transition-colors hover:text-primary-500">
+              {i18n.nav.services}
+            </a>
+          </li>
+          <li>
+            <a href={getLocalePath('/a-propos/', lang)}
+               class="transition-colors hover:text-primary-500">
+              {i18n.nav.about}
+            </a>
+          </li>
+          <li>
+            <a href={getLocalePath('/contact/', lang)}
+               class="transition-colors hover:text-primary-500">
+              {i18n.nav.contact}
+            </a>
+          </li>
         </ul>
-        <div class="lang-switcher">
+
+        <!-- Language switcher -->
+        <div class="flex items-center gap-1 text-sm">
           {(Object.keys(languages) as Lang[]).map((l) => (
             <a
               href={getLocalePath(currentPath, l)}
-              class:list={[{ active: l === lang }]}
+              class:list={[
+                'rounded px-2 py-1 transition-colors',
+                l === lang
+                  ? 'font-bold text-primary-500'
+                  : 'text-neutral-400 hover:text-neutral-700'
+              ]}
               aria-label={languages[l]}
             >
               {l.toUpperCase()}
@@ -58,118 +88,18 @@ const alternateLinks = (Object.keys(languages) as Lang[]).map((l) => ({
       </nav>
     </header>
 
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
 
-    <footer>
-      <p>&copy; {new Date().getFullYear()} {i18n.footer.copyright}</p>
-      <a href={getLocalePath('/mentions-legales/', lang)}>{i18n.footer.legal}</a>
+    <footer class="border-t border-neutral-100 bg-neutral-50 py-8 text-center text-sm text-neutral-500">
+      <div class="mx-auto max-w-7xl px-6">
+        <p class="mb-2">&copy; {new Date().getFullYear()} {i18n.footer.copyright}</p>
+        <a href={getLocalePath('/mentions-legales/', lang)}
+           class="text-neutral-400 transition-colors hover:text-primary-500">
+          {i18n.footer.legal}
+        </a>
+      </div>
     </footer>
   </body>
 </html>
-
-<style>
-  /* Minimal reset - to be replaced with full design system */
-  :root {
-    --color-text: #1a1a1a;
-    --color-bg: #fafaf8;
-    --color-primary: #1e2a3a;
-    --color-accent: #2d6a6a;
-    --font-serif: Georgia, 'Times New Roman', serif;
-    --font-sans: Inter, system-ui, -apple-system, sans-serif;
-  }
-
-  html {
-    font-family: var(--font-sans);
-    color: var(--color-text);
-    background: var(--color-bg);
-    line-height: 1.65;
-  }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  header {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #e5e5e3;
-  }
-
-  nav {
-    max-width: 72rem;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .logo {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-  }
-
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  nav a {
-    color: var(--color-text);
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
-
-  nav a:hover {
-    color: var(--color-accent);
-  }
-
-  .lang-switcher {
-    display: flex;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-  }
-
-  .lang-switcher a {
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    color: #666;
-  }
-
-  .lang-switcher a.active {
-    font-weight: 600;
-    color: var(--color-primary);
-  }
-
-  main {
-    flex: 1;
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 2rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  footer {
-    padding: 2rem;
-    border-top: 1px solid #e5e5e3;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #666;
-  }
-
-  footer a {
-    color: #666;
-  }
-</style>
