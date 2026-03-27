@@ -17,38 +17,54 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Architecture
 
 ```
-Payload CMS (Payload Cloud, SQLite, headless)
+Content (Markdown/JSON in repo)
   |
-  | webhook on publish
+  | git push to main
   v
-GitHub Actions -> astro build -> fetch content from Payload REST API
+Cloudflare Pages auto-build (Astro static generation)
   |
   v
 Cloudflare Pages (static, global CDN)
   valeris.ch/fr/*  (French, primary)
   valeris.ch/de/*  (German, secondary)
   valeris.ch/en/*  (English, tertiary)
+
+Cloudflare Workers (/api/*)
+  ├── POST /api/contact     (contact form)
+  ├── POST /api/download    (lead capture + PDF delivery)
+  └── POST /api/register    (event registration)
+
+Cloudflare D1  -> leads, submissions, registrations
+Cloudflare R2  -> PDFs, downloadable assets
+Resend         -> transactional emails
+Cal.com        -> booking widget
 ```
 
 ### Key Decisions
 
 - **Astro over Next.js**: Static-first, zero JS by default, native Cloudflare Pages adapter. Next.js SSR on Cloudflare Workers is experimental and unnecessary.
-- **Payload Cloud (free tier)**: Managed hosting, SQLite, zero maintenance. Self-hosted fallback on Railway if needed.
-- **Cloudflare Pages (free tier)**: Unlimited bandwidth, atomic deploys, automatic SSL.
+- **No CMS for MVP**: Content managed as static files in the repo. Payload CMS deferred (Payload Cloud closed due to Figma acquisition). Re-evaluate later. See ADR-002.
+- **Cloudflare full stack**: Pages (hosting) + Workers (forms) + D1 (data) + R2 (files). All free tier.
+- **Resend for email**: Transactional emails (confirmations, download links). Free tier (100 emails/day).
 - **No server-side rendering**: Content changes at most weekly. Static generation is sufficient.
 
-### Architecture Decision Record
+### Architecture Decision Records
 
-Full ADR at: `docs-valeris/architecture/ADR/ADR-001-astro-payload-cloudflare.md`
+- ADR-001: `docs-valeris/architecture/ADR/ADR-001-astro-payload-cloudflare.md` (partially superseded)
+- ADR-002: `docs-valeris/architecture/ADR/ADR-002-static-content-no-cms-cloudflare-stack.md`
 
 ## Technology Stack
 
 | Layer | Technology | Version |
 |-------|-----------|---------|
 | Frontend | Astro | 5.x |
-| CMS | Payload CMS | 3.x |
+| CMS | None (static files in repo) | - |
 | Hosting | Cloudflare Pages | - |
+| Forms/API | Cloudflare Workers | - |
+| Database | Cloudflare D1 | - |
+| File storage | Cloudflare R2 | - |
 | DNS/SSL | Cloudflare | - |
+| Email | Resend | - |
 | CI/CD | GitHub Actions | - |
 | Language | TypeScript | 5.x |
 | Styling | TBD (Tailwind or vanilla CSS) | - |

@@ -2,7 +2,7 @@
 
 ## Status
 
-**Accepted** - 2026-03-27
+**Accepted** - 2026-03-27 | **Partially superseded** by ADR-002 (Payload CMS deferred)
 
 ## Context
 

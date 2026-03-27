@@ -14,18 +14,23 @@
 
 ## Current Sprint
 
-**Sprint 0: Scaffolding** (March 2026)
+**Sprint 0: Scaffolding** (March 2026) - COMPLETE
 
 - [x] Git repository initialised
 - [x] Project structure created
 - [x] CLAUDE.md written
 - [x] README.md written
 - [x] Memory bank populated
-- [ ] Astro project initialised
-- [ ] i18n configured (FR/DE/EN)
-- [ ] Base layout created
+- [x] Astro 6.x project initialised (TypeScript strict)
+- [x] i18n configured (FR/DE/EN, directory-based routing)
+- [x] Base layout created (nav, footer, hreflang, language switcher)
+- [x] All 25 pages created (8 per language + root redirect)
+- [x] Build verified (25 pages, 542ms, zero errors)
+- [x] Dev server verified (all routes 200, redirect working)
+- [x] First commit: `064ef0b`
 - [ ] Payload CMS schemas defined
 - [ ] Cloudflare Pages connected
+- [ ] GitHub remote connected
 
 ## Upcoming
 
