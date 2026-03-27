@@ -1,0 +1,174 @@
+---
+import { t, getLangFromUrl, getLocalePath, languages, type Lang } from '../i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const i18n = t(lang);
+const { title = i18n.site.title, description = i18n.site.description } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+// Build alternate language links for hreflang
+const alternateLinks = (Object.keys(languages) as Lang[]).map((l) => ({
+  lang: l,
+  href: `${Astro.site}${getLocalePath(currentPath, l).slice(1)}`,
+}));
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    {alternateLinks.map((alt) => (
+      <link rel="alternate" hreflang={alt.lang} href={alt.href} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${Astro.site}fr/`} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href={getLocalePath(currentPath, lang).replace(/\/[^/]+\/$/, '/')} class="logo">
+          Valeris
+        </a>
+        <ul>
+          <li><a href={getLocalePath('/services/', lang)}>{i18n.nav.services}</a></li>
+          <li><a href={getLocalePath('/a-propos/', lang)}>{i18n.nav.about}</a></li>
+          <li><a href={getLocalePath('/contact/', lang)}>{i18n.nav.contact}</a></li>
+        </ul>
+        <div class="lang-switcher">
+          {(Object.keys(languages) as Lang[]).map((l) => (
+            <a
+              href={getLocalePath(currentPath, l)}
+              class:list={[{ active: l === lang }]}
+              aria-label={languages[l]}
+            >
+              {l.toUpperCase()}
+            </a>
+          ))}
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>&copy; {new Date().getFullYear()} {i18n.footer.copyright}</p>
+      <a href={getLocalePath('/mentions-legales/', lang)}>{i18n.footer.legal}</a>
+    </footer>
+  </body>
+</html>
+
+<style>
+  /* Minimal reset - to be replaced with full design system */
+  :root {
+    --color-text: #1a1a1a;
+    --color-bg: #fafaf8;
+    --color-primary: #1e2a3a;
+    --color-accent: #2d6a6a;
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-sans: Inter, system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.65;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e5e5e3;
+  }
+
+  nav {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  nav a:hover {
+    color: var(--color-accent);
+  }
+
+  .lang-switcher {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .lang-switcher a {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    color: #666;
+  }
+
+  .lang-switcher a.active {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  main {
+    flex: 1;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  footer {
+    padding: 2rem;
+    border-top: 1px solid #e5e5e3;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  footer a {
+    color: #666;
+  }
+</style>

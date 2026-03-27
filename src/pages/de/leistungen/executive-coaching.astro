@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { t } from '../../../i18n';
+
+const i18n = t('de');
+---
+
+<BaseLayout title={`${i18n.services.executiveCoaching.name} - ${i18n.site.title}`}>
+  <h1>{i18n.services.executiveCoaching.name}</h1>
+  <p>{i18n.services.executiveCoaching.tagline}</p>
+</BaseLayout>

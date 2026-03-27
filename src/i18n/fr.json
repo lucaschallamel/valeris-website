@@ -1,0 +1,45 @@
+{
+  "site": {
+    "title": "Valeris Coaching",
+    "description": "Conseil en leadership technologique pour les entreprises suisses"
+  },
+  "nav": {
+    "services": "Services",
+    "about": "A propos",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "Valeris Coaching - Geneve, Suisse",
+    "legal": "Mentions legales"
+  },
+  "cta": {
+    "primary": "Reserver un echange",
+    "secondary": "En savoir plus"
+  },
+  "services": {
+    "aiGovernance": {
+      "name": "Activation IA & Gouvernance",
+      "tagline": "De la curiosite IA a la confiance IA - une adoption responsable qui livre."
+    },
+    "teamPerformance": {
+      "name": "Performance des Equipes d'Ingenierie",
+      "tagline": "Un meilleur logiciel commence par une meilleure equipe - pas un meilleur outil."
+    },
+    "executiveCoaching": {
+      "name": "Coaching de Dirigeants Techniques",
+      "tagline": "Le role a change. Votre methode aussi devrait."
+    }
+  },
+  "hero": {
+    "headline": "Un leadership technologique qui livre.",
+    "subheadline": "J'aide les entreprises suisses a reussir leur transformation technologique - pas seulement la strategie, mais l'execution."
+  },
+  "about": {
+    "title": "A propos",
+    "methodology": "Ma methode"
+  },
+  "contact": {
+    "title": "Contact",
+    "expectation": "Un echange de 30 minutes, pas un pitch commercial. Nous discuterons de votre situation et je vous dirai honnetement si je peux vous aider."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "site": {
+    "title": "Valeris Coaching",
+    "description": "Technologie-Leadership-Beratung fuer Schweizer Unternehmen"
+  },
+  "nav": {
+    "services": "Leistungen",
+    "about": "Ueber mich",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "copyright": "Valeris Coaching - Genf, Schweiz",
+    "legal": "Impressum"
+  },
+  "cta": {
+    "primary": "Gespraech vereinbaren",
+    "secondary": "Mehr erfahren"
+  },
+  "services": {
+    "aiGovernance": {
+      "name": "KI-Aktivierung & Governance",
+      "tagline": "Von KI-Neugier zu KI-Vertrauen - verantwortungsvolle Einfuehrung, die liefert."
+    },
+    "teamPerformance": {
+      "name": "Engineering-Team-Performance",
+      "tagline": "Bessere Software beginnt mit einem besseren Team - nicht einem besseren Tool."
+    },
+    "executiveCoaching": {
+      "name": "Coaching fuer technische Fuehrungskraefte",
+      "tagline": "Die Rolle hat sich veraendert. Ihre Methoden sollten es auch."
+    }
+  },
+  "hero": {
+    "headline": "Technologie-Leadership, das liefert.",
+    "subheadline": "Ich helfe Schweizer Unternehmen, ihre Technologie-Transformation erfolgreich umzusetzen - nicht nur die Strategie, sondern auch die Umsetzung."
+  },
+  "about": {
+    "title": "Ueber mich",
+    "methodology": "Meine Methode"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "expectation": "Ein 30-minuetiges Gespraech, kein Verkaufspitch. Wir besprechen Ihre Situation und ich sage Ihnen ehrlich, ob ich helfen kann."
+  }
+}

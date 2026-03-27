@@ -1,0 +1,45 @@
+{
+  "site": {
+    "title": "Valeris Coaching",
+    "description": "Technology leadership advisory for Swiss enterprises"
+  },
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "Valeris Coaching - Geneva, Switzerland",
+    "legal": "Legal"
+  },
+  "cta": {
+    "primary": "Book a conversation",
+    "secondary": "Learn more"
+  },
+  "services": {
+    "aiGovernance": {
+      "name": "AI Activation & Governance",
+      "tagline": "From AI curiosity to AI confidence - responsible adoption that actually ships."
+    },
+    "teamPerformance": {
+      "name": "Engineering Team Performance",
+      "tagline": "Better software starts with a better team - not a better tool."
+    },
+    "executiveCoaching": {
+      "name": "Technical Executive Coaching",
+      "tagline": "The role changed. Your playbook should too."
+    }
+  },
+  "hero": {
+    "headline": "Technology leadership that delivers.",
+    "subheadline": "I help Swiss enterprises get technology transformation right - not just the strategy, but the execution."
+  },
+  "about": {
+    "title": "About",
+    "methodology": "My approach"
+  },
+  "contact": {
+    "title": "Contact",
+    "expectation": "A 30-minute conversation, not a sales pitch. We will discuss your situation and I will tell you honestly whether I can help."
+  }
+}
