@@ -2,92 +2,103 @@
 
 ## Architecture Pattern
 
-**Static Site Generation (SSG) with Headless CMS**
+**Static Site Generation (SSG) with Cloudflare Full Stack**
 
 ```
-Content authoring (Payload CMS)
+Content (static files in repo)
     |
-    | REST API at build time
+    | git push to main
     v
-Static generation (Astro)
+Cloudflare Pages auto-build (Astro SSG)
     |
-    | HTML/CSS/JS output
     v
 Edge delivery (Cloudflare Pages CDN)
+    valeris.fr/*     (FR at root)
+    valeris.fr/de/*  (German)
+    valeris.fr/en/*  (English)
+
+Cloudflare Workers (/api/*)
+    POST /api/contact  (Resend + Turnstile)
 ```
 
 ### Why This Pattern
 
-- **Zero runtime dependencies**: site works even if CMS is down
+- **Zero runtime dependencies**: site works even if external services are down
 - **Maximum performance**: pre-rendered HTML, no server-side processing
 - **Minimal attack surface**: no database, no server, no login on production
-- **Near-zero cost**: free tiers cover all needs
+- **Near-zero cost**: all Cloudflare free tier
 - **Low maintenance**: nothing to patch, nothing to monitor
 
 ## Design Patterns
 
-### Component Architecture (Astro)
+### Component Architecture (Astro + Foxi)
 
 ```
 src/
 ├── components/
-│   ├── common/          # Header, Footer, Nav, LanguageSwitcher
-│   ├── home/            # Hero, ServiceCards, CredibilityStrip
-│   ├── services/        # ServiceHero, ProblemBlock, EngagementOptions
-│   ├── about/           # Portrait, CareerNarrative, Methodology
-│   └── contact/         # BookingWidget, ContactInfo
+│   ├── ui/              # Foxi primitives (Section, Row, Col, Button, Feature, List, etc.)
+│   ├── blocks/          # Foxi composite blocks (hero, CTA, features, pricing, etc.)
+│   ├── BlogGrid.astro   # Substack RSS + podcast filters
+│   └── ContactForm.astro # Trilingual form with Turnstile
 ├── layouts/
-│   └── BaseLayout.astro # Common HTML structure, meta, i18n
+│   └── BaseLayout.astro  # Header, nav, footer, hreflang, lang switcher
 └── pages/
-    ├── fr/              # French route tree
-    ├── de/              # German route tree
-    ├── en/              # English route tree
-    └── index.astro      # Root redirect
+    ├── services/         # FR service pages (at root)
+    ├── de/               # German pages
+    ├── en/               # English pages
+    └── index.astro       # FR home
 ```
 
 ### i18n Pattern
 
-- Directory-based routing: `/fr/`, `/de/`, `/en/`
+- Directory-based routing: FR at root, DE/EN under prefix
+- `prefixDefaultLocale: false` in Astro config
 - UI strings: JSON files per locale (`src/i18n/fr.json`, `de.json`, `en.json`)
-- Content: Payload CMS localised fields, fetched per-locale at build time
-- Language switcher: equivalent page in other language (not redirect to home)
-- hreflang tags on every page
+- Route map in `src/i18n/index.ts` for cross-language navigation
+- Language switcher: `FR | DE | EN` in header, no flag icons
+- hreflang tags + x-default on every page
+
+### Colour System
+
+```
+Primary (rose):    Action colour - CTA buttons, active nav, form focus
+Secondary (teal):  Authority colour - labels, icons, CTA sections, banners
+Neutral (stone):   Foundation - backgrounds, text, borders (warm, not cold)
+```
+
+| Role | Element | Colour |
+|------|---------|--------|
+| CTA button | "Réserver un échange" | `bg-primary-500` (rose) |
+| Altitude label | "GOUVERNANCE" | `text-secondary-500 font-bold` (teal) |
+| Feature icon (square) | Heroicons | `bg-secondary-400` (lighter teal) |
+| CTA section | Bottom of pages | `rounded-xl bg-secondary-600` (dark teal) |
+| Blog/Contact banner | Full-width header | `bg-secondary-600` |
+| Entry-point card | "Point d'entrée" | `border-secondary-200 bg-secondary-50/30` |
+| Checklist markers | List items | `text-secondary-500` |
+| Page background | Sections | `bg-neutral-50` (warm stone) |
+| Body text | Paragraphs | `text-neutral-600` (warm) |
+| Headings | H1-H3 | `text-neutral-900` (warm near-black) |
+
+### Service Page Template
+
+All 3 service detail pages follow the same 6-section structure:
+1. **Hero** - altitude label + H1 (from i18n) + tagline
+2. **Problem** - empathy block, 3 paragraphs in 2nd person
+3. **Approach** - description + 4 Feature cards with icons
+4. **Packages** - 2-column: entry point (teal border) + full journey
+5. **Audience** - 4 buyer profiles in 2x2 grid
+6. **CTA** - teal rounded rectangle with white outline button
 
 ### Content Fetching Pattern
 
-```typescript
-// At build time only (getStaticPaths)
-const response = await fetch(`${CMS_URL}/api/pages?locale=${locale}`);
-const content = await response.json();
-// Generates static HTML - no runtime fetch
-```
+Currently all content is static (hardcoded in pages + i18n JSON). No runtime API calls. Blog content fetched from Substack RSS at build time only.
 
 ## Coding Conventions
 
 - TypeScript throughout (Astro supports it natively)
-- CSS: component-scoped styles in Astro (or Tailwind if adopted)
-- No JavaScript shipped to client unless explicitly required (Astro islands)
+- Tailwind v4 with custom `@theme` for brand colours
+- Component-scoped styles in Astro (`<style>` blocks)
 - Semantic HTML5 elements (nav, main, article, section, footer)
 - Accessibility: WCAG 2.1 AA minimum
-
-## Integration Patterns
-
-### CMS to Site (Build-time)
-
-```
-Payload CMS --[webhook]--> GitHub Actions --[build]--> Cloudflare Pages
-```
-
-### Booking (Client-side)
-
-```
-Cal.com embedded widget (iframe or JS embed)
-Styled to match site aesthetic
-```
-
-### Analytics (Privacy-first)
-
-```
-Plausible or Fathom (no cookies, no consent banner needed)
-Script loaded async, does not block rendering
-```
+- British English spelling in EN content (en-AU convention)
+- German formal "Sie" in DE content

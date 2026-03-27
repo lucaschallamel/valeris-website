@@ -7,70 +7,70 @@
     "services": "Services",
     "blog": "Blog",
     "publications": "Publications",
-    "about": "A propos",
+    "about": "À propos",
     "contact": "Contact"
   },
   "footer": {
-    "copyright": "Valeris Coaching - Geneve, Suisse",
-    "legal": "Mentions legales"
+    "copyright": "Valeris Coaching - Genève, Suisse",
+    "legal": "Mentions légales"
   },
   "blog": {
-    "subtitle": "Reflexions sur le leadership technologique, l'IA et la transformation des organisations.",
+    "subtitle": "Réflexions sur le leadership technologique, l'IA et la transformation des organisations.",
     "readArticle": "Lire l'article",
     "onSubstack": "sur Substack",
     "noArticles": "Aucun article pour le moment."
   },
   "cta": {
-    "primary": "Reserver un echange",
+    "primary": "Réserver un échange",
     "secondary": "En savoir plus"
   },
   "services": {
     "aiGovernance": {
       "name": "Activation IA & Gouvernance",
-      "tagline": "De la curiosite IA a la confiance IA - une adoption responsable qui livre."
+      "tagline": "De la curiosité IA à la confiance IA - une adoption responsable qui livre."
     },
     "teamPerformance": {
-      "name": "Performance des Equipes d'Ingenierie",
-      "tagline": "Un meilleur logiciel commence par une meilleure equipe - pas un meilleur outil."
+      "name": "Performance des Équipes d'Ingénierie",
+      "tagline": "Un meilleur logiciel commence par une meilleure équipe - pas un meilleur outil."
     },
     "executiveCoaching": {
       "name": "Coaching de Dirigeants Techniques",
-      "tagline": "Le role a change. Votre methode aussi devrait."
+      "tagline": "Le rôle a changé. Votre méthode aussi devrait."
     }
   },
   "hero": {
     "headline": "Un leadership technologique qui livre.",
-    "subheadline": "J'aide les entreprises suisses a reussir leur transformation technologique - pas seulement la strategie, mais l'execution."
+    "subheadline": "J'aide les entreprises suisses à réussir leur transformation technologique - pas seulement la stratégie, mais l'exécution."
   },
   "about": {
-    "title": "A propos",
-    "methodology": "Ma methode"
+    "title": "À propos",
+    "methodology": "Ma méthode"
   },
   "contact": {
     "title": "Contact",
-    "expectation": "Un echange de 30 minutes, pas un pitch commercial. Nous discuterons de votre situation et je vous dirai honnetement si je peux vous aider.",
+    "expectation": "Un échange de 30 minutes, pas un pitch commercial. Nous discuterons de votre situation et je vous dirai honnêtement si je peux vous aider.",
     "form": {
-      "serviceInterest": "Quel service vous interesse ?",
-      "selectService": "Selectionnez un service",
-      "noPreference": "Pas de preference",
-      "firstName": "Prenom",
+      "serviceInterest": "Quel service vous intéresse ?",
+      "selectService": "Sélectionnez un service",
+      "noPreference": "Pas de préférence",
+      "firstName": "Prénom",
       "lastName": "Nom",
       "email": "Adresse e-mail",
-      "phone": "Telephone",
-      "company": "Societe",
+      "phone": "Téléphone",
+      "company": "Société",
       "jobTitle": "Fonction",
       "orgSize": "Taille de l'organisation",
       "orgSizes": {
-        "1-49": "1-49 employes",
-        "50-199": "50-199 employes",
-        "200-999": "200-999 employes",
-        "1000+": "1000+ employes"
+        "1-49": "1-49 employés",
+        "50-199": "50-199 employés",
+        "200-999": "200-999 employés",
+        "1000+": "1000+ employés"
       },
       "message": "Votre message (optionnel)",
       "submit": "Envoyer",
       "required": "Champs obligatoires",
-      "success": "Merci pour votre message. Je vous repondrai dans les 48 heures.",
-      "error": "Une erreur est survenue. Veuillez reessayer ou m'ecrire directement."
+      "success": "Merci pour votre message. Je vous répondrai dans les 48 heures.",
+      "error": "Une erreur est survenue. Veuillez réessayer ou m'écrire directement."
     }
   }
 }

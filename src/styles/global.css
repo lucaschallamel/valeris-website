@@ -50,18 +50,31 @@
   --color-primary-900: #7a2a50;
   --color-primary-950: #4a0e2b;
 
-  /* Neutral palette (slate tones matching Foxi) */
-  --color-neutral-50: #f8fafc;
-  --color-neutral-100: #f1f5f9;
-  --color-neutral-200: #e2e8f0;
-  --color-neutral-300: #cbd5e1;
-  --color-neutral-400: #94a3b8;
-  --color-neutral-500: #64748b;
-  --color-neutral-600: #475569;
-  --color-neutral-700: #334155;
-  --color-neutral-800: #1e293b;
-  --color-neutral-900: #0f172a;
-  --color-neutral-950: #020617;
+  /* Secondary palette (Valeris teal - complementary to rose, @400 as reference) */
+  --color-secondary-50: #effcfc;
+  --color-secondary-100: #d5f5f5;
+  --color-secondary-200: #ade8e8;
+  --color-secondary-300: #7dd6d6;
+  --color-secondary-400: #52bcbc;
+  --color-secondary-500: #3d9e9e;
+  --color-secondary-600: #2d7a7a;
+  --color-secondary-700: #226060;
+  --color-secondary-800: #1a4a4a;
+  --color-secondary-900: #123636;
+  --color-secondary-950: #0a2020;
+
+  /* Neutral palette (warm stone - replaces cold slate) */
+  --color-neutral-50: #faf8f6;
+  --color-neutral-100: #f3f0ec;
+  --color-neutral-200: #e5e0da;
+  --color-neutral-300: #d1c9c0;
+  --color-neutral-400: #a89e94;
+  --color-neutral-500: #7d7570;
+  --color-neutral-600: #5c554f;
+  --color-neutral-700: #433d38;
+  --color-neutral-800: #2e2926;
+  --color-neutral-900: #1c1917;
+  --color-neutral-950: #0d0b0a;
 
   /* Brand shortcuts */
   --color-valeris-pink: #ffa6c9;
@@ -94,16 +107,16 @@
   @keyframes fadeInShadowLight {
     100% {
       box-shadow:
-        0 20px 25px -5px rgba(15, 23, 42, 0.025),
-        0 8px 10px -6px rgba(15, 23, 42, 0.025);
+        0 20px 25px -5px rgba(28, 25, 23, 0.025),
+        0 8px 10px -6px rgba(28, 25, 23, 0.025);
     }
   }
 
   @keyframes fadeInShadowDark {
     100% {
       box-shadow:
-        0 20px 25px -5px rgba(2, 6, 23, 0.25),
-        0 8px 10px -6px rgba(2, 6, 23, 0.25);
+        0 20px 25px -5px rgba(13, 11, 10, 0.25),
+        0 8px 10px -6px rgba(13, 11, 10, 0.25);
     }
   }
 

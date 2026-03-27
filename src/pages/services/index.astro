@@ -3,20 +3,144 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/ui/Section.astro';
 import Row from '../../components/ui/Row.astro';
 import Col from '../../components/ui/Col.astro';
+import Button from '../../components/ui/Button.astro';
+import Feature from '../../components/ui/Feature.astro';
 import { t } from '../../i18n';
 
 const i18n = t('fr');
 ---
 
 <BaseLayout title={`${i18n.nav.services} - ${i18n.site.title}`}>
-  <Section padding="both">
+
+  <!-- Hero -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
-      
-      <Col span="12">
-        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.nav.services}</h1>
-        <p class="text-neutral-500">Page services - contenu a venir.</p>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
+          Trois altitudes, un seul objectif.
+        </h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
+          La transformation technologique échoue rarement par manque de stratégie. Elle échoue quand l'exécution est déconnectée du leadership. Mes trois offres adressent ce problème à chaque niveau.
+        </p>
       </Col>
-      
+      <Col span="2" />
     </Row>
   </Section>
+
+  <!-- Three Pillars -->
+  <Section padding="both">
+    <Row>
+      <Col span="12" align="center" classes="mb-12">
+        <p class="text-sm font-bold uppercase tracking-widest text-secondary-500">Gouvernance / Exécution / Leadership</p>
+      </Col>
+    </Row>
+
+    <!-- Pillar 1: AI Governance -->
+    <Row classes="mb-16">
+      <Col span="1" />
+      <Col span="5">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Le quoi</p>
+        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">
+          {i18n.services.aiGovernance.name}
+        </h2>
+        <p class="mb-4 text-neutral-500">
+          {i18n.services.aiGovernance.tagline}
+        </p>
+        <p class="mb-6 text-neutral-600">
+          Que devons-nous faire avec l'IA ? Diagnostic de maturité, cadre de gouvernance, politiques, évaluation des cas d'usage, préparation ISO 42001.
+        </p>
+        <p class="mb-2 text-sm text-neutral-400">À partir de CHF 8 500</p>
+        <Button type="link" style="primary" variation="link" link="/services/gouvernance-ia/">
+          Découvrir cette offre &rarr;
+        </Button>
+      </Col>
+      <Col span="5">
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
+          <Feature icon="heroicons:shield-check" title="Pour qui ?" align="left">
+            <p class="text-sm text-neutral-500">CTO, CISO, responsables conformité, CEO de PME cherchant à structurer leur adoption de l'IA.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+
+    <!-- Pillar 2: Team Performance -->
+    <Row classes="mb-16">
+      <Col span="1" />
+      <Col span="5">
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
+          <Feature icon="heroicons:users" title="Pour qui ?" align="left">
+            <p class="text-sm text-neutral-500">CTO, VP Engineering, Head of IT confrontés à des problèmes de livraison, de qualité ou de rétention des talents.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="5">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Le comment</p>
+        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">
+          {i18n.services.teamPerformance.name}
+        </h2>
+        <p class="mb-4 text-neutral-500">
+          {i18n.services.teamPerformance.tagline}
+        </p>
+        <p class="mb-6 text-neutral-600">
+          Comment livrons-nous réellement ? Health check, métriques DORA, accélération de la delivery, workshops culture, offsites de leadership technique.
+        </p>
+        <p class="mb-2 text-sm text-neutral-400">À partir de CHF 5 500</p>
+        <Button type="link" style="primary" variation="link" link="/services/performance-equipes/">
+          Découvrir cette offre &rarr;
+        </Button>
+      </Col>
+      <Col span="1" />
+    </Row>
+
+    <!-- Pillar 3: Executive Coaching -->
+    <Row>
+      <Col span="1" />
+      <Col span="5">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Le qui</p>
+        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">
+          {i18n.services.executiveCoaching.name}
+        </h2>
+        <p class="mb-4 text-neutral-500">
+          {i18n.services.executiveCoaching.tagline}
+        </p>
+        <p class="mb-6 text-neutral-600">
+          Qui tient tout ensemble ? Coaching individuel, programme de 6 mois, accélérateur des 100 premiers jours, alignement de l'équipe de direction technique.
+        </p>
+        <p class="mb-2 text-sm text-neutral-400">À partir de CHF 1 500</p>
+        <Button type="link" style="primary" variation="link" link="/services/coaching-executif/">
+          Découvrir cette offre &rarr;
+        </Button>
+      </Col>
+      <Col span="5">
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
+          <Feature icon="heroicons:academic-cap" title="Pour qui ?" align="left">
+            <p class="text-sm text-neutral-500">Dirigeants techniques en poste ou en transition, DRH cherchant un coach pour un leader technique, CEO voulant aligner sa direction technique.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
+  <!-- Cross-selling -->
+  <Section padding="both">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
+          <h2 class="mb-6 font-headings text-2xl font-bold text-white">Un client, trois portes d'entrée</h2>
+          <p class="mx-auto mb-8 max-w-xl text-secondary-100">
+            Les trois offres sont interconnectées. Un diagnostic IA révèle que les équipes ne peuvent pas livrer. Un assessment d'équipe révèle que le CTO est le goulot d'étranglement. Le coaching du CTO révèle que le board veut une stratégie IA. Chaque porte mène aux autres.
+          </p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/contact/">
+            {i18n.cta.primary}
+          </Button>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
 </BaseLayout>

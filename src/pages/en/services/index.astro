@@ -3,20 +3,144 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Section from '../../../components/ui/Section.astro';
 import Row from '../../../components/ui/Row.astro';
 import Col from '../../../components/ui/Col.astro';
+import Button from '../../../components/ui/Button.astro';
+import Feature from '../../../components/ui/Feature.astro';
 import { t } from '../../../i18n';
 
 const i18n = t('en');
 ---
 
 <BaseLayout title={`${i18n.nav.services} - ${i18n.site.title}`}>
-  <Section padding="both">
+
+  <!-- Hero -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
-      
-      <Col span="12">
-        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.nav.services}</h1>
-        <p class="text-neutral-500">Services page - content coming soon.</p>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
+          Three altitudes, one objective.
+        </h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
+          Technology transformation rarely fails for lack of strategy. It fails when execution is disconnected from leadership. My three offerings address this problem at every level.
+        </p>
       </Col>
-      
+      <Col span="2" />
     </Row>
   </Section>
+
+  <!-- Three Pillars -->
+  <Section padding="both">
+    <Row>
+      <Col span="12" align="center" classes="mb-12">
+        <p class="text-sm font-bold uppercase tracking-widest text-secondary-500">Governance / Execution / Leadership</p>
+      </Col>
+    </Row>
+
+    <!-- Pillar 1: AI Governance -->
+    <Row classes="mb-16">
+      <Col span="1" />
+      <Col span="5">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">The what</p>
+        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">
+          {i18n.services.aiGovernance.name}
+        </h2>
+        <p class="mb-4 text-neutral-500">
+          {i18n.services.aiGovernance.tagline}
+        </p>
+        <p class="mb-6 text-neutral-600">
+          What should we do with AI? Maturity diagnostic, governance framework, policies, use case evaluation, ISO 42001 readiness.
+        </p>
+        <p class="mb-2 text-sm text-neutral-400">From CHF 8,500</p>
+        <Button type="link" style="primary" variation="link" link="/en/services/ai-governance/">
+          Discover this offering &rarr;
+        </Button>
+      </Col>
+      <Col span="5">
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
+          <Feature icon="heroicons:shield-check" title="Who this is for" align="left">
+            <p class="text-sm text-neutral-500">CTOs, CISOs, compliance officers, SME CEOs looking to structure their AI adoption.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+
+    <!-- Pillar 2: Team Performance -->
+    <Row classes="mb-16">
+      <Col span="1" />
+      <Col span="5">
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
+          <Feature icon="heroicons:users" title="Who this is for" align="left">
+            <p class="text-sm text-neutral-500">CTOs, VPs of Engineering, Heads of IT facing delivery, quality or talent retention challenges.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="5">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">The how</p>
+        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">
+          {i18n.services.teamPerformance.name}
+        </h2>
+        <p class="mb-4 text-neutral-500">
+          {i18n.services.teamPerformance.tagline}
+        </p>
+        <p class="mb-6 text-neutral-600">
+          How do we actually deliver? Health check, DORA metrics, delivery acceleration, culture workshops, technical leadership offsites.
+        </p>
+        <p class="mb-2 text-sm text-neutral-400">From CHF 5,500</p>
+        <Button type="link" style="primary" variation="link" link="/en/services/team-performance/">
+          Discover this offering &rarr;
+        </Button>
+      </Col>
+      <Col span="1" />
+    </Row>
+
+    <!-- Pillar 3: Executive Coaching -->
+    <Row>
+      <Col span="1" />
+      <Col span="5">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">The who</p>
+        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">
+          {i18n.services.executiveCoaching.name}
+        </h2>
+        <p class="mb-4 text-neutral-500">
+          {i18n.services.executiveCoaching.tagline}
+        </p>
+        <p class="mb-6 text-neutral-600">
+          Who holds it all together? Individual coaching, 6-month programme, first 100 days accelerator, technical leadership team alignment.
+        </p>
+        <p class="mb-2 text-sm text-neutral-400">From CHF 1,500</p>
+        <Button type="link" style="primary" variation="link" link="/en/services/executive-coaching/">
+          Discover this offering &rarr;
+        </Button>
+      </Col>
+      <Col span="5">
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
+          <Feature icon="heroicons:academic-cap" title="Who this is for" align="left">
+            <p class="text-sm text-neutral-500">Technical leaders in role or in transition, HR directors seeking a coach for a technical leader, CEOs wanting to align their technical leadership.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
+  <!-- Cross-selling -->
+  <Section padding="both">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
+          <h2 class="mb-6 font-headings text-2xl font-bold text-white">One client, three entry points</h2>
+          <p class="mx-auto mb-8 max-w-xl text-secondary-100">
+            The three offerings are interconnected. An AI diagnostic reveals that teams cannot deliver. A team assessment reveals that the CTO is the bottleneck. CTO coaching reveals that the board wants an AI strategy. Every door leads to the others.
+          </p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/en/contact/">
+            {i18n.cta.primary}
+          </Button>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
 </BaseLayout>

@@ -26,17 +26,17 @@ const podcastDescriptions = Object.fromEntries(
 );
 ---
 
-<Section padding="both">
+<Section padding="both" classes="bg-secondary-600">
   <Row>
     <Col span="12" align="center" classes="mb-8">
-      <h1 class="mb-4 font-headings text-4xl font-bold text-neutral-900">{i18n.nav.blog}</h1>
-      <p id="blog-subtitle" class="mx-auto max-w-2xl text-lg text-neutral-500">{i18n.blog.subtitle}</p>
+      <h1 class="mb-4 font-headings text-4xl font-bold text-white">{i18n.nav.blog}</h1>
+      <p id="blog-subtitle" class="mx-auto max-w-2xl text-lg text-secondary-100">{i18n.blog.subtitle}</p>
     </Col>
   </Row>
 
   <!-- Podcast filters -->
   <Row>
-    <Col span="12" classes="mb-10">
+    <Col span="12" classes="mb-2">
       <div class="flex flex-wrap items-center justify-center gap-3">
         <button
           data-filter="all"
@@ -55,6 +55,9 @@ const podcastDescriptions = Object.fromEntries(
       </div>
     </Col>
   </Row>
+</Section>
+
+<Section padding="both">
 
   {posts.length === 0 ? (
     <Row>
@@ -70,11 +73,15 @@ const podcastDescriptions = Object.fromEntries(
           <a href={post.link} target="_blank" rel="noopener noreferrer"
              class="blog-card group block overflow-hidden rounded-lg border border-neutral-200 transition-shadow hover:shadow-lg"
              data-podcast={post.podcastSlug}>
-            {post.imageUrl && (
-              <div class="aspect-video overflow-hidden bg-neutral-100">
+            <div class="aspect-video overflow-hidden bg-neutral-100">
+              {post.imageUrl ? (
                 <img src={post.imageUrl} alt="" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
-              </div>
-            )}
+              ) : (
+                <div class="flex h-full items-center justify-center bg-secondary-600">
+                  <p class="text-sm font-medium text-secondary-100">{podcast?.name || 'Podcast'}</p>
+                </div>
+              )}
+            </div>
             <div class="p-6">
               {podcast && (
                 <span class="mb-2 inline-block rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-600">
@@ -108,24 +115,25 @@ const podcastDescriptions = Object.fromEntries(
 <style>
   /* Filter button styles - no variant issues, pure CSS */
   .filter-btn {
-    border: 1px solid var(--color-neutral-200);
-    color: var(--color-neutral-600);
-    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    background: transparent;
     cursor: pointer;
   }
   .filter-btn:hover {
-    border-color: var(--color-primary-300);
-    color: var(--color-primary-500);
+    border-color: white;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
   }
   .filter-btn.is-active {
-    background: var(--color-primary-500);
-    color: white;
-    border-color: var(--color-primary-500);
+    background: white;
+    color: var(--color-secondary-700);
+    border-color: white;
   }
   .filter-btn.is-active:hover {
-    background: var(--color-primary-600);
-    border-color: var(--color-primary-600);
-    color: white;
+    background: var(--color-neutral-50);
+    border-color: var(--color-neutral-50);
+    color: var(--color-secondary-700);
   }
 </style>
 

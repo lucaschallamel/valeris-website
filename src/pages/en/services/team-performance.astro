@@ -3,20 +3,156 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Section from '../../../components/ui/Section.astro';
 import Row from '../../../components/ui/Row.astro';
 import Col from '../../../components/ui/Col.astro';
+import Button from '../../../components/ui/Button.astro';
+import Feature from '../../../components/ui/Feature.astro';
+import List from '../../../components/ui/List.astro';
 import { t } from '../../../i18n';
 
 const i18n = t('en');
 ---
 
 <BaseLayout title={`${i18n.services.teamPerformance.name} - ${i18n.site.title}`}>
-  <Section padding="both">
+
+  <!-- Hero -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
-      
-      <Col span="12">
-        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.services.teamPerformance.name}</h1>
-        <p class="text-neutral-500">{i18n.services.teamPerformance.tagline}</p>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-secondary-500">Execution</p>
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
+          {i18n.services.teamPerformance.name}
+        </h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
+          {i18n.services.teamPerformance.tagline}
+        </p>
       </Col>
-      
+      <Col span="2" />
     </Row>
   </Section>
+
+  <!-- The problem -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">The problem you face</h2>
+        <div class="space-y-4 text-neutral-600">
+          <p>Your sprints end with unfinished stories. Time-to-market is stretching. Production incidents are increasing. Your best developers are starting to leave.</p>
+          <p>You have tried adding tools, switching frameworks, hiring more people. But the problem is not technical - it is organisational. The way your team works, communicates and makes decisions is the real lever.</p>
+          <p>This is not a problem of individual skills. It is a system problem.</p>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- The approach -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">My approach</h2>
+        <p class="mb-8 text-neutral-600">
+          I measure before I act. My approach relies on DORA metrics, process observation, and individual interviews to build a fact-based diagnosis - not opinions.
+        </p>
+        <div class="grid gap-8 md:grid-cols-2">
+          <Feature icon="heroicons:chart-bar" title="Health Check" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Interviews, DORA metrics, process observation, industry benchmarking.</p>
+          </Feature>
+          <Feature icon="heroicons:bolt" title="Delivery acceleration" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">3 months of embedded coaching, process redesign, metrics implementation.</p>
+          </Feature>
+          <Feature icon="heroicons:light-bulb" title="Culture workshops" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">3 half-days on a specific topic (code review, incident management, etc.), before/after survey.</p>
+          </Feature>
+          <Feature icon="heroicons:map" title="Leadership offsite" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Full-day facilitation for the technical leadership team. Vision, priorities, alignment.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Packages -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Engagement formats</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Entry point</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Engineering Health Check</h3>
+            <p class="mb-4 text-sm text-neutral-500">A fact-based diagnostic that gives the CTO the arguments to invest in improvement.</p>
+            <List type="checklist" listItems={[
+              { listItem: "5-6 days" },
+              { listItem: "Deliverable: report + benchmarks + recommendations" },
+              { listItem: "From CHF 9,000" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Full journey</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Delivery transformation</h3>
+            <p class="mb-4 text-sm text-neutral-500">Health check, then 3-month acceleration, culture workshops, annual offsite.</p>
+            <List type="checklist" listItems={[
+              { listItem: "12 months" },
+              { listItem: "CHF 40,000 - 50,000 in the first year" },
+              { listItem: "Measurable DORA metrics from month 3" },
+            ]} />
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Who this is for -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Who this is for</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">CTO / VP Engineering</h3>
+            <p class="text-sm text-neutral-500">Who know their team can do better but cannot identify the concrete levers.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Head of IT / CIO</h3>
+            <p class="text-sm text-neutral-500">Who face recurring delivery issues and are looking for an objective external perspective.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Growing scale-ups</h3>
+            <p class="text-sm text-neutral-500">Whose artisanal processes no longer scale and who need to professionalise their engineering.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Post-acquisition / merger</h3>
+            <p class="text-sm text-neutral-500">Who need to align technical teams from different cultures.</p>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- CTA -->
+  <Section padding="both">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
+          <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
+          <p class="mx-auto mb-6 max-w-xl text-secondary-100">
+            A 30-minute conversation, not a sales pitch.
+          </p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/en/contact/">
+            {i18n.cta.primary}
+          </Button>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
 </BaseLayout>

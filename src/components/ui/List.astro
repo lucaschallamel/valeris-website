@@ -45,10 +45,10 @@ const { type = 'basic', listColor = 'primary', listItems, classes } = Astro.prop
 		@apply mb-2 ml-4 list-disc text-neutral-700 dark:text-neutral-50;
 	}
 	.list--checklist {
-		@apply [&_li]:flex [&_li]:items-start [&_li]:gap-2 [&_svg]:h-6 [&_svg]:w-6 [&_svg]:shrink-0 [&_svg]:p-1 [&_svg]:text-primary-500;
+		@apply [&_li]:flex [&_li]:items-start [&_li]:gap-2 [&_svg]:h-6 [&_svg]:w-6 [&_svg]:shrink-0 [&_svg]:p-1 [&_svg]:text-secondary-500;
 	}
 	.list--primary {
-		@apply [&.list--checklist_svg]:text-primary-500 [&_li]:marker:text-primary-500;
+		@apply [&.list--checklist_svg]:text-secondary-500 [&_li]:marker:text-secondary-500;
 	}
 	.list--white {
 		@apply [&.list--checklist_svg]:text-white [&_li]:marker:text-white;

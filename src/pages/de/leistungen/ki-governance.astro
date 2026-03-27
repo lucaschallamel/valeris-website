@@ -3,20 +3,158 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Section from '../../../components/ui/Section.astro';
 import Row from '../../../components/ui/Row.astro';
 import Col from '../../../components/ui/Col.astro';
+import Button from '../../../components/ui/Button.astro';
+import Feature from '../../../components/ui/Feature.astro';
+import List from '../../../components/ui/List.astro';
 import { t } from '../../../i18n';
 
 const i18n = t('de');
 ---
 
 <BaseLayout title={`${i18n.services.aiGovernance.name} - ${i18n.site.title}`}>
-  <Section padding="both">
+
+  <!-- Hero -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
-      
-      <Col span="12">
-        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.services.aiGovernance.name}</h1>
-        <p class="text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-secondary-500">Governance</p>
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
+          {i18n.services.aiGovernance.name}
+        </h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
+          {i18n.services.aiGovernance.tagline}
+        </p>
       </Col>
-      
+      <Col span="2" />
     </Row>
   </Section>
+
+  <!-- Das Problem -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Das Problem, das Sie kennen</h2>
+        <div class="space-y-4 text-neutral-600">
+          <p>Ihr Verwaltungsrat fordert eine KI-Strategie. Ihre Teams experimentieren ohne Rahmen. Die Regulierungsbehörden bewegen sich schneller als Ihre Governance.</p>
+          <p>Sie haben die beeindruckenden Demos gesehen. Sie haben ein oder zwei POCs gestartet. Aber zwischen Experimentierung und Produktivbetrieb klafft eine Lücke, die niemand in der Organisation zu schliessen weiss.</p>
+          <p>Das Risiko besteht nicht darin, KI nicht einzusetzen. Es besteht darin, sie falsch einzusetzen - ohne Governance, ohne Risikobewertung, ohne Abstimmung mit Ihren regulatorischen Verpflichtungen.</p>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Der Ansatz -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Mein Ansatz</h2>
+        <p class="mb-8 text-neutral-600">
+          Ich kombiniere tiefgreifende technische Expertise in KI/ML mit konkreter Erfahrung in Unternehmens-Governance. Mein Ansatz orientiert sich an internationalen Standards (ISO 42001, EU AI Act) und bleibt dabei pragmatisch und an den Schweizer Kontext angepasst.
+        </p>
+        <div class="grid gap-8 md:grid-cols-2">
+          <Feature icon="heroicons:magnifying-glass" title="Reifegrad-Diagnose" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Gap-Analyse gegenüber ISO 42001, Reifegrad-Scoring, 90-Tage-Aktionsplan.</p>
+          </Feature>
+          <Feature icon="heroicons:document-text" title="Governance-Framework" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Richtlinien, RACI, Risiko-Methodik, Use-Case-Bewertungsmatrix, Workshops.</p>
+          </Feature>
+          <Feature icon="heroicons:shield-check" title="ISO 42001-Vorbereitung" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Vollständige AIMS-Dokumentation, internes Audit, Management-Review, Schulung.</p>
+          </Feature>
+          <Feature icon="heroicons:rocket-launch" title="KI-Aktivierungs-Sprint" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Ein Use Case von der Idee zum funktionsfähigen Piloten, mit integrierter Governance von Anfang an.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Pakete -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Engagement-Formate</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <!-- Entry point -->
+          <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Einstiegspunkt</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">KI-Diagnose</h3>
+            <p class="mb-4 text-sm text-neutral-500">Gap-Analyse vs. ISO 42001, Reifegrad-Scoring, 90-Tage-Aktionsplan.</p>
+            <List type="checklist" listItems={[
+              { listItem: "5-6 Tage" },
+              { listItem: "Lieferobjekt: Bericht + Roadmap" },
+              { listItem: "Ab CHF 8 500" },
+            ]} />
+          </div>
+          <!-- Full journey -->
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Vollständiger Weg</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Von der Neugier zur Zertifizierung</h3>
+            <p class="mb-4 text-sm text-neutral-500">Diagnose, dann Aufbau des Frameworks + Aktivierungs-Sprint parallel, dann ISO 42001-Vorbereitung.</p>
+            <List type="checklist" listItems={[
+              { listItem: "6-9 Monate" },
+              { listItem: "CHF 55 000 - 75 000" },
+              { listItem: "Ziel: ISO 42001-Zertifizierung" },
+            ]} />
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Für wen -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Für wen</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Technische Direktoren (CTO/CIO)</h3>
+            <p class="text-sm text-neutral-500">Die die KI-Adoption über POCs hinaus strukturieren und dem Verwaltungsrat eine glaubwürdige Strategie vorlegen müssen.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Compliance-Verantwortliche / CISO</h3>
+            <p class="text-sm text-neutral-500">Die KI-Risiken bewerten und einen Governance-Rahmen aufbauen müssen, bevor der Regulator es verlangt.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">CEO von KMU (50-500 Mitarbeitende)</h3>
+            <p class="text-sm text-neutral-500">Die sehen, wie KI ihre Branche transformiert, und strukturiert statt reaktiv handeln wollen.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Innovationsverantwortliche</h3>
+            <p class="text-sm text-neutral-500">Die einen Rahmen brauchen, um KI-Use-Cases rigoros zu bewerten, zu priorisieren und zu starten.</p>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- CTA -->
+  <Section padding="both">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
+          <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
+          <p class="mx-auto mb-6 max-w-xl text-secondary-100">
+            Ein 30-minütiges Gespräch, kein Verkaufspitch.
+          </p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/de/kontakt/">
+            {i18n.cta.primary}
+          </Button>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
 </BaseLayout>

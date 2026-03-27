@@ -65,9 +65,9 @@ export const podcasts: Podcast[] = [
 // For articles that can't be auto-detected by keywords
 const manualMapping: Record<string, string> = {
   'the-9-ai-conversations-people-avoid': 'the-aim',
-  'your-consulting-firm-claims-to-be': 'the-aim',
+  'your-consulting-firm-claims-to-be': 'drive-and-thrive',
   'the-byoa-manifesto-why-knowledge': 'the-aim',
-  'the-end-of-technical-debt-as-we-know': 'the-aim',
+  'the-end-of-technical-debt-as-we-know': 'drive-and-thrive',
   'ai-powered-content-analysis-means': 'the-aim',
   'meet-ollama-your-key-to-truly-open': 'the-aim',
   'ai-revolution-from-french-startups': 'the-aim',
@@ -84,6 +84,18 @@ const manualMapping: Record<string, string> = {
   '8-good-reasons-to-visit-your-local': 'sustainics',
   'the-kind-mind-manifesto-transforming': 'kind-mind',
   'welcome-to-the-camel-hall': 'the-aim', // general intro, default to AIM
+  // Manual posts (older than RSS feed limit)
+  'the-4-pillars-of-high-performing': 'drive-and-thrive',
+  'the-secret-of-peak-performance-why': 'drive-and-thrive',
+  '6-effective-steps-for-flicking-the': 'the-switch',
+  'invest-in-prime-real-estate-buy-yourself': 'the-switch',
+  'the-inspiration-switch-how-to-turn': 'the-switch',
+  'breaking-free-a-personal-journey': 'the-switch',
+  'what-the-a-in-ai-should-stand-for-57c': 'the-aim',
+  'ai-advancements-ethical-dilemmas-0e5': 'the-aim',
+  'ai-for-good-the-battle-for-accessible-50a': 'the-aim',
+  'ai-revolution-from-magnets-to-movies-4cc': 'the-aim',
+  'the-forgotten-art-of-mending-rekindle': 'sustainics',
 };
 
 // Keyword-based fallback detection for new articles

@@ -17,14 +17,12 @@ const i18n = t(lang);
 const form = i18n.contact.form;
 ---
 
-<Section padding="both">
-  <Row>
-    <Col span="12" align="center" classes="mb-8">
-      <h1 class="mb-4 font-headings text-4xl font-bold text-neutral-900">{i18n.contact.title}</h1>
-      <p class="mx-auto max-w-2xl text-lg text-neutral-500">{i18n.contact.expectation}</p>
-    </Col>
-  </Row>
+<div class="bg-secondary-600 px-6 py-10 text-center">
+  <h1 class="mb-3 font-headings text-4xl font-bold text-white">{i18n.contact.title}</h1>
+  <p class="mx-auto max-w-2xl text-lg text-secondary-100">{i18n.contact.expectation}</p>
+</div>
 
+<Section padding="top">
   <Row>
     <Col span="2" />
     <Col span="8">
@@ -41,7 +39,7 @@ const form = i18n.contact.form;
 
         <!-- Service interest -->
         <div>
-          <label for="service" class="mb-2 block text-sm font-medium text-neutral-700">
+          <label for="service" class="mb-2 block text-sm font-bold text-neutral-700">
             {form.serviceInterest}
           </label>
           <select
@@ -60,7 +58,7 @@ const form = i18n.contact.form;
         <!-- Name row -->
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label for="firstName" class="mb-2 block text-sm font-medium text-neutral-700">
+            <label for="firstName" class="mb-2 block text-sm font-bold text-neutral-700">
               {form.firstName} <span class="text-primary-500">*</span>
             </label>
             <input
@@ -72,7 +70,7 @@ const form = i18n.contact.form;
             />
           </div>
           <div>
-            <label for="lastName" class="mb-2 block text-sm font-medium text-neutral-700">
+            <label for="lastName" class="mb-2 block text-sm font-bold text-neutral-700">
               {form.lastName} <span class="text-primary-500">*</span>
             </label>
             <input
@@ -88,7 +86,7 @@ const form = i18n.contact.form;
         <!-- Email and Phone -->
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label for="email" class="mb-2 block text-sm font-medium text-neutral-700">
+            <label for="email" class="mb-2 block text-sm font-bold text-neutral-700">
               {form.email} <span class="text-primary-500">*</span>
             </label>
             <input
@@ -100,7 +98,7 @@ const form = i18n.contact.form;
             />
           </div>
           <div>
-            <label for="phone" class="mb-2 block text-sm font-medium text-neutral-700">
+            <label for="phone" class="mb-2 block text-sm font-bold text-neutral-700">
               {form.phone}
             </label>
             <input
@@ -115,7 +113,7 @@ const form = i18n.contact.form;
         <!-- Company and Job title -->
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label for="company" class="mb-2 block text-sm font-medium text-neutral-700">
+            <label for="company" class="mb-2 block text-sm font-bold text-neutral-700">
               {form.company}
             </label>
             <input
@@ -126,7 +124,7 @@ const form = i18n.contact.form;
             />
           </div>
           <div>
-            <label for="jobTitle" class="mb-2 block text-sm font-medium text-neutral-700">
+            <label for="jobTitle" class="mb-2 block text-sm font-bold text-neutral-700">
               {form.jobTitle}
             </label>
             <input
@@ -140,7 +138,7 @@ const form = i18n.contact.form;
 
         <!-- Organisation size -->
         <div>
-          <label for="orgSize" class="mb-2 block text-sm font-medium text-neutral-700">
+          <label for="orgSize" class="mb-2 block text-sm font-bold text-neutral-700">
             {form.orgSize}
           </label>
           <select
@@ -158,7 +156,7 @@ const form = i18n.contact.form;
 
         <!-- Message -->
         <div>
-          <label for="message" class="mb-2 block text-sm font-medium text-neutral-700">
+          <label for="message" class="mb-2 block text-sm font-bold text-neutral-700">
             {form.message}
           </label>
           <textarea

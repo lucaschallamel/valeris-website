@@ -174,13 +174,20 @@ function isActiveSection(section: string): boolean {
       <slot />
     </main>
 
-    <footer class="border-t border-neutral-100 bg-neutral-50 py-8 text-center text-sm text-neutral-500">
-      <div class="mx-auto max-w-7xl px-6">
-        <p class="mb-2">&copy; {new Date().getFullYear()} {i18n.footer.copyright}</p>
-        <a href={getLocalePath('/mentions-legales/', lang)}
-           class="text-neutral-400 transition-colors hover:text-primary-500">
-          {i18n.footer.legal}
-        </a>
+    <footer class="border-t border-neutral-200 bg-neutral-50 py-8 text-sm text-neutral-500">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
+        <p>&copy; {new Date().getFullYear()} {i18n.footer.copyright}</p>
+        <div class="flex items-center gap-4">
+          <a href={getLocalePath('/mentions-legales/', lang)}
+             class="text-neutral-400 transition-colors hover:text-secondary-500">
+            {i18n.footer.legal}
+          </a>
+          <span class="text-neutral-300">|</span>
+          <a href={getLocalePath('/contact/', lang)}
+             class="text-neutral-400 transition-colors hover:text-secondary-500">
+            {i18n.nav.contact}
+          </a>
+        </div>
       </div>
     </footer>
   </body>

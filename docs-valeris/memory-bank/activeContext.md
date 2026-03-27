@@ -2,15 +2,16 @@
 
 ## Current Phase
 
-**Phase 1: MVP Build** (March-April 2026) - Design system in place, entering content writing phase
+**Phase 1: Content & Polish** (March-April 2026) - Content scaffolded, entering real content writing phase
 
 ## Current Focus
 
-- Professional design with Foxi components + Valeris branding (30 pages, ~1.3s build)
-- Blog federating 20 Substack articles with 5 podcast filters
-- Contact form with Resend + Cloudflare Turnstile (backend ready, pending first deploy)
-- Cloudflare Pages deployment pipeline operational
-- DNS transfer to Cloudflare in progress (valeris.fr)
+- All 30 pages scaffolded with full section structure (FR/DE/EN)
+- Teal secondary palette + warm stone neutrals applied
+- Teal CTA rectangles, teal blog/contact banners, teal feature icons
+- Reduced section padding (~40% reduction from Foxi defaults)
+- Footer with legal + contact links on all pages
+- Ready for real content injection (CV, proposals, white paper)
 
 ## Recent Decisions
 
@@ -23,9 +24,11 @@
 | 2026-03-27 | Foxi components imported (not cloned) | Preserve existing i18n routing |
 | 2026-03-27 | Stay on Tailwind v4 | Future-proof, adapt Foxi components |
 | 2026-03-27 | Substack RSS federation for blog | No content duplication, zero cost |
-| 2026-03-27 | Resend for email | Best DX, free tier, domain verified |
-| 2026-03-27 | Cloudflare Turnstile for captcha | Free, privacy-respecting, native integration |
-| 2026-03-27 | Domain is valeris.fr (not .ch) | Registered at Infomaniak, DNS at Cloudflare |
+| 2026-03-27 | Resend + Turnstile for contact | Best DX, free tier, privacy-respecting |
+| 2026-03-27 | Teal secondary palette (variant B) | Complementary to rose, warm stone neutrals, premium feel |
+| 2026-03-27 | Teal CTA rectangles (not full-width) | Contained design, consistent across all pages |
+| 2026-03-27 | Section padding reduced to 3.5rem | Foxi defaults too generous for advisory site |
+| 2026-03-27 | Bold uppercase altitude labels | GOUVERNANCE / EXÉCUTION / LEADERSHIP in teal bold |
 
 ## Next Steps
 
@@ -34,18 +37,20 @@
 3. ~~Choose and integrate typography~~ (done - Cerebri Sans + Montserrat)
 4. ~~Set up contact form with Resend + Turnstile~~ (done, pending deploy test)
 5. ~~Federate blog from Substack~~ (done)
-6. Deploy and test contact form end-to-end
-7. Add custom domain valeris.fr (DNS propagation)
-8. Write real content for FR service pages
-9. Translate content to DE and EN
-10. Build publications page with lead capture flow (D1 + R2 + Resend)
-11. Add mobile hamburger menu
-12. Implement Cal.com booking widget
-13. Professional headshot photography
+6. ~~Scaffold content for all pages~~ (done)
+7. ~~Establish teal palette~~ (done)
+8. ~~Propagate to DE/EN~~ (done)
+9. Inject real content (CV, proposals, white paper)
+10. Deploy and test contact form end-to-end
+11. Add custom domain valeris.fr (DNS propagation)
+12. Build publications lead capture flow (D1 + R2 + Resend)
+13. Add mobile hamburger menu
+14. Implement Cal.com booking widget
+15. Professional headshot photography
 
 ## Blockers
 
-- Cloudflare Pages API intermittent 504 (temporary, retrying)
+- None currently
 
 ## Risks
 

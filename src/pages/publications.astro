@@ -3,18 +3,146 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/ui/Section.astro';
 import Row from '../components/ui/Row.astro';
 import Col from '../components/ui/Col.astro';
+import Button from '../components/ui/Button.astro';
+import Feature from '../components/ui/Feature.astro';
 import { t } from '../i18n';
 
 const i18n = t('fr');
 ---
 
 <BaseLayout title={`${i18n.nav.publications} - ${i18n.site.title}`}>
-  <Section padding="both">
+
+  <!-- Hero -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
-      <Col span="12">
-        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.nav.publications}</h1>
-        <p class="text-neutral-500">White papers et ressources - contenu a venir.</p>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
+          Publications
+        </h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
+          Livres blancs, essais et ressources sur le leadership technologique, la gouvernance IA et la transformation des organisations.
+        </p>
       </Col>
+      <Col span="2" />
     </Row>
   </Section>
+
+  <!-- Featured: AI Sovereignty White Paper -->
+  <Section padding="both">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-lg border-2 border-primary-100 bg-primary-50/20 p-8 md:p-12">
+          <Row>
+            <Col span="7">
+              <p class="mb-2 text-xs font-bold uppercase tracking-widest text-secondary-500">Livre blanc</p>
+              <h2 class="mb-4 font-headings text-3xl font-bold text-neutral-900">
+                Souveraineté IA : Guide pratique pour les entreprises suisses
+              </h2>
+              <p class="mb-4 text-neutral-600">
+                <!-- TODO: Étoffer avec le contenu réel du livre blanc -->
+                Comment adopter l'intelligence artificielle sans céder le contrôle de vos données, de vos décisions et de votre avenir numérique. Un guide pragmatique pour les dirigeants qui veulent aller au-delà du battage médiatique.
+              </p>
+              <p class="mb-6 text-sm text-neutral-500">
+                Thématiques : souveraineté des données, cadre réglementaire suisse (nDSG) et européen (EU AI Act), évaluation des fournisseurs, gouvernance des modèles, construction vs achat, ISO 42001.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">Gouvernance IA</span>
+                <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">Souveraineté numérique</span>
+                <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">ISO 42001</span>
+                <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">nDSG / EU AI Act</span>
+              </div>
+              <!-- TODO: Remplacer par un vrai lien de téléchargement quand le PDF sera prêt -->
+              <Button type="link" size="lg" style="primary" link="/contact/" elevated>
+                Recevoir le livre blanc
+              </Button>
+              <p class="mt-3 text-xs text-neutral-400">Gratuit. Envoi par email après inscription.</p>
+            </Col>
+            <Col span="5">
+              <!-- TODO: Remplacer par une couverture du livre blanc -->
+              <div class="flex h-full min-h-64 items-center justify-center rounded-lg bg-neutral-100">
+                <div class="text-center">
+                  <p class="text-4xl mb-2">📄</p>
+                  <p class="text-sm text-neutral-400">[Couverture du livre blanc]</p>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
+  <!-- Upcoming publications -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900 text-center">À venir</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+
+          <!-- Essay 1 -->
+          <div class="rounded-lg border border-neutral-200 bg-white p-6">
+            <p class="mb-2 text-xs font-bold uppercase tracking-widest text-neutral-400">Essai</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">
+              <!-- TODO: Titre provisoire, à confirmer -->
+              Le CTO à l'ère de l'IA générative
+            </h3>
+            <p class="mb-4 text-sm text-neutral-500">
+              Comment le rôle du directeur technique se transforme quand l'IA devient un membre de l'équipe. Leadership, architecture de décisions, et la question de l'obsolescence volontaire.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">Leadership technique</span>
+              <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">IA générative</span>
+            </div>
+          </div>
+
+          <!-- Essay 2 -->
+          <div class="rounded-lg border border-neutral-200 bg-white p-6">
+            <p class="mb-2 text-xs font-bold uppercase tracking-widest text-neutral-400">Essai</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">
+              <!-- TODO: Titre provisoire, à confirmer -->
+              Mesurer ce qui compte : au-delà des métriques DORA
+            </h3>
+            <p class="mb-4 text-sm text-neutral-500">
+              Les métriques de performance engineering sont nécessaires mais pas suffisantes. Ce que les chiffres ne capturent pas - et comment compléter le tableau.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">Performance engineering</span>
+              <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">Métriques</span>
+            </div>
+          </div>
+
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Newsletter / Blog link -->
+  <Section padding="both">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
+          <h2 class="mb-4 font-headings text-2xl font-bold text-white">Réflexions régulières</h2>
+          <p class="mx-auto mb-6 max-w-xl text-secondary-100">
+            Je publie aussi régulièrement sur Substack - articles, analyses et épisodes de podcast sur le leadership technologique, l'IA et la transformation des organisations.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <Button type="link" size="lg" style="white" variation="outline" link="/blog/">
+              Lire le blog
+            </Button>
+            <Button type="link" size="lg" style="white" variation="outline" link="https://thecamelhall.substack.com">
+              Substack
+            </Button>
+          </div>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
 </BaseLayout>

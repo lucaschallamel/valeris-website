@@ -3,20 +3,156 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/ui/Section.astro';
 import Row from '../../components/ui/Row.astro';
 import Col from '../../components/ui/Col.astro';
+import Button from '../../components/ui/Button.astro';
+import Feature from '../../components/ui/Feature.astro';
+import List from '../../components/ui/List.astro';
 import { t } from '../../i18n';
 
 const i18n = t('fr');
 ---
 
 <BaseLayout title={`${i18n.services.executiveCoaching.name} - ${i18n.site.title}`}>
-  <Section padding="both">
+
+  <!-- Hero -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
-      
-      <Col span="12">
-        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.services.executiveCoaching.name}</h1>
-        <p class="text-neutral-500">{i18n.services.executiveCoaching.tagline}</p>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-secondary-500">Leadership</p>
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
+          {i18n.services.executiveCoaching.name}
+        </h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
+          {i18n.services.executiveCoaching.tagline}
+        </p>
       </Col>
-      
+      <Col span="2" />
     </Row>
   </Section>
+
+  <!-- Le problème -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Le problème que vous rencontrez</h2>
+        <div class="space-y-4 text-neutral-600">
+          <p>Vous êtes passé de "meilleur ingénieur" à "dirigeant technique". Le rôle a changé, mais personne ne vous a donné le nouveau mode d'emploi.</p>
+          <p>Vous gérez des budgets, des stakeholders, des tensions politiques. Vous prenez des décisions qui affectent des dizaines ou des centaines de personnes. Et vous le faites souvent seul, parce qu'il n'y a personne d'autre dans l'organisation qui comprend vraiment votre position.</p>
+          <p>Les coachs généralistes ne comprennent pas la technologie. Les consultants techniques ne comprennent pas le leadership. Vous avez besoin de quelqu'un qui a fait les deux.</p>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- L'approche -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Mon approche</h2>
+        <p class="mb-8 text-neutral-600">
+          Je ne suis pas un coach qui a lu des livres sur la technologie. Je suis un dirigeant technique qui a appris le coaching. La différence se ressent dès la première session.
+        </p>
+        <div class="grid gap-8 md:grid-cols-2">
+          <Feature icon="heroicons:sparkles" title="Session de clarté" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Un deep-dive de 2 heures sur un défi spécifique. Cadrage du problème, options, plan d'action.</p>
+          </Feature>
+          <Feature icon="heroicons:calendar-days" title="Programme de coaching" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">6 mois, sessions bi-mensuelles de 90 min, assessment 360, plan de développement personnalisé.</p>
+          </Feature>
+          <Feature icon="heroicons:fire" title="Accélérateur 100 jours" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Coaching intensif pour un dirigeant en prise de poste. Hebdomadaire puis bi-mensuel.</p>
+          </Feature>
+          <Feature icon="heroicons:user-group" title="Alignement d'équipe" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Coaching de groupe pour 4-6 leaders techniques. 4 mois pour créer une équipe de direction alignée.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Packages -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Formats d'engagement</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
+            <p class="mb-1 text-xs font-medium uppercase tracking-widest text-secondary-500">Point d'entrée</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Session de clarté</h3>
+            <p class="mb-4 text-sm text-neutral-500">Un deep-dive de 2 heures. Pas besoin de procurement. Vous repartez avec un plan d'action.</p>
+            <List type="checklist" listItems={[
+              { listItem: "2 heures" },
+              { listItem: "Livrable: synthèse + plan d'action" },
+              { listItem: "CHF 1 500" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-medium uppercase tracking-widest text-neutral-400">Parcours complet</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Transformation du leadership</h3>
+            <p class="mb-4 text-sm text-neutral-500">Session de clarté, puis programme de coaching 6 mois, potentiellement élargi à l'équipe de direction.</p>
+            <List type="checklist" listItems={[
+              { listItem: "6-12 mois" },
+              { listItem: "CHF 40 000 - 50 000" },
+              { listItem: "Assessment 360 + plan de développement" },
+            ]} />
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Pour qui -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Pour qui</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">CTO / VP Engineering en poste</h3>
+            <p class="text-sm text-neutral-500">Qui veulent passer au niveau supérieur dans leur rôle et développer leur impact stratégique.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Dirigeants en transition</h3>
+            <p class="text-sm text-neutral-500">Nouveaux CTO, promotions internes, changements de périmètre - les 100 premiers jours sont critiques.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">DRH / Talent</h3>
+            <p class="text-sm text-neutral-500">Qui cherchent un coach spécialisé pour un dirigeant technique et veulent un programme structuré.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">CEO de PME</h3>
+            <p class="text-sm text-neutral-500">Qui veulent aligner leur équipe de direction technique et créer une culture d'exécution partagée.</p>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- CTA -->
+  <Section padding="both">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
+          <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
+          <p class="mx-auto mb-6 max-w-xl text-secondary-100">
+            Un échange de 30 minutes, pas un pitch commercial.
+          </p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/contact/">
+            {i18n.cta.primary}
+          </Button>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
 </BaseLayout>
