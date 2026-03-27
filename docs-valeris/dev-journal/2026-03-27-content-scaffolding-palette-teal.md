@@ -137,16 +137,40 @@ Contains all 3 variants (A/B/C) with real logo, real fonts, and side-by-side moc
 - Reduced padding, compact contact/blog banners
 - Footer with legal + contact links on all pages
 - Build passes (30 pages, ~1.2s)
-- 29 files changed, +2670 lines
+- 40 files changed, +3184 lines
+- Commit: `6417385` pushed to main
+
+### Blog Fixes (added after initial scaffolding)
+
+**Podcast mapping corrections**:
+- "The End of Technical Debt" and "Your Consulting Firm Claims to Be AI-Augmented" were miscategorised as The AIM, corrected to Drive & Thrive (ep.008-009)
+
+**11 articles added manually** (older than Substack's 20-item RSS feed limit):
+- The AIM ep.001-004 (Jul 2024)
+- Drive & Thrive ep.001-002 (Jun 2024)
+- The Switch ep.001-004 (Jun-Jul 2024)
+- Sustain.ics ep.001 (Jul 2024)
+
+**Images recovered for all 11 manual articles**:
+- 3 articles with Substack cover images (D&T ep.001-002, Sustain.ics ep.001)
+- 8 articles with YouTube thumbnails extracted via Playwright (`https://img.youtube.com/vi/{ID}/maxresdefault.jpg`)
+- YouTube IDs: DqSWK_f9kYA, 3HyEIm_2w2E, ZLHeSYzQgaQ, BZ-Wc9-iA68, WyNZzV_Cq3o, Tkn9pEPFWZM, 2Y8kYy53eyI, 18Z6jxSMOmA
+
+**Blog now shows 31 articles** (20 RSS + 11 manual), all with images.
+
+### Memory Updates
+
+- Serena memories created on project `valeris-website` (3 memories: architecture, content, operations)
+- Memory bank files updated (activeContext, progress, systemPatterns)
+- Claude project memory updated
 
 **Immediate Next Steps**:
 
-- [ ] Commit and push all changes
 - [ ] Provide real content: CV, commercial proposals, white paper draft
 - [ ] Professional headshot photography
 - [ ] Review German translations with native Swiss-German speaker
 - [ ] Mobile responsive testing (hamburger menu still missing)
-- [ ] Deploy and test on valeris.fr
+- [ ] Deploy and test contact form on valeris.fr
 
 **Knowledge Captured**:
 
@@ -155,9 +179,12 @@ Contains all 3 variants (A/B/C) with real logo, real fonts, and side-by-side moc
 - Tailwind v4 `@theme` makes palette swaps instant - all existing `neutral-*` classes automatically resolve to new values
 - Preview palette pages are invaluable for design decisions - worth the 30min investment
 - Content propagation to 3 languages is labour-intensive (10 pages) - consider shared component approach for future
+- Substack RSS feed is limited to 20 most recent articles - use `manualPosts` array in `src/lib/substack.ts` for older content
+- Podcast episodes on Substack are audio-only (no cover image) - use YouTube thumbnails (`img.youtube.com/vi/{ID}/maxresdefault.jpg`) as fallback
+- Playwright browser_navigate is essential for extracting YouTube IDs from Substack (JS-rendered iframes)
 
 ---
 
-**Session Summary**: Scaffolded content for all 30 pages (FR/DE/EN), established teal+warm stone palette replacing rose-only+cold slate, reduced padding, enhanced footer, archived design study.
+**Session Summary**: Scaffolded content for all 30 pages (FR/DE/EN), established teal+warm stone palette, reduced padding, enhanced footer, fixed blog podcast mappings, added 11 missing articles with images, updated all memories.
 
 **Estimated Impact**: High
