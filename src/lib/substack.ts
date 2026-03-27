@@ -25,11 +25,32 @@ function extractFirstImage(html: string): string | null {
 function stripHtml(html: string): string {
   return html
     .replace(/<[^>]*>/g, '')
+    // Decode numeric HTML entities (decimal &#127897; and hex &#x1F3A4;)
+    .replace(/&#(\d+);/g, (_, code) => {
+      const num = parseInt(code, 10);
+      // Skip emoji and special Unicode chars that display poorly in excerpts
+      if (num > 127) return '';
+      return String.fromCharCode(num);
+    })
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, code) => {
+      const num = parseInt(code, 16);
+      if (num > 127) return '';
+      return String.fromCharCode(num);
+    })
+    // Decode named HTML entities
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
+    .replace(/&rsquo;/g, "'")
+    .replace(/&lsquo;/g, "'")
+    .replace(/&rdquo;/g, '"')
+    .replace(/&ldquo;/g, '"')
+    .replace(/&ndash;/g, '-')
+    .replace(/&mdash;/g, '-')
+    .replace(/&hellip;/g, '...')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&[a-zA-Z]+;/g, '') // Remove any remaining named entities
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -38,6 +59,16 @@ function extractBetweenTags(xml: string, tag: string): string {
   const regex = new RegExp(`<${tag}[^>]*>(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?<\\/${tag}>`);
   const match = xml.match(regex);
   return match ? match[1].trim() : '';
+}
+
+function cleanTitle(title: string): string {
+  return title
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(parseInt(code, 10)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, code) => String.fromCodePoint(parseInt(code, 16)))
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&[a-zA-Z]+;/g, '')
+    .trim();
 }
 
 function extractSlug(url: string): string {
@@ -58,7 +89,7 @@ export async function fetchSubstackPosts(): Promise<SubstackPost[]> {
     const items = xml.split('<item>').slice(1);
 
     return items.map((item) => {
-      const title = extractBetweenTags(item, 'title');
+      const title = cleanTitle(extractBetweenTags(item, 'title'));
       const link = extractBetweenTags(item, 'link');
       const slug = extractSlug(link);
       const pubDateStr = extractBetweenTags(item, 'pubDate');

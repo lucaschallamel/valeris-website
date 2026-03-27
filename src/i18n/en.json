@@ -48,6 +48,29 @@
   },
   "contact": {
     "title": "Contact",
-    "expectation": "A 30-minute conversation, not a sales pitch. We will discuss your situation and I will tell you honestly whether I can help."
+    "expectation": "A 30-minute conversation, not a sales pitch. We will discuss your situation and I will tell you honestly whether I can help.",
+    "form": {
+      "serviceInterest": "Which service are you interested in?",
+      "selectService": "Select a service",
+      "noPreference": "No preference",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email address",
+      "phone": "Phone",
+      "company": "Company",
+      "jobTitle": "Job title",
+      "orgSize": "Organisation size",
+      "orgSizes": {
+        "1-49": "1-49 employees",
+        "50-199": "50-199 employees",
+        "200-999": "200-999 employees",
+        "1000+": "1,000+ employees"
+      },
+      "message": "Your message (optional)",
+      "submit": "Send",
+      "required": "Required fields",
+      "success": "Thank you for your message. I will get back to you within 48 hours.",
+      "error": "Something went wrong. Please try again or email me directly."
+    }
   }
 }

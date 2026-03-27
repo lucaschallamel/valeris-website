@@ -48,6 +48,29 @@
   },
   "contact": {
     "title": "Contact",
-    "expectation": "Un echange de 30 minutes, pas un pitch commercial. Nous discuterons de votre situation et je vous dirai honnetement si je peux vous aider."
+    "expectation": "Un echange de 30 minutes, pas un pitch commercial. Nous discuterons de votre situation et je vous dirai honnetement si je peux vous aider.",
+    "form": {
+      "serviceInterest": "Quel service vous interesse ?",
+      "selectService": "Selectionnez un service",
+      "noPreference": "Pas de preference",
+      "firstName": "Prenom",
+      "lastName": "Nom",
+      "email": "Adresse e-mail",
+      "phone": "Telephone",
+      "company": "Societe",
+      "jobTitle": "Fonction",
+      "orgSize": "Taille de l'organisation",
+      "orgSizes": {
+        "1-49": "1-49 employes",
+        "50-199": "50-199 employes",
+        "200-999": "200-999 employes",
+        "1000+": "1000+ employes"
+      },
+      "message": "Votre message (optionnel)",
+      "submit": "Envoyer",
+      "required": "Champs obligatoires",
+      "success": "Merci pour votre message. Je vous repondrai dans les 48 heures.",
+      "error": "Une erreur est survenue. Veuillez reessayer ou m'ecrire directement."
+    }
   }
 }

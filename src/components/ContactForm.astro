@@ -1,0 +1,270 @@
+---
+// ContactForm - Trilingual contact form with Resend backend
+// Submits to /api/contact (Cloudflare Worker)
+
+import Section from './ui/Section.astro';
+import Row from './ui/Row.astro';
+import Col from './ui/Col.astro';
+import type { Lang } from '../i18n';
+import { t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const i18n = t(lang);
+const form = i18n.contact.form;
+---
+
+<Section padding="both">
+  <Row>
+    <Col span="12" align="center" classes="mb-8">
+      <h1 class="mb-4 font-headings text-4xl font-bold text-neutral-900">{i18n.contact.title}</h1>
+      <p class="mx-auto max-w-2xl text-lg text-neutral-500">{i18n.contact.expectation}</p>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col span="2" />
+    <Col span="8">
+      <!-- Success / Error messages -->
+      <div id="form-success" class="mb-6 hidden rounded-lg bg-green-50 p-4 text-green-800">
+        {form.success}
+      </div>
+      <div id="form-error" class="mb-6 hidden rounded-lg bg-red-50 p-4 text-red-800">
+        {form.error}
+      </div>
+
+      <form id="contact-form" class="space-y-6" data-submit-label={form.submit} novalidate>
+        <input type="hidden" name="lang" value={lang} />
+
+        <!-- Service interest -->
+        <div>
+          <label for="service" class="mb-2 block text-sm font-medium text-neutral-700">
+            {form.serviceInterest}
+          </label>
+          <select
+            id="service"
+            name="service"
+            class="w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-neutral-700 outline-none transition-colors focus:border-primary-500"
+          >
+            <option value="">{form.selectService}</option>
+            <option value="ai-governance">{i18n.services.aiGovernance.name}</option>
+            <option value="team-performance">{i18n.services.teamPerformance.name}</option>
+            <option value="executive-coaching">{i18n.services.executiveCoaching.name}</option>
+            <option value="no-preference">{form.noPreference}</option>
+          </select>
+        </div>
+
+        <!-- Name row -->
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
+            <label for="firstName" class="mb-2 block text-sm font-medium text-neutral-700">
+              {form.firstName} <span class="text-primary-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              required
+              class="w-full rounded-lg border border-neutral-200 px-4 py-3 text-neutral-700 outline-none transition-colors focus:border-primary-500"
+            />
+          </div>
+          <div>
+            <label for="lastName" class="mb-2 block text-sm font-medium text-neutral-700">
+              {form.lastName} <span class="text-primary-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              required
+              class="w-full rounded-lg border border-neutral-200 px-4 py-3 text-neutral-700 outline-none transition-colors focus:border-primary-500"
+            />
+          </div>
+        </div>
+
+        <!-- Email and Phone -->
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
+            <label for="email" class="mb-2 block text-sm font-medium text-neutral-700">
+              {form.email} <span class="text-primary-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full rounded-lg border border-neutral-200 px-4 py-3 text-neutral-700 outline-none transition-colors focus:border-primary-500"
+            />
+          </div>
+          <div>
+            <label for="phone" class="mb-2 block text-sm font-medium text-neutral-700">
+              {form.phone}
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="w-full rounded-lg border border-neutral-200 px-4 py-3 text-neutral-700 outline-none transition-colors focus:border-primary-500"
+            />
+          </div>
+        </div>
+
+        <!-- Company and Job title -->
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
+            <label for="company" class="mb-2 block text-sm font-medium text-neutral-700">
+              {form.company}
+            </label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="w-full rounded-lg border border-neutral-200 px-4 py-3 text-neutral-700 outline-none transition-colors focus:border-primary-500"
+            />
+          </div>
+          <div>
+            <label for="jobTitle" class="mb-2 block text-sm font-medium text-neutral-700">
+              {form.jobTitle}
+            </label>
+            <input
+              type="text"
+              id="jobTitle"
+              name="jobTitle"
+              class="w-full rounded-lg border border-neutral-200 px-4 py-3 text-neutral-700 outline-none transition-colors focus:border-primary-500"
+            />
+          </div>
+        </div>
+
+        <!-- Organisation size -->
+        <div>
+          <label for="orgSize" class="mb-2 block text-sm font-medium text-neutral-700">
+            {form.orgSize}
+          </label>
+          <select
+            id="orgSize"
+            name="orgSize"
+            class="w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-neutral-700 outline-none transition-colors focus:border-primary-500"
+          >
+            <option value="">-</option>
+            <option value="1-49">{form.orgSizes['1-49']}</option>
+            <option value="50-199">{form.orgSizes['50-199']}</option>
+            <option value="200-999">{form.orgSizes['200-999']}</option>
+            <option value="1000+">{form.orgSizes['1000+']}</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="message" class="mb-2 block text-sm font-medium text-neutral-700">
+            {form.message}
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            class="w-full resize-y rounded-lg border border-neutral-200 px-4 py-3 text-neutral-700 outline-none transition-colors focus:border-primary-500"
+          ></textarea>
+        </div>
+
+        <!-- Cloudflare Turnstile -->
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAACw1vy6U50c8ODeg" data-theme="light"></div>
+
+        <!-- Honeypot (anti-spam, hidden from humans) -->
+        <div class="hidden" aria-hidden="true">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- Submit -->
+        <div class="flex items-center justify-between">
+          <p class="text-sm text-neutral-400">
+            <span class="text-primary-500">*</span> {form.required}
+          </p>
+          <button
+            type="submit"
+            id="submit-btn"
+            class="rounded-full bg-primary-500 px-8 py-3 font-bold text-white transition-colors hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {form.submit}
+          </button>
+        </div>
+      </form>
+    </Col>
+    <Col span="2" />
+  </Row>
+</Section>
+
+<!-- Cloudflare Turnstile script -->
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const successEl = document.getElementById('form-success')!;
+    const errorEl = document.getElementById('form-error')!;
+    const submitLabel = form.dataset.submitLabel || 'Send';
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Reset messages
+      successEl.classList.add('hidden');
+      errorEl.classList.add('hidden');
+
+      // Basic validation
+      const firstName = (form.querySelector('#firstName') as HTMLInputElement).value.trim();
+      const lastName = (form.querySelector('#lastName') as HTMLInputElement).value.trim();
+      const email = (form.querySelector('#email') as HTMLInputElement).value.trim();
+
+      if (!firstName || !lastName || !email) {
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
+      // Honeypot check
+      const honeypot = (form.querySelector('[name="website"]') as HTMLInputElement).value;
+      if (honeypot) return;
+
+      // Turnstile token check
+      const turnstileInput = form.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement;
+      if (!turnstileInput || !turnstileInput.value) {
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
+      // Disable button
+      submitBtn.disabled = true;
+      submitBtn.textContent = '...';
+
+      try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          successEl.classList.remove('hidden');
+          form.reset();
+          // Reset Turnstile widget
+          if (window.turnstile) {
+            window.turnstile.reset();
+          }
+        } else {
+          errorEl.classList.remove('hidden');
+        }
+      } catch {
+        errorEl.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitLabel;
+      }
+    });
+  });
+</script>

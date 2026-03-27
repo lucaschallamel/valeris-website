@@ -2,49 +2,55 @@
 
 ## Current Phase
 
-**Phase 0: Project Setup** (March 2026) - Scaffolding complete, entering content phase
+**Phase 1: MVP Build** (March-April 2026) - Design system in place, entering content writing phase
 
 ## Current Focus
 
-- Astro project initialised and building (25 pages, 542ms)
-- Base layout with nav, footer, language switcher operational
-- Stub pages in place for all 3 languages
-- Ready for real content writing
+- Professional design with Foxi components + Valeris branding (30 pages, ~1.3s build)
+- Blog federating 20 Substack articles with 5 podcast filters
+- Contact form with Resend + Cloudflare Turnstile (backend ready, pending first deploy)
+- Cloudflare Pages deployment pipeline operational
+- DNS transfer to Cloudflare in progress (valeris.fr)
 
 ## Recent Decisions
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
-| 2026-03-27 | Astro over Next.js | Static-first, Cloudflare native, zero JS, lower maintenance |
-| 2026-03-27 | ~~Payload Cloud (free tier)~~ | ~~Zero maintenance CMS, SQLite, managed hosting~~ - superseded by ADR-002 |
-| 2026-03-27 | Trilingual FR/DE/EN | FR for Romandie, DE for Swiss-German reach, EN for international |
-| 2026-03-27 | MVP 8 pages per language | Minimal credibility anchor, no blog/case studies at launch |
-| 2026-03-27 | prefixDefaultLocale: true | Even FR pages live at /fr/ - correct for a trilingual site |
-| 2026-03-27 | Vanilla CSS with custom properties | No CSS framework yet, decision deferred until content is in place |
-| 2026-03-27 | Defer Payload CMS (ADR-002) | Payload Cloud closed (Figma acquisition). Static content in repo for now |
-| 2026-03-27 | Cloudflare full stack for forms | Workers + D1 + R2 + Resend for contact forms, lead capture, events |
+| 2026-03-27 | Astro over Next.js | Static-first, Cloudflare native, zero JS |
+| 2026-03-27 | Defer Payload CMS (ADR-002) | Payload Cloud closed (Figma acquisition) |
+| 2026-03-27 | Cloudflare full stack | Workers + D1 + R2 + Resend for forms and lead capture |
+| 2026-03-27 | prefixDefaultLocale: false | FR pages at root, DE/EN under prefix |
+| 2026-03-27 | Foxi components imported (not cloned) | Preserve existing i18n routing |
+| 2026-03-27 | Stay on Tailwind v4 | Future-proof, adapt Foxi components |
+| 2026-03-27 | Substack RSS federation for blog | No content duplication, zero cost |
+| 2026-03-27 | Resend for email | Best DX, free tier, domain verified |
+| 2026-03-27 | Cloudflare Turnstile for captcha | Free, privacy-respecting, native integration |
+| 2026-03-27 | Domain is valeris.fr (not .ch) | Registered at Infomaniak, DNS at Cloudflare |
 
 ## Next Steps
 
 1. ~~Connect GitHub remote and push~~ (done)
-2. Write real content for FR pages (hero complete, about, services)
-3. Translate content to DE and EN
-4. Implement full page sections (credibility strip, methodology, service detail blocks)
-5. Integrate Cal.com booking widget on contact page
-6. Choose and integrate typography (serif headings + Inter body)
-7. Refine colour palette and responsive design
-8. Set up Cloudflare Pages deployment
-9. Set up Cloudflare Worker for contact form + Resend integration
-10. Create lead capture flow for white papers (D1 + R2 + Resend)
+2. ~~Set up Cloudflare Pages deployment~~ (done)
+3. ~~Choose and integrate typography~~ (done - Cerebri Sans + Montserrat)
+4. ~~Set up contact form with Resend + Turnstile~~ (done, pending deploy test)
+5. ~~Federate blog from Substack~~ (done)
+6. Deploy and test contact form end-to-end
+7. Add custom domain valeris.fr (DNS propagation)
+8. Write real content for FR service pages
+9. Translate content to DE and EN
+10. Build publications page with lead capture flow (D1 + R2 + Resend)
+11. Add mobile hamburger menu
+12. Implement Cal.com booking widget
+13. Professional headshot photography
 
 ## Blockers
 
-- None currently
+- Cloudflare Pages API intermittent 504 (temporary, retrying)
 
 ## Risks
 
 | Risk | Severity | Mitigation |
 |------|----------|------------|
-| Payload Cloud free tier limitations | Low | Self-hosted Railway fallback ($5/month) |
 | Content quality without real client experience | Medium | Lead with credentials and methodology, not claims |
 | German translation quality | Medium | Professional review by native Swiss-German speaker |
+| 26 Foxi components not yet Tailwind v4 adapted | Low | Fix when actually used, not blocking builds |

@@ -48,6 +48,29 @@
   },
   "contact": {
     "title": "Kontakt",
-    "expectation": "Ein 30-minuetiges Gespraech, kein Verkaufspitch. Wir besprechen Ihre Situation und ich sage Ihnen ehrlich, ob ich helfen kann."
+    "expectation": "Ein 30-minuetiges Gespraech, kein Verkaufspitch. Wir besprechen Ihre Situation und ich sage Ihnen ehrlich, ob ich helfen kann.",
+    "form": {
+      "serviceInterest": "Welche Dienstleistung interessiert Sie?",
+      "selectService": "Dienstleistung auswaehlen",
+      "noPreference": "Keine Praeferenz",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefon",
+      "company": "Unternehmen",
+      "jobTitle": "Position",
+      "orgSize": "Unternehmensgroesse",
+      "orgSizes": {
+        "1-49": "1-49 Mitarbeiter",
+        "50-199": "50-199 Mitarbeiter",
+        "200-999": "200-999 Mitarbeiter",
+        "1000+": "1000+ Mitarbeiter"
+      },
+      "message": "Ihre Nachricht (optional)",
+      "submit": "Absenden",
+      "required": "Pflichtfelder",
+      "success": "Vielen Dank fuer Ihre Nachricht. Ich werde Ihnen innerhalb von 48 Stunden antworten.",
+      "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt."
+    }
   }
 }

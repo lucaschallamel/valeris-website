@@ -52,6 +52,7 @@ Cal.com        -> booking widget
 
 - ADR-001: `docs-valeris/architecture/ADR/ADR-001-astro-payload-cloudflare.md` (partially superseded)
 - ADR-002: `docs-valeris/architecture/ADR/ADR-002-static-content-no-cms-cloudflare-stack.md`
+- ADR-003: `docs-valeris/architecture/ADR/ADR-003-foxi-components-substack-resend-turnstile.md`
 
 ## Technology Stack
 
