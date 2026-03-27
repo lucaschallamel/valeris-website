@@ -2,7 +2,7 @@
   "name": "valeris-website",
   "type": "module",
   "version": "0.1.0",
-  "description": "Trilingual website for Valeris Coaching - Astro + Payload CMS + Cloudflare Pages",
+  "description": "Trilingual website for Valeris Coaching - Astro + Cloudflare Pages",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -12,7 +12,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "astro build && wrangler pages deploy dist/ --project-name valeris-website --commit-dirty=true"
   },
   "dependencies": {
     "astro": "^6.1.1"
@@ -21,7 +22,8 @@
     "@astrojs/check": "^0.9.0",
     "prettier": "^3.4.0",
     "prettier-plugin-astro": "^0.14.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "wrangler": "^4.77.0"
   },
   "private": true,
   "license": "MIT"

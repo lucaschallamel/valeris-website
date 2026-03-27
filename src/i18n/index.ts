@@ -19,30 +19,26 @@ export function t(lang: Lang) {
 }
 
 export function getLangFromUrl(url: URL): Lang {
-  const [, lang] = url.pathname.split('/');
-  if (lang in translations) return lang as Lang;
+  const [, segment] = url.pathname.split('/');
+  if (segment === 'de' || segment === 'en') return segment;
   return defaultLang;
 }
 
-/** Route map for language switching: given a path in one locale, return equivalent in another. */
+/** Route map for language switching. FR pages live at root, DE/EN under their prefix. */
 const routeMap: Record<string, Record<Lang, string>> = {
-  '/': { fr: '/fr/', de: '/de/', en: '/en/' },
-  '/services/': { fr: '/fr/services/', de: '/de/leistungen/', en: '/en/services/' },
-  '/services/gouvernance-ia/': { fr: '/fr/services/gouvernance-ia/', de: '/de/leistungen/ki-governance/', en: '/en/services/ai-governance/' },
-  '/services/performance-equipes/': { fr: '/fr/services/performance-equipes/', de: '/de/leistungen/team-performance/', en: '/en/services/team-performance/' },
-  '/services/coaching-executif/': { fr: '/fr/services/coaching-executif/', de: '/de/leistungen/executive-coaching/', en: '/en/services/executive-coaching/' },
-  '/a-propos/': { fr: '/fr/a-propos/', de: '/de/ueber-mich/', en: '/en/about/' },
-  '/contact/': { fr: '/fr/contact/', de: '/de/kontakt/', en: '/en/contact/' },
-  '/mentions-legales/': { fr: '/fr/mentions-legales/', de: '/de/impressum/', en: '/en/legal/' },
+  '/': { fr: '/', de: '/de/', en: '/en/' },
+  '/services/': { fr: '/services/', de: '/de/leistungen/', en: '/en/services/' },
+  '/services/gouvernance-ia/': { fr: '/services/gouvernance-ia/', de: '/de/leistungen/ki-governance/', en: '/en/services/ai-governance/' },
+  '/services/performance-equipes/': { fr: '/services/performance-equipes/', de: '/de/leistungen/team-performance/', en: '/en/services/team-performance/' },
+  '/services/coaching-executif/': { fr: '/services/coaching-executif/', de: '/de/leistungen/executive-coaching/', en: '/en/services/executive-coaching/' },
+  '/a-propos/': { fr: '/a-propos/', de: '/de/ueber-mich/', en: '/en/about/' },
+  '/contact/': { fr: '/contact/', de: '/de/kontakt/', en: '/en/contact/' },
+  '/mentions-legales/': { fr: '/mentions-legales/', de: '/de/impressum/', en: '/en/legal/' },
 };
 
 /** Get the equivalent URL for a different language. */
 export function getLocalePath(currentPath: string, targetLang: Lang): string {
-  // Strip the locale prefix to get the route key
-  const withoutLocale = currentPath.replace(/^\/(fr|de|en)/, '');
-  const routeKey = withoutLocale || '/';
-
-  // Look up in route map
+  // Look up in route map by matching any language variant
   for (const [, paths] of Object.entries(routeMap)) {
     for (const [, path] of Object.entries(paths)) {
       if (path === currentPath || path === currentPath + '/') {
@@ -51,6 +47,8 @@ export function getLocalePath(currentPath: string, targetLang: Lang): string {
     }
   }
 
-  // Fallback: just swap the locale prefix
+  // Fallback: swap or add locale prefix
+  const withoutLocale = currentPath.replace(/^\/(de|en)/, '');
+  if (targetLang === 'fr') return withoutLocale || '/';
   return `/${targetLang}${withoutLocale}`;
 }

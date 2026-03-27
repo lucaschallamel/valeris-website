@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | Attribute | Value |
 |-----------|-------|
 | Owner | Lucas Challamel |
-| Domain | valeris.ch (Infomaniak) |
+| Domain | valeris.fr (Infomaniak) |
 | Stack | Astro + Payload CMS 3.x + Cloudflare Pages |
 | Status | MVP Development (Phase 0) |
 | License | MIT |
@@ -25,9 +25,9 @@ Cloudflare Pages auto-build (Astro static generation)
   |
   v
 Cloudflare Pages (static, global CDN)
-  valeris.ch/fr/*  (French, primary)
-  valeris.ch/de/*  (German, secondary)
-  valeris.ch/en/*  (English, tertiary)
+  valeris.fr/*     (French, primary - root level)
+  valeris.fr/de/*  (German, secondary)
+  valeris.fr/en/*  (English, tertiary)
 
 Cloudflare Workers (/api/*)
   ├── POST /api/contact     (contact form)
@@ -79,10 +79,10 @@ valeris-website/
 │   ├── components/               # Reusable Astro components
 │   ├── layouts/                  # Page layouts
 │   ├── pages/                    # Route pages
-│   │   ├── fr/                   # French pages (primary)
 │   │   ├── de/                   # German pages (secondary)
 │   │   ├── en/                   # English pages (tertiary)
-│   │   └── index.astro           # Root redirect -> /fr/
+│   │   ├── services/             # French service pages (at root)
+│   │   └── index.astro           # French home page (default locale)
 │   ├── i18n/                     # Translation strings
 │   │   ├── fr.json
 │   │   ├── de.json
@@ -113,7 +113,7 @@ valeris-website/
 
 - French is the primary authoring language
 - German and English are translated mirrors
-- URL structure: `/fr/services/gouvernance-ia/`, `/de/services/ki-governance/`, `/en/services/ai-governance/`
+- URL structure: `/services/gouvernance-ia/` (FR at root), `/de/leistungen/ki-governance/`, `/en/services/ai-governance/`
 - UI strings in `src/i18n/fr.json`, `src/i18n/de.json`, and `src/i18n/en.json`
 - Content from Payload CMS uses localised fields, fetched per-locale at build time
 - Astro built-in i18n routing for hreflang tags and language switching

@@ -29,7 +29,7 @@ const alternateLinks = (Object.keys(languages) as Lang[]).map((l) => ({
     {alternateLinks.map((alt) => (
       <link rel="alternate" hreflang={alt.lang} href={alt.href} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={`${Astro.site}fr/`} />
+    <link rel="alternate" hreflang="x-default" href={`${Astro.site}`} />
     <title>{title}</title>
   </head>
   <body>
