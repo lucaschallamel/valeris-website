@@ -34,20 +34,93 @@
   font-display: swap;
 }
 
-/* === Valeris Design Tokens (Tailwind v4 theme) === */
+/* === Tailwind v4 Theme - Valeris + Foxi Adapted === */
 
 @theme {
-  /* Brand colours */
+  /* Primary palette (Valeris rose/pink - adapted from brand #FFA6C9) */
+  --color-primary-50: #fff5f9;
+  --color-primary-100: #ffe0ee;
+  --color-primary-200: #ffc4de;
+  --color-primary-300: #ffa6c9;
+  --color-primary-400: #fe8dc6;
+  --color-primary-500: #f06aa8;
+  --color-primary-600: #d94d8e;
+  --color-primary-700: #b83a74;
+  --color-primary-800: #962f5e;
+  --color-primary-900: #7a2a50;
+  --color-primary-950: #4a0e2b;
+
+  /* Neutral palette (slate tones matching Foxi) */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
+
+  /* Brand shortcuts */
   --color-valeris-pink: #ffa6c9;
   --color-valeris-rose: #fe8dc6;
   --color-valeris-blush: #fed1c7;
-  --color-valeris-white: #ffffff;
-  --color-valeris-text: #1a1a1a;
-  --color-valeris-bg: #fafaf8;
   --color-valeris-navy: #1e2a3a;
   --color-valeris-teal: #2d6a6a;
 
   /* Typography */
   --font-sans: "Cerebri Sans", system-ui, -apple-system, sans-serif;
-  --font-display: "Montserrat", "Cerebri Sans", system-ui, sans-serif;
+  --font-headings: "Montserrat", "Cerebri Sans", system-ui, sans-serif;
+
+  /* Animations (from Foxi - camelCase to match component class names) */
+  --animate-dropdown: dropdown 300ms ease-in-out forwards;
+  --animate-fadeInShadowLight: fadeInShadowLight 500ms ease-in-out forwards;
+  --animate-fadeInShadowDark: fadeInShadowDark 500ms ease-in-out forwards;
+  --animate-fadeUp: fadeUp 500ms ease-in-out forwards;
+
+  @keyframes dropdown {
+    0% {
+      transform: translateY(-1rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInShadowLight {
+    100% {
+      box-shadow:
+        0 20px 25px -5px rgba(15, 23, 42, 0.025),
+        0 8px 10px -6px rgba(15, 23, 42, 0.025);
+    }
+  }
+
+  @keyframes fadeInShadowDark {
+    100% {
+      box-shadow:
+        0 20px 25px -5px rgba(2, 6, 23, 0.25),
+        0 8px 10px -6px rgba(2, 6, 23, 0.25);
+    }
+  }
+
+  @keyframes fadeUp {
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* === Container utility === */
+
+.container {
+  @apply mx-auto max-w-7xl px-6;
 }
