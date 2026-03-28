@@ -8,6 +8,7 @@ import Feature from '../components/ui/Feature.astro';
 import { Image } from 'astro:assets';
 import { t } from '../i18n';
 import portrait from '../assets/lucas-challamel.jpg';
+import valerisLogo from '../assets/logos/valeris-icon-primary.svg';
 import logoNab from '../assets/logos/clients/nab.png';
 import logoUbank from '../assets/logos/clients/ubank.jpg';
 
@@ -17,24 +18,55 @@ import CtaBanner from '../components/CtaBanner.astro';
 
 <BaseLayout title={`${i18n.about.title} - ${i18n.site.title}`} description={i18n.site.descriptions.about} seoType="about">
 
-  <!-- Hero -->
-  <Section padding="both" classes="bg-neutral-50">
+  <!-- Pourquoi Valeris -->
+  <Section padding="top" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8" align="center">
-        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
-          Lucas Challamel
+        <h1 class="mb-6 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
+          Pourquoi Valeris ?
         </h1>
-        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
-          Fondateur, Valeris Coaching. 30 ans de leadership technologique, de la startup au conseil international. Trilingue et triculturel : France, Australie, Suisse. Basé à Genève.
-        </p>
       </Col>
       <Col span="2" />
+    </Row>
+    <Row>
+      <Col span="1" />
+      <Col span="3" align="center" classes="flex items-center justify-center">
+        <img src={valerisLogo.src} alt="Valeris" class="mx-auto h-40 w-auto lg:h-48" />
+      </Col>
+      <Col span="7">
+        <p class="mb-4 text-lg text-neutral-600">
+          <em>Valeris</em> vient du latin <strong>valeo</strong> : bien se porter, être en bonne santé, être fort.
+        </p>
+        <p class="mb-4 text-lg text-neutral-600">
+          <em>Valeris</em> est la deuxième personne du futur : <strong>tu seras fort</strong>, <strong>tu iras bien</strong>. C'est une promesse et une conviction : avec le bon accompagnement, les bonnes décisions et le bon état d'esprit, tout ira bien.
+        </p>
+        <p class="text-neutral-500">
+          C'est cette philosophie qui guide chaque engagement : renforcer les leaders, les équipes et les organisations pour qu'ils soient durablement capables, autonomes et confiants.
+        </p>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
+  <!-- Lucas Challamel -->
+  <Section padding="top">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-xl bg-secondary-600 px-8 py-8 text-center">
+          <h2 class="mb-2 font-headings text-3xl font-bold text-white">Lucas Challamel</h2>
+          <p class="mx-auto max-w-2xl text-lg text-secondary-100">
+            Fondateur, Valeris Coaching. 30 ans de leadership technologique, de la startup au conseil international. Trilingue et triculturel : France, Australie, Suisse.<br />Basé à Genève.
+          </p>
+        </div>
+      </Col>
+      <Col span="1" />
     </Row>
   </Section>
 
   <!-- Portrait + Narrative -->
-  <Section padding="both">
+  <Section padding="top">
     <Row>
       <Col span="1" />
       <Col span="5">
