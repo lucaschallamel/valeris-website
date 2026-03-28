@@ -3,8 +3,8 @@ entry_date: 2026-03-28
 author: Lucas Challamel
 focus_area: 4-language translations, DNS migration, contact form debugging, CTA standardisation
 status: complete
-session_duration: ~4 hours
-tags: [i18n, italian, translations, dns, cloudflare, resend, turnstile, cta, opera-fix]
+session_duration: ~6 hours (ongoing)
+tags: [i18n, italian, translations, dns, cloudflare, resend, turnstile, cta, opera-fix, visual-assets, diagrams, css]
 ---
 
 ## Why (High-Level Context)
@@ -168,6 +168,33 @@ Deployed a background agent to translate all 8 FR content pages to 3 languages (
 | Disable DNSSEC before NS change | Then re-enable in Cloudflare | Prevent resolver rejection during transition |
 | Delete _domainkey NS records | Remove Infomaniak delegation | Allow Cloudflare to serve Resend DKIM directly |
 
+### 10. Visual Assets - Sprint A & B
+
+Audit complet du site (7 pages FR) pour identifier les gaps visuels, puis inventaire de 91 assets existants dans 3 repertoires source (white papers sovereignty + governance, OCSIN coaching assets). Document de recommandations produit a `Website/01_visual_assets_recommendations.md`.
+
+**Sprint A (CSS/SVG, implemente)** :
+- Icones service (shield, chart, academic-cap) sur les 3 cartes home page (SVG inline)
+- Diagramme "3 altitudes" pyramide teal (CSS Tailwind) sur `/services/`
+- Pipeline protection donnees 4 etapes (CSS grid) sur `/services/gouvernance-ia/`
+- Pyramide inversee Specs/Tests/Code (CSS) sur `/services/performance-equipes/`
+- Evolution role CTO Orchestrateur -> Ingenieur Systeme (CSS 2 cartes + fleche) sur `/services/coaching-executif/`
+- Logos clients NAB, UBank, Infostrates, Process Creative (PNG grayscale) sur `/a-propos/`
+- Placeholder couverture livre blanc (SVG + gradient teal) sur `/publications/`
+
+**Sprint B (composants + enrichissements, implemente)** :
+- Composant reutilisable `MetricBar.astro` (barres de progression avant/apres)
+- Spectre souverainete (gradient 3 zones : bleu/teal/teal fonce) sur `/services/gouvernance-ia/`
+- Barres MetricBar x4 (Infostrates : tests, regressions, lead time, dette) sur `/services/performance-equipes/`
+- Barres MetricBar x4 (NAB : engagement, productivite, turnover, time to market) sur `/services/coaching-executif/`
+- Timeline carriere avec badges pays FR/AU/CH (CSS couleur par geographie) sur `/a-propos/`
+
+**Sprint C (images de diffusion, en cours)** :
+- Prompts Midjourney/DALL-E affines pour hero home page et couverture livre blanc
+- Style cible : hexagones + lignes topographiques + points roses sur fond creme
+- Lucas prepare les visuels de diffusion en parallele
+
+**Reference DADA supprimee** : l'acronyme ne correspondait pas aux 4 etapes (D-T-A-A). Pipeline de protection des donnees conserve sans nom de marque.
+
 ---
 
 ## Final State & Next Steps
@@ -182,6 +209,7 @@ Deployed a background agent to translate all 8 FR content pages to 3 languages (
 
 **Immediate Next Steps**:
 
+- [ ] Integrer les visuels de diffusion generes par Lucas (hero home, couverture livre blanc)
 - [ ] Verify Resend domain is fully verified, test contact form end-to-end
 - [ ] Test email delivery (send test submission, check inbox)
 - [ ] Mobile hamburger menu (nav hidden on mobile)
@@ -201,9 +229,14 @@ Deployed a background agent to translate all 8 FR content pages to 3 languages (
 - Complex `@apply` selectors in Tailwind v4 scoped styles can fail silently in some browsers - prefer native CSS for critical layout
 - Python scripts are effective for bulk CTA replacement across 28+ files
 - Background agent translation of 24 pages took ~18 minutes with 57 tool uses
+- Visual asset audits should be done systematically (page by page, section by section) before creating anything
+- CSS/Tailwind diagrams (pyramides, spectres, barres) sont suffisants pour la plupart des visualisations - pas besoin d'images
+- MetricBar component is highly reusable across service pages
+- For diffusion images: be very specific in prompts (hex colours, reference artists, negative constraints), iterate heavily
+- Existing OCSIN/white paper figures (X2, X3, X4) are directly adaptable with palette swap
 
 ---
 
-**Session Summary**: Made the site quadrilingual (FR/DE/EN/IT), completed DNS migration to Cloudflare, debugged contact form infrastructure, standardised CTA banners with phone and LinkedIn across all 40 pages.
+**Session Summary**: Made the site quadrilingual (FR/DE/EN/IT), completed DNS migration to Cloudflare, debugged contact form infrastructure, standardised CTA banners with phone and LinkedIn across all 40 pages. Implemented visual assets Sprint A+B (CSS diagrams, MetricBar component, client logos, spectre souverainete, timeline badges).
 
 **Estimated Impact**: Very High

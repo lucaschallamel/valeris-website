@@ -1,26 +1,31 @@
-# Valeris Website - Stack & Architecture
+# Architecture - Stack and Decisions
 
 ## Stack
-- **Frontend**: Astro 6.x (static SSG) + Tailwind CSS v4 + Foxi component library
-- **Hosting**: Cloudflare Pages (free tier, global CDN)
-- **Forms**: Cloudflare Workers + Resend + Turnstile captcha
-- **Blog**: Substack RSS federation (20 articles, 5 podcast filters)
-- **Domain**: valeris.fr (Infomaniak, DNS at Cloudflare)
-- **No CMS**: Content as static files. Payload CMS deferred (Figma acquisition). See ADR-002.
+- **Frontend**: Astro 6.x + Tailwind CSS v4 (Vite plugin) + Foxi component library (adapted)
+- **CMS**: None (static files in repo, Payload CMS deferred - Figma acquisition)
+- **Hosting**: Cloudflare Pages (free tier)
+- **DNS**: Cloudflare (migrated from Infomaniak, CNAME flattening for root domain)
+- **Domain**: valeris.fr (registrar: Infomaniak, nameservers: Cloudflare)
+- **Email (transactional)**: Resend (free tier, domain valeris.fr verified)
+- **Email (business)**: Infomaniak KSuite (MX preserved)
+- **Captcha**: Cloudflare Turnstile (managed mode, site key: 0x4AAAAAACw1vy6U50c8ODeg)
+- **Blog**: Substack RSS federation (thecamelhall.substack.com/feed, build-time fetch)
+- **Icons**: astro-icon + @iconify-json/heroicons + custom SVGs
 
-## Key Architecture Decisions
-- ADR-001: Astro over Next.js (partially superseded)
-- ADR-002: Static content, no CMS, Cloudflare full stack
-- ADR-003: Foxi components, Substack federation, Resend + Turnstile
-- FR pages at root (`/services/`), DE/EN under prefix (`/de/leistungen/`, `/en/services/`)
-- Tailwind v4 (not v3) for future-proofing
+## Key ADRs
+- ADR-001: Astro over Next.js (static-first, Cloudflare native)
+- ADR-002: No CMS, Cloudflare full stack (Workers + D1 + R2 + Resend)
+- ADR-003: Foxi components, Substack federation, Resend, Turnstile
 
-## Colour Palette (March 2026)
-- **Primary**: Rose/pink (#f06aa8) - CTA buttons, active nav, form focus
-- **Secondary**: Teal (#52bcbc @400, scale 50-950) - altitude labels, feature icons, CTA sections, checklist markers
-- **Neutrals**: Warm stone (replacing cold slate) - #faf8f6 to #1c1917
-- Study archived: `Website/design-studies/2026-03-27-palette-comparison.astro`
+## i18n Architecture
+- 4 languages: FR (root), DE (/de/), EN (/en/), IT (/it/)
+- prefixDefaultLocale: false (FR at root)
+- Route map in src/i18n/index.ts with localised slugs per language
+- Language switcher: FR|DE|EN|IT in header
+- Active section detection normalises DE/EN/IT slugs to FR equivalents
 
-## Build
-- 30 pages, ~1.2s build time
-- Fonts: Cerebri Sans (body) + Montserrat (headings)
+## Tailwind v4 Specifics
+- @reference directive required in all scoped component styles
+- Responsive @apply (lg:, md:) does not work in scoped styles - use native @media
+- Dynamic class names not detected - use CSS custom properties (Col component)
+- Complex @apply selectors can fail in some browsers - prefer native CSS
