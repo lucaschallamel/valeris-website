@@ -14,18 +14,24 @@ import CtaBanner from '../../../components/CtaBanner.astro';
 
 <BaseLayout title={`${i18n.services.aiGovernance.name} - ${i18n.site.title}`}>
 
+  <!-- Hero -->
   <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8" align="center">
         <p class="mb-4 text-sm font-bold uppercase tracking-widest text-secondary-500">Governance</p>
-        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">{i18n.services.aiGovernance.name}</h1>
-        <p class="mx-auto max-w-2xl text-lg text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
+          {i18n.services.aiGovernance.name}
+        </h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
+          {i18n.services.aiGovernance.tagline}
+        </p>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
+  <!-- Il problema -->
   <Section padding="both">
     <Row>
       <Col span="2" />
@@ -41,12 +47,15 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     </Row>
   </Section>
 
+  <!-- L'approccio -->
   <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8">
         <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Il mio approccio</h2>
-        <p class="mb-8 text-neutral-600">Combino un'expertise tecnica approfondita in IA/ML con un'esperienza concreta di governance nei settori regolamentati (banche private ginevrine, FINMA, APRA). Il mio approccio si basa su un modello di maturità IA a 7 assi, allineato con ISO 42001 e l'EU AI Act, restando pragmatico e adattato al contesto svizzero.</p>
+        <p class="mb-8 text-neutral-600">
+          Combino un'expertise tecnica approfondita in IA/ML con un'esperienza concreta di governance nei settori regolamentati (banche private ginevrine, FINMA, APRA). Il mio approccio si basa su un modello di maturità IA a 7 assi, allineato con ISO 42001 e l'EU AI Act, restando pragmatico e adattato al contesto svizzero.
+        </p>
         <div class="grid gap-8 md:grid-cols-2">
           <Feature icon="heroicons:magnifying-glass" title="Diagnosi di maturità IA" type="side-icon" iconStyle="square" align="left">
             <p class="text-sm text-neutral-500">Valutazione su 7 assi: governance, cybersicurezza, conformità normativa, infrastruttura, qualità dei dati, competenze, portafoglio applicativo. Scoring di maturità (livelli 1-4: Emergente a Strategico). Piano d'azione a 90 giorni.</p>
@@ -66,13 +75,18 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     </Row>
   </Section>
 
+  <!-- Sovranità -->
   <Section padding="both">
     <Row>
       <Col span="2" />
       <Col span="8">
         <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Sovranità IA: una scelta deliberata</h2>
-        <p class="mb-6 text-neutral-600">La sovranità IA non significa rifiutare il cloud o gli hyperscaler. È una <strong>scelta deliberata</strong>: cosa gira dove, basata sul rischio, la normativa e le priorità strategiche. Alcuni workload sono perfettamente adatti al cloud pubblico. Altri esigono un controllo totale. Vi aiuto ad articolare le tre zone:</p>
+        <p class="mb-6 text-neutral-600">
+          La sovranità IA non significa rifiutare il cloud o gli hyperscaler. È una <strong>scelta deliberata</strong>: cosa gira dove, basata sul rischio, la normativa e le priorità strategiche. Alcuni workload sono perfettamente adatti al cloud pubblico. Altri esigono un controllo totale. Vi aiuto ad articolare le tre zone:
+        </p>
+        <!-- Spettro di sovranità -->
         <div class="overflow-hidden rounded-lg border border-neutral-200">
+          <!-- Gradient bar -->
           <div class="flex h-3">
             <div class="flex-1 bg-blue-300"></div>
             <div class="flex-1 bg-secondary-400"></div>
@@ -101,12 +115,93 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     </Row>
   </Section>
 
+  <!-- FinOps + Protezione dei dati -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">AI FinOps e protezione dei dati</h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <h3 class="mb-3 font-headings text-lg font-bold text-neutral-900">AI FinOps: controllare i costi</h3>
+            <p class="mb-4 text-neutral-600">
+              I CFO pongono la domanda: "Quanto costerà l'IA su larga scala?" Senza pilotaggio, i costi LLM esplodono. Vi aiuto a mettere in atto:
+            </p>
+            <ul class="space-y-2 text-sm text-neutral-500">
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Modellazione predittiva dei costi per caso d'uso</li>
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Monitoraggio del consumo di token</li>
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Ottimizzazione dei modelli (right-sizing, caching, routing)</li>
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Framework ROI per gli investimenti IA</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-3 font-headings text-lg font-bold text-neutral-900">Protezione dei dati per l'IA</h3>
+            <p class="mb-4 text-neutral-600">
+              Non potete alimentare i vostri LLM con dati sensibili non protetti. Il mio approccio in 4 fasi permette di alimentare l'IA in tutta sicurezza:
+            </p>
+            <div class="grid grid-cols-4 gap-1">
+              <div class="rounded-l-lg bg-secondary-50 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">1. Discover</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Mappare i dati sensibili</p>
+              </div>
+              <div class="relative bg-secondary-100 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">2. Tokenise</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Sostituire con token sicuri</p>
+              </div>
+              <div class="bg-secondary-100 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">3. Augment</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Generare dati sintetici</p>
+              </div>
+              <div class="rounded-r-lg bg-secondary-200 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-700">4. Apply</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Alimentare il RAG in sicurezza</p>
+              </div>
+            </div>
+            <div class="mt-2 flex justify-between px-2">
+              <span class="text-[0.6rem] text-neutral-400">Dati grezzi</span>
+              <span class="text-[0.6rem] text-secondary-500">&#x2192; &#x2192; &#x2192;</span>
+              <span class="text-[0.6rem] text-neutral-400">IA alimentata in sicurezza</span>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Certificazioni -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Certificazioni e expertise</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <Feature icon="heroicons:shield-check" title="ISO 42001" type="side-icon" align="left">
+            <p class="text-sm text-neutral-500">Lead Auditor in preparazione (obiettivo 2026). Standard internazionale per i sistemi di gestione dell'IA.</p>
+          </Feature>
+          <Feature icon="heroicons:building-library" title="TOGAF 10" type="side-icon" align="left">
+            <p class="text-sm text-neutral-500">Certificazione in corso. Architettura d'impresa e quadro di trasformazione.</p>
+          </Feature>
+          <Feature icon="heroicons:cpu-chip" title="Microsoft AI" type="side-icon" align="left">
+            <p class="text-sm text-neutral-500">Certificazioni AI-102, AI-900, SC-300 in preparazione. Governance e sicurezza dell'ecosistema Microsoft AI.</p>
+          </Feature>
+        </div>
+        <p class="mt-6 text-sm text-neutral-400">
+          In complemento: MIT AI Programme (2024), Cambridge CTO Programme (2018), AWS Certified (2017). 25+ anni di esperienza in architettura e governance IT nei settori regolamentati (FINMA, APRA, nDSG, GDPR).
+        </p>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Pacchetti -->
   <Section padding="both">
     <Row>
       <Col span="2" />
       <Col span="8">
         <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Formati di ingaggio</h2>
         <div class="grid gap-6 md:grid-cols-2">
+          <!-- Punto di ingresso -->
           <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
             <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Punto di ingresso</p>
             <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Diagnosi di maturità IA</h3>
@@ -117,6 +212,7 @@ import CtaBanner from '../../../components/CtaBanner.astro';
               { listItem: "A partire da CHF 8 500" },
             ]} />
           </div>
+          <!-- Quadro di governance -->
           <div class="rounded-lg border border-neutral-200 p-6">
             <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Costruzione</p>
             <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Quadro di governance IA</h3>
@@ -127,6 +223,7 @@ import CtaBanner from '../../../components/CtaBanner.astro';
               { listItem: "Allineato ISO 42001, EU AI Act, nDSG" },
             ]} />
           </div>
+          <!-- Preparazione ISO -->
           <div class="rounded-lg border border-neutral-200 p-6">
             <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Certificazione</p>
             <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Preparazione ISO 42001</h3>
@@ -137,6 +234,7 @@ import CtaBanner from '../../../components/CtaBanner.astro';
               { listItem: "Obiettivo: certificazione ISO 42001" },
             ]} />
           </div>
+          <!-- Sprint di attivazione -->
           <div class="rounded-lg border border-neutral-200 p-6">
             <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Attivazione</p>
             <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Sprint di attivazione IA</h3>
@@ -148,12 +246,15 @@ import CtaBanner from '../../../components/CtaBanner.astro';
             ]} />
           </div>
         </div>
-        <p class="mt-6 text-sm text-neutral-400">Percorso completo (diagnosi + quadro + attivazione + certificazione): CHF 55 000 - 75 000 su 6-9 mesi.</p>
+        <p class="mt-6 text-sm text-neutral-400">
+          Percorso completo (diagnosi + quadro + attivazione + certificazione): CHF 55 000 - 75 000 su 6-9 mesi.
+        </p>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
+  <!-- Per chi -->
   <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
@@ -182,6 +283,7 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     </Row>
   </Section>
 
+  <!-- Esperienza sul campo -->
   <Section padding="both">
     <Row>
       <Col span="2" />
@@ -195,6 +297,8 @@ import CtaBanner from '../../../components/CtaBanner.astro';
       <Col span="2" />
     </Row>
   </Section>
+
+  <!-- CTA -->
   <CtaBanner lang="it" />
 
 </BaseLayout>

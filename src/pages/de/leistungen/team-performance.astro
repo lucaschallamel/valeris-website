@@ -6,6 +6,7 @@ import Col from '../../../components/ui/Col.astro';
 import Button from '../../../components/ui/Button.astro';
 import Feature from '../../../components/ui/Feature.astro';
 import List from '../../../components/ui/List.astro';
+import MetricBar from '../../../components/ui/MetricBar.astro';
 import { t } from '../../../i18n';
 
 const i18n = t('de');
@@ -38,9 +39,9 @@ import CtaBanner from '../../../components/CtaBanner.astro';
       <Col span="8">
         <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Das Problem, das Sie kennen</h2>
         <div class="space-y-4 text-neutral-600">
-          <p>Ihre Sprints enden mit unerledigten Stories. Die Time-to-Market verlängert sich. Produktionsvorfälle nehmen zu. Die besten Entwickler beginnen zu gehen.</p>
-          <p>Sie haben versucht, Tools hinzuzufügen, Frameworks zu wechseln, mehr zu rekrutieren. Aber das Problem ist nicht technisch - es ist organisatorisch. Die Art, wie Ihr Team arbeitet, kommuniziert und Entscheidungen trifft, ist der eigentliche Hebel.</p>
-          <p>Es ist kein Problem individueller Kompetenzen. Es ist ein Systemproblem.</p>
+          <p>Ihre Sprints enden mit unerledigten Stories. Produktionsvorfälle und Regressionen häufen sich. Die technische Schuld wächst schneller, als sie abgebaut wird. Die besten Entwickler beginnen zu gehen.</p>
+          <p>Ihre Teams experimentieren mit KI auf eigene Faust: Copilot hier, ChatGPT dort, ohne gemeinsame Methode, ohne Messung des tatsächlichen Nutzens. Die Legacy-Dokumentation ist veraltet oder nicht vorhanden. Der Kompromiss zwischen Qualität und Geschwindigkeit wird nie gelöst.</p>
+          <p>Sie haben versucht, Tools hinzuzufügen, Frameworks zu wechseln, mehr zu rekrutieren. Aber das Problem ist nicht technisch: Es ist die Art, wie Ihr Team spezifiziert, entwickelt, testet und ausliefert, die der eigentliche Hebel ist.</p>
         </div>
       </Col>
       <Col span="2" />
@@ -52,22 +53,25 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     <Row>
       <Col span="2" />
       <Col span="8">
-        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Mein Ansatz</h2>
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Mein Ansatz: Coach-Craft</h2>
+        <p class="mb-4 text-neutral-600">
+          Ich messe, bevor ich handle. Mein Ansatz stützt sich auf DORA-Metriken, Prozessbeobachtung und Einzelgespräche, um eine faktenbasierte Diagnose zu erstellen. Dann coache ich Ihr Team in echten Sprints, nicht in einem Schulungsraum.
+        </p>
         <p class="mb-8 text-neutral-600">
-          Ich messe, bevor ich handle. Mein Ansatz stützt sich auf DORA-Metriken, Prozessbeobachtung und Einzelgespräche, um eine faktenbasierte Diagnose zu erstellen - keine Meinungen.
+          Die Coach-Craft-Methode folgt 4 Schritten: <strong>Demonstration</strong> (ich zeige es an Ihren realen Projekten), <strong>Begleitete Praxis</strong> (Pair Programming, pädagogische Reviews), <strong>Schrittweise Autonomie</strong> (die Tech Leads übernehmen), <strong>Nachhaltige Verankerung</strong> (interne Champions werden ausgebildet, um die Praktiken zu verstetigen). Das Ziel ist Autonomie, nicht Abhängigkeit.
         </p>
         <div class="grid gap-8 md:grid-cols-2">
-          <Feature icon="heroicons:chart-bar" title="Health Check" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Interviews, DORA-Metriken, Prozessbeobachtung, Branchen-Benchmarking.</p>
+          <Feature icon="heroicons:magnifying-glass" title="Phase 1: Diagnose (1-2 Wochen)" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Einzelgespräche, DORA-Metriken, Prozessbeobachtung, Kartierung des Ökosystems (Tools, Abläufe, KI-Initiativen, Abhängigkeiten). Identifikation von Quick Wins und Branchen-Benchmarking.</p>
           </Feature>
-          <Feature icon="heroicons:bolt" title="Delivery-Beschleunigung" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">3 Monate eingebettetes Coaching, Prozess-Redesign, Einführung von Metriken.</p>
+          <Feature icon="heroicons:bolt" title="Phase 2: Eingebettetes Coaching (4-8 Wochen)" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Pair Programming an realen Projekten. Pädagogische Code Reviews. Einführung von Specification-Driven Development (SDD): zuerst spezifizieren, dann generieren. Einrichtung von CI/CD, Quality Gates, Testabdeckung.</p>
           </Feature>
-          <Feature icon="heroicons:light-bulb" title="Kultur-Workshops" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">3 halbe Tage zu einem spezifischen Thema (Code Review, Incident Management, etc.), Befragung vorher/nachher.</p>
+          <Feature icon="heroicons:arrow-trending-up" title="Phase 3: Autonomie (4 Wochen)" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Die Tech Leads übernehmen. Messung der finalen KPIs. Vollständiger Praxistransfer. Dokumentation der validierten Workflows. Das Team macht ohne mich weiter.</p>
           </Feature>
-          <Feature icon="heroicons:map" title="Leadership Offsite" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Ganztägige Moderation für das technische Führungsteam. Vision, Prioritäten, Alignment.</p>
+          <Feature icon="heroicons:cpu-chip" title="SDD-Methodik" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Specification-Driven Development: KI ist ein Ausführer, der Spezifikationen in Code umwandelt, kein Orakel, das die Absicht errät. Beschleunigung: 5-10 User Stories/Tag, Delivery-Zyklus -30%, Testabdeckung 80%+.</p>
           </Feature>
         </div>
       </Col>
@@ -75,8 +79,127 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     </Row>
   </Section>
 
-  <!-- Pakete -->
+  <!-- Philosophie -->
   <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Philosophie: "Code is Cattle, Context is King"</h2>
+        <p class="mb-6 text-neutral-600">
+          KI kann Code schneller und günstiger generieren als jeder Mensch. Der Wert liegt nicht mehr im Code selbst: Er ist ein <strong>regenerierbares Derivat</strong>. Ihre wahren Assets sind Ihre <strong>Spezifikationen</strong> und Ihre <strong>Tests</strong>. Wenn Ihre Spezifikationen präzise und Ihre Tests vollständig sind, können Sie Ihre gesamte Codebase bei Bedarf regenerieren.
+        </p>
+        <!-- Umgekehrte Pyramide: Specs > Tests > Code -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="flex w-full max-w-lg items-center justify-center rounded-t-lg bg-secondary-600 px-6 py-4 text-center">
+            <div>
+              <p class="font-headings text-lg font-bold text-white">Spezifikationen</p>
+              <p class="text-xs text-secondary-100">Primärer Asset. Das "Was" und das "Warum". Quelle der Wahrheit.</p>
+            </div>
+          </div>
+          <div class="flex w-full max-w-sm items-center justify-center bg-secondary-400 px-6 py-4 text-center">
+            <div>
+              <p class="font-headings text-lg font-bold text-white">Tests</p>
+              <p class="text-xs text-secondary-50">Primärer Asset. Das Sicherheitsnetz. Garantiert das "Wie".</p>
+            </div>
+          </div>
+          <div class="flex w-full max-w-xs items-center justify-center rounded-b-lg bg-neutral-200 px-6 py-4 text-center">
+            <div>
+              <p class="font-headings text-lg font-bold text-neutral-400">Code</p>
+              <p class="text-xs text-neutral-500">Regenerierbares Derivat. Ein Artefakt, kein Asset mehr.</p>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- 4 Schmerzpunkte Legacy -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Die 4 Schmerzpunkte, die jeder CIO kennt</h2>
+        <p class="mb-6 text-neutral-600">
+          Jedes Transformationsengagement geht von denselben Realitäten vor Ort aus, validiert bei Dutzenden von CIOs in Finanz-, Versicherungs- und öffentlichem Sektor:
+        </p>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-lg border-l-4 border-secondary-400 bg-white p-5">
+            <h3 class="mb-1 font-headings font-bold text-neutral-900">1. Verstehen</h3>
+            <p class="text-sm text-neutral-500">"Was macht dieses System tatsächlich, in seiner Gesamtheit?" Keine vergessene Verbindung, Funktion oder gespeicherte Prozedur.</p>
+          </div>
+          <div class="rounded-lg border-l-4 border-secondary-400 bg-white p-5">
+            <h3 class="mb-1 font-headings font-bold text-neutral-900">2. Dokumentieren</h3>
+            <p class="text-sm text-neutral-500">"Wie erfassen wir das Wissen, bevor es in Rente geht?" Kein Stammwissen mehr, das zur Tür hinausgeht.</p>
+          </div>
+          <div class="rounded-lg border-l-4 border-secondary-400 bg-white p-5">
+            <h3 class="mb-1 font-headings font-bold text-neutral-900">3. Absichern</h3>
+            <p class="text-sm text-neutral-500">"Wo verstecken sich die Schwachstellen in diesem Legacy?" Jede Weiterentwicklung ist ein Risiko, solange der Umfang nicht beherrscht wird.</p>
+          </div>
+          <div class="rounded-lg border-l-4 border-secondary-400 bg-white p-5">
+            <h3 class="mb-1 font-headings font-bold text-neutral-900">4. Weiterentwickeln</h3>
+            <p class="text-sm text-neutral-500">"Wie weiterentwickeln, ohne alles zu zerstören?" Der Onion-Model-Ansatz: von aussen nach innen modernisieren, Schicht für Schicht.</p>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Gemessene Ergebnisse -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Gemessene Ergebnisse aus realen Mandaten</h2>
+        <div class="grid gap-4 md:grid-cols-4">
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">5% → 65%</p>
+            <p class="text-xs text-neutral-500">Testabdeckung</p>
+          </div>
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">-70%</p>
+            <p class="text-xs text-neutral-500">Regressionen in Prod</p>
+          </div>
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">-96%</p>
+            <p class="text-xs text-neutral-500">Lead Time (2T → 2h)</p>
+          </div>
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">-73%</p>
+            <p class="text-xs text-neutral-500">Technische Schuld</p>
+          </div>
+        </div>
+        <!-- Visuelle Balken -->
+        <div class="mt-6 rounded-lg border border-neutral-200 p-6">
+          <p class="mb-4 text-xs font-bold uppercase tracking-widest text-secondary-500">Gemessener Fortschritt (6 Monate)</p>
+          <MetricBar label="Testabdeckung" before="5%" after="65%" beforeValue={5} afterValue={65} />
+          <MetricBar label="Regressionen in Produktion" before="10/Monat" after="3/Monat" beforeValue={100} afterValue={30} inverted />
+          <MetricBar label="Lead Time der Lieferung" before="2 Tage" after="2 Stunden" beforeValue={100} afterValue={4} inverted />
+          <MetricBar label="Technische Schuld (SonarQube)" before="45 Tage" after="12 Tage" beforeValue={100} afterValue={27} inverted />
+        </div>
+        <p class="mt-4 text-sm text-neutral-400">Ergebnisse gemessen in einem 6-monatigen technischen Coaching-Mandat (Digitalagentur, 30 Entwickler).</p>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <div class="rounded-lg bg-neutral-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-neutral-700">x4-x5</p>
+            <p class="text-xs text-neutral-500">Produktivität mit SDD</p>
+          </div>
+          <div class="rounded-lg bg-neutral-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-neutral-700">3-5 Tage</p>
+            <p class="text-xs text-neutral-500">Time to First Sprint (statt 3-5 Wochen)</p>
+          </div>
+          <div class="rounded-lg bg-neutral-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-neutral-700">80%+</p>
+            <p class="text-xs text-neutral-500">Testabdeckung Zielwert</p>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Engagement-Formate -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8">
@@ -84,32 +207,64 @@ import CtaBanner from '../../../components/CtaBanner.astro';
         <div class="grid gap-6 md:grid-cols-2">
           <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
             <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Einstiegspunkt</p>
-            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Engineering Health Check</h3>
-            <p class="mb-4 text-sm text-neutral-500">Eine faktenbasierte Diagnose, die dem CTO die Argumente für Investitionen in die Verbesserung liefert.</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Flash-Diagnose</h3>
+            <p class="mb-4 text-sm text-neutral-500">Kartierung des Ökosystems, Reifegrad-Benchmarks, 5-8 konkrete Empfehlungen, bezifferte Roadmap auf 3, 6 und 12 Monate. Der CTO geht mit den Argumenten für eine Investition nach Hause.</p>
             <List type="checklist" listItems={[
-              { listItem: "5-6 Tage" },
-              { listItem: "Lieferobjekt: Bericht + Benchmarks + Empfehlungen" },
-              { listItem: "Ab CHF 9 000" },
+              { listItem: "3-5 Tage (davon 1 Tag vor Ort)" },
+              { listItem: "Lieferobjekt: Bericht + Benchmarks + Roadmap" },
+              { listItem: "CHF 5 500 - 9 000" },
             ]} />
           </div>
           <div class="rounded-lg border border-neutral-200 p-6">
-            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Vollständiger Weg</p>
-            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Delivery-Transformation</h3>
-            <p class="mb-4 text-sm text-neutral-500">Health Check, dann 3-monatige Beschleunigung, Kultur-Workshops, jährliches Offsite.</p>
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Transformation</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Eingebettetes Coaching 12 Wochen</h3>
+            <p class="mb-4 text-sm text-neutral-500">Coaching in echten Sprints. Pair Programming, Code Reviews, SDD, CI/CD, Quality Gates. Messbare DORA-Metriken ab Monat 3.</p>
             <List type="checklist" listItems={[
-              { listItem: "12 Monate" },
-              { listItem: "CHF 40 000 - 50 000 im ersten Jahr" },
-              { listItem: "Messbare DORA-Metriken ab Monat 3" },
+              { listItem: "12 Wochen (3T/Woche dann 2T/Woche)" },
+              { listItem: "CHF 45 000 - 55 000" },
+              { listItem: "Gemessene KPIs: Qualität, Geschwindigkeit, Effizienz" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Punktuell</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Kultur-Workshop</h3>
+            <p class="mb-4 text-sm text-neutral-500">3 halbe Tage zu einem spezifischen Thema (Code Review, Incident Management, Testing, KI für Entwickler). Befragung vorher/nachher.</p>
+            <List type="checklist" listItems={[
+              { listItem: "5-6 Tage Vorbereitung + Durchführung" },
+              { listItem: "CHF 9 500 - 11 000" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Punktuell</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Leadership Offsite</h3>
+            <p class="mb-4 text-sm text-neutral-500">Ganztägige Moderation für das technische Führungsteam. Vision, Prioritäten, Alignment, Aktionsplan.</p>
+            <List type="checklist" listItems={[
+              { listItem: "3 Tage (Vorbereitung + Durchführung)" },
+              { listItem: "CHF 5 500" },
             ]} />
           </div>
         </div>
+        <!-- SDLC Assessment -->
+        <div class="mt-6 rounded-lg border border-neutral-200 p-6">
+          <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Neu</p>
+          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">SDLC Assessment</h3>
+          <p class="mb-4 text-sm text-neutral-500">Vollständige Kartierung Ihres Entwicklungszyklus (Spezifikation, Design, Build, Test, Deploy, Operate). Identifikation von KI-Beschleunigungen pro Schritt. Transformations-Roadmap mit Prioritäten und einem verkaufbaren ersten Schritt.</p>
+          <List type="checklist" listItems={[
+            { listItem: "2-3 Wochen" },
+            { listItem: "Lieferobjekt: SDLC-Roadmap + priorisierte Use Cases" },
+            { listItem: "CHF 15 000 - 25 000" },
+          ]} />
+        </div>
+        <p class="mt-6 text-sm text-neutral-400">
+          Vollständiger Weg (Diagnose + 12 Wochen Coaching + Workshops + jährliches Offsite): CHF 40 000 - 55 000 im ersten Jahr.
+        </p>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
   <!-- Für wen -->
-  <Section padding="both" classes="bg-neutral-50">
+  <Section padding="both">
     <Row>
       <Col span="2" />
       <Col span="8">
@@ -117,19 +272,19 @@ import CtaBanner from '../../../components/CtaBanner.astro';
         <div class="grid gap-6 md:grid-cols-2">
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">CTO / VP Engineering</h3>
-            <p class="text-sm text-neutral-500">Die wissen, dass ihr Team besser kann, aber die konkreten Hebel nicht identifizieren können.</p>
+            <p class="text-sm text-neutral-500">Die wissen, dass ihr Team besser kann, aber die konkreten Hebel nicht identifizieren können. Bedarf an einer faktenbasierten Diagnose und Coaching in echten Sprints.</p>
           </div>
           <div>
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Head of IT / CIO</h3>
-            <p class="text-sm text-neutral-500">Die mit wiederkehrenden Lieferproblemen konfrontiert sind und einen objektiven externen Blick suchen.</p>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Teams, die KI einführen</h3>
+            <p class="text-sm text-neutral-500">Die Copilot oder ChatGPT auf eigene Faust nutzen und eine gemeinsame Methode (SDD) brauchen, damit KI die Delivery tatsächlich beschleunigt.</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Scale-ups im Wachstum</h3>
-            <p class="text-sm text-neutral-500">Deren handwerkliche Prozesse bei Skalierung nicht mehr tragen und die ihr Engineering professionalisieren müssen.</p>
+            <p class="text-sm text-neutral-500">Deren handwerkliche Prozesse bei Skalierung nicht mehr tragen und die ihr Engineering professionalisieren müssen, ohne an Agilität zu verlieren.</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Post-Akquisition / Fusion</h3>
-            <p class="text-sm text-neutral-500">Die technische Teams aus unterschiedlichen Kulturen zusammenführen müssen.</p>
+            <p class="text-sm text-neutral-500">Die technische Teams aus unterschiedlichen Kulturen zusammenführen und Praktiken sowie Tools harmonisieren müssen.</p>
           </div>
         </div>
       </Col>

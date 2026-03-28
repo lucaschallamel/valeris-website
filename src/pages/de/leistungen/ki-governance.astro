@@ -38,9 +38,9 @@ import CtaBanner from '../../../components/CtaBanner.astro';
       <Col span="8">
         <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Das Problem, das Sie kennen</h2>
         <div class="space-y-4 text-neutral-600">
-          <p>Ihr Verwaltungsrat fordert eine KI-Strategie. Ihre Teams experimentieren ohne Rahmen. Die Regulierungsbehörden bewegen sich schneller als Ihre Governance.</p>
-          <p>Sie haben die beeindruckenden Demos gesehen. Sie haben ein oder zwei POCs gestartet. Aber zwischen Experimentierung und Produktivbetrieb klafft eine Lücke, die niemand in der Organisation zu schliessen weiss.</p>
-          <p>Das Risiko besteht nicht darin, KI nicht einzusetzen. Es besteht darin, sie falsch einzusetzen - ohne Governance, ohne Risikobewertung, ohne Abstimmung mit Ihren regulatorischen Verpflichtungen.</p>
+          <p>Ihr Verwaltungsrat fordert eine KI-Strategie. Ihre Teams experimentieren jedes für sich, ohne gemeinsamen Rahmen, ohne Risikobewertung. Die Regulierungsbehörden bewegen sich schneller als Ihre Governance: EU AI Act, Schweizer nDSG, FINMA-Richtlinien.</p>
+          <p>Sie haben die beeindruckenden Demos gesehen. Sie haben ein oder zwei POCs gestartet. Aber zwischen Experimentierung und Produktivbetrieb klafft ein Abgrund. Niemand in der Organisation weiss, wie man Daten für KI klassifiziert, die Risiken eines Modells bewertet oder die tatsächlichen Kosten von LLMs in der Produktion beziffert.</p>
+          <p>Das Risiko besteht nicht darin, KI nicht einzusetzen. Es besteht darin, sie falsch einzusetzen - ohne Governance, ohne Risikopolitik, ohne regulatorische Abstimmung, und mit Kosten, die explodieren, ohne dass jemand sie steuert.</p>
         </div>
       </Col>
       <Col span="2" />
@@ -54,22 +54,141 @@ import CtaBanner from '../../../components/CtaBanner.astro';
       <Col span="8">
         <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Mein Ansatz</h2>
         <p class="mb-8 text-neutral-600">
-          Ich kombiniere tiefgreifende technische Expertise in KI/ML mit konkreter Erfahrung in Unternehmens-Governance. Mein Ansatz orientiert sich an internationalen Standards (ISO 42001, EU AI Act) und bleibt dabei pragmatisch und an den Schweizer Kontext angepasst.
+          Ich kombiniere tiefgreifende technische Expertise in KI/ML mit konkreter Governance-Erfahrung in regulierten Sektoren (Genfer Privatbanken, FINMA, APRA). Mein Ansatz basiert auf einem KI-Reifegradmodell mit 7 Achsen, ausgerichtet auf ISO 42001 und den EU AI Act, und bleibt dabei pragmatisch und an den Schweizer Kontext angepasst.
         </p>
         <div class="grid gap-8 md:grid-cols-2">
-          <Feature icon="heroicons:magnifying-glass" title="Reifegrad-Diagnose" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Gap-Analyse gegenüber ISO 42001, Reifegrad-Scoring, 90-Tage-Aktionsplan.</p>
+          <Feature icon="heroicons:magnifying-glass" title="KI-Reifegrad-Diagnose" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Bewertung auf 7 Achsen: Governance, Cybersicherheit, regulatorische Konformität, Infrastruktur, Datenqualität, Kompetenzen, Applikationsportfolio. Reifegrad-Scoring (Stufen 1-4: Emergent bis Strategisch). 90-Tage-Aktionsplan.</p>
           </Feature>
           <Feature icon="heroicons:document-text" title="Governance-Framework" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Richtlinien, RACI, Risiko-Methodik, Use-Case-Bewertungsmatrix, Workshops.</p>
+            <p class="text-sm text-neutral-500">KI-Richtlinien, RACI-Matrix, Risikomanagement-Methodik, Datenklassifikation, Use-Case-Bewertungsmatrix, Sensibilisierungs-Workshops. Ausgerichtet auf ISO 42001, EU AI Act, nDSG.</p>
           </Feature>
           <Feature icon="heroicons:shield-check" title="ISO 42001-Vorbereitung" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Vollständige AIMS-Dokumentation, internes Audit, Management-Review, Schulung.</p>
+            <p class="text-sm text-neutral-500">Vollständige AIMS-Dokumentation, internes Audit, Management-Review, Schulung der Stakeholder. Begleitung zur Zertifizierung.</p>
           </Feature>
           <Feature icon="heroicons:rocket-launch" title="KI-Aktivierungs-Sprint" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Ein Use Case von der Idee zum funktionsfähigen Piloten, mit integrierter Governance von Anfang an.</p>
+            <p class="text-sm text-neutral-500">Ein konkreter Use Case, von der Idee zum funktionsfähigen Piloten in 8-10 Tagen. Governance von Anfang an integriert: Risikobewertung, Datenklassifikation, Kostenmonitoring (FinOps).</p>
           </Feature>
         </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Souveränität -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">KI-Souveränität: eine bewusste Entscheidung</h2>
+        <p class="mb-6 text-neutral-600">
+          KI-Souveränität bedeutet nicht, die Cloud oder Hyperscaler abzulehnen. Es ist eine <strong>bewusste Entscheidung</strong>: was wo läuft, basierend auf Risiko, Regulierung und strategischen Prioritäten. Manche Workloads eignen sich hervorragend für die Public Cloud. Andere erfordern vollständige Kontrolle. Ich helfe Ihnen, die drei Zonen zu artikulieren:
+        </p>
+        <!-- Souveränitätsspektrum -->
+        <div class="overflow-hidden rounded-lg border border-neutral-200">
+          <!-- Gradient bar -->
+          <div class="flex h-3">
+            <div class="flex-1 bg-blue-300"></div>
+            <div class="flex-1 bg-secondary-400"></div>
+            <div class="flex-1 bg-secondary-700"></div>
+          </div>
+          <div class="grid md:grid-cols-3">
+            <div class="border-b border-r border-neutral-100 p-5 text-center md:border-b-0">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-blue-500">Geschwindigkeit</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Public Cloud</p>
+              <p class="text-sm text-neutral-500">Azure OpenAI, Anthropic, Google. Schnell, integriert, Enterprise-Support. Geeignet für nicht-sensible Workloads.</p>
+            </div>
+            <div class="border-b border-r border-neutral-100 p-5 text-center md:border-b-0">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Gleichgewicht</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Private Cloud</p>
+              <p class="text-sm text-neutral-500">Open-Source-Modelle (Mistral, Llama) auf dedizierter Infrastruktur. Datenkontrolle, planbare Kosten, Portabilität.</p>
+            </div>
+            <div class="p-5 text-center">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-700">Kontrolle</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Souverän on-premise</p>
+              <p class="text-sm text-neutral-500">Lokale LLMs für sensible Daten (Bankgeheimnis, Patientendaten). Maximale Konformität, minimale Latenz.</p>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- FinOps + Datenschutz -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">AI FinOps und Datenschutz</h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <h3 class="mb-3 font-headings text-lg font-bold text-neutral-900">AI FinOps: Kosten beherrschen</h3>
+            <p class="mb-4 text-neutral-600">
+              CFOs stellen die Frage: "Was wird KI im grossen Massstab kosten?" Ohne Steuerung explodieren die LLM-Kosten. Ich helfe Ihnen bei der Einführung von:
+            </p>
+            <ul class="space-y-2 text-sm text-neutral-500">
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Prädiktive Kostenmodellierung pro Use Case</li>
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Monitoring des Token-Verbrauchs</li>
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Modelloptimierung (Right-Sizing, Caching, Routing)</li>
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> ROI-Framework für KI-Investitionen</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-3 font-headings text-lg font-bold text-neutral-900">Datenschutz für KI</h3>
+            <p class="mb-4 text-neutral-600">
+              Sie können Ihre LLMs nicht mit ungeschützten sensiblen Daten füttern. Mein 4-Schritte-Ansatz ermöglicht es, KI sicher mit Daten zu versorgen:
+            </p>
+            <div class="grid grid-cols-4 gap-1">
+              <div class="rounded-l-lg bg-secondary-50 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">1. Discover</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Sensible Daten kartographieren</p>
+              </div>
+              <div class="relative bg-secondary-100 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">2. Tokenise</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Durch sichere Tokens ersetzen</p>
+              </div>
+              <div class="bg-secondary-100 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">3. Augment</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Synthetische Daten generieren</p>
+              </div>
+              <div class="rounded-r-lg bg-secondary-200 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-700">4. Apply</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">RAG sicher speisen</p>
+              </div>
+            </div>
+            <div class="mt-2 flex justify-between px-2">
+              <span class="text-[0.6rem] text-neutral-400">Rohdaten</span>
+              <span class="text-[0.6rem] text-secondary-500">&#x2192; &#x2192; &#x2192;</span>
+              <span class="text-[0.6rem] text-neutral-400">KI sicher gespeist</span>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Zertifizierungen -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Zertifizierungen und Expertise</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <Feature icon="heroicons:shield-check" title="ISO 42001" type="side-icon" align="left">
+            <p class="text-sm text-neutral-500">Lead Auditor in Vorbereitung (Ziel 2026). Internationaler Standard für KI-Managementsysteme.</p>
+          </Feature>
+          <Feature icon="heroicons:building-library" title="TOGAF 10" type="side-icon" align="left">
+            <p class="text-sm text-neutral-500">Zertifizierung in Vorbereitung. Unternehmensarchitektur und Transformationsrahmenwerk.</p>
+          </Feature>
+          <Feature icon="heroicons:cpu-chip" title="Microsoft AI" type="side-icon" align="left">
+            <p class="text-sm text-neutral-500">Zertifizierungen AI-102, AI-900, SC-300 in Vorbereitung. Governance und Sicherheit des Microsoft AI-Ökosystems.</p>
+          </Feature>
+        </div>
+        <p class="mt-6 text-sm text-neutral-400">
+          Ergänzend: MIT AI Programme (2024), Cambridge CTO Programme (2018), AWS Certified (2017). 25+ Jahre Erfahrung in Architektur und IT-Governance in regulierten Sektoren (FINMA, APRA, nDSG, DSGVO).
+        </p>
       </Col>
       <Col span="2" />
     </Row>
@@ -82,29 +201,54 @@ import CtaBanner from '../../../components/CtaBanner.astro';
       <Col span="8">
         <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Engagement-Formate</h2>
         <div class="grid gap-6 md:grid-cols-2">
-          <!-- Entry point -->
+          <!-- Einstiegspunkt -->
           <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
             <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Einstiegspunkt</p>
-            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">KI-Diagnose</h3>
-            <p class="mb-4 text-sm text-neutral-500">Gap-Analyse vs. ISO 42001, Reifegrad-Scoring, 90-Tage-Aktionsplan.</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">KI-Reifegrad-Diagnose</h3>
+            <p class="mb-4 text-sm text-neutral-500">Vollständige Bewertung auf 7 Achsen, Reifegrad-Scoring, Identifikation regulatorischer Lücken, 90-Tage-Aktionsplan. Sie erhalten eine bezifferte Roadmap.</p>
             <List type="checklist" listItems={[
-              { listItem: "5-6 Tage" },
-              { listItem: "Lieferobjekt: Bericht + Roadmap" },
+              { listItem: "5 Tage" },
+              { listItem: "Lieferobjekt: Reifegradreport + Roadmap" },
               { listItem: "Ab CHF 8 500" },
             ]} />
           </div>
-          <!-- Full journey -->
+          <!-- Governance-Framework -->
           <div class="rounded-lg border border-neutral-200 p-6">
-            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Vollständiger Weg</p>
-            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Von der Neugier zur Zertifizierung</h3>
-            <p class="mb-4 text-sm text-neutral-500">Diagnose, dann Aufbau des Frameworks + Aktivierungs-Sprint parallel, dann ISO 42001-Vorbereitung.</p>
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Aufbau</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">KI-Governance-Framework</h3>
+            <p class="mb-4 text-sm text-neutral-500">Richtlinien-Suite, RACI, Risiko-Methodik, Use-Case-Bewertungsmatrix. 2 Sensibilisierungs-Workshops inklusive.</p>
             <List type="checklist" listItems={[
-              { listItem: "6-9 Monate" },
-              { listItem: "CHF 55 000 - 75 000" },
+              { listItem: "10-15 Tage über 2-3 Monate" },
+              { listItem: "CHF 18 000 - 25 000" },
+              { listItem: "Ausgerichtet auf ISO 42001, EU AI Act, nDSG" },
+            ]} />
+          </div>
+          <!-- ISO-Vorbereitung -->
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Zertifizierung</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">ISO 42001-Vorbereitung</h3>
+            <p class="mb-4 text-sm text-neutral-500">Vollständige AIMS-Dokumentation, internes Audit, Management-Review, Schulung. Ziel: bereit für die Zertifizierung.</p>
+            <List type="checklist" listItems={[
+              { listItem: "15-20 Tage über 4-6 Monate" },
+              { listItem: "CHF 28 000 - 40 000" },
               { listItem: "Ziel: ISO 42001-Zertifizierung" },
             ]} />
           </div>
+          <!-- Aktivierungs-Sprint -->
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Aktivierung</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">KI-Aktivierungs-Sprint</h3>
+            <p class="mb-4 text-sm text-neutral-500">Ein konkreter Use Case von der Idee zum funktionsfähigen Piloten, mit integrierter Governance von Anfang an.</p>
+            <List type="checklist" listItems={[
+              { listItem: "8-10 Tage" },
+              { listItem: "CHF 14 000 - 18 000" },
+              { listItem: "Inklusive: Risikobewertung + FinOps" },
+            ]} />
+          </div>
         </div>
+        <p class="mt-6 text-sm text-neutral-400">
+          Gesamtparcours (Diagnose + Framework + Aktivierung + Zertifizierung): CHF 55 000 - 75 000 über 6-9 Monate.
+        </p>
       </Col>
       <Col span="2" />
     </Row>
@@ -119,20 +263,35 @@ import CtaBanner from '../../../components/CtaBanner.astro';
         <div class="grid gap-6 md:grid-cols-2">
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Technische Direktoren (CTO/CIO)</h3>
-            <p class="text-sm text-neutral-500">Die die KI-Adoption über POCs hinaus strukturieren und dem Verwaltungsrat eine glaubwürdige Strategie vorlegen müssen.</p>
+            <p class="text-sm text-neutral-500">Die die KI-Adoption über POCs hinaus strukturieren und dem Verwaltungsrat eine glaubwürdige Strategie vorlegen müssen. Bedarf an einem Reifegradmodell und einer Roadmap.</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Compliance-Verantwortliche / CISO</h3>
-            <p class="text-sm text-neutral-500">Die KI-Risiken bewerten und einen Governance-Rahmen aufbauen müssen, bevor der Regulator es verlangt.</p>
+            <p class="text-sm text-neutral-500">Die KI-Risiken bewerten, Daten klassifizieren und einen Governance-Rahmen aufbauen müssen, bevor der Regulator es verlangt (FINMA, nDSG, EU AI Act).</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">CEO von KMU (50-500 Mitarbeitende)</h3>
-            <p class="text-sm text-neutral-500">Die sehen, wie KI ihre Branche transformiert, und strukturiert statt reaktiv handeln wollen.</p>
+            <p class="text-sm text-neutral-500">Die sehen, wie KI ihre Branche transformiert, und strukturiert handeln wollen. Bedarf an einem Rahmen, ohne ein spezialisiertes Team einzustellen.</p>
           </div>
           <div>
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Innovationsverantwortliche</h3>
-            <p class="text-sm text-neutral-500">Die einen Rahmen brauchen, um KI-Use-Cases rigoros zu bewerten, zu priorisieren und zu starten.</p>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Regulierte Sektoren</h3>
+            <p class="text-sm text-neutral-500">Banken, Versicherungen, Gesundheitswesen, öffentliche Verwaltung. Dort, wo Konformität nicht optional ist und jeder KI-Einsatz dokumentiert und rückverfolgbar sein muss.</p>
           </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Felderfahrung -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Felderfahrung</h2>
+        <div class="space-y-4 text-neutral-600">
+          <p>Ich habe KI-Governance-Frameworks für Schweizer Finanzinstitute unter FINMA-Aufsicht konzipiert und implementiert. Ich habe die technologische Integration einer Akquisition mit CHF 160 Milliarden verwalteten Vermögen gesteuert, einen Strategischen Datenschutzrat mit dem CISO und dem DPO gegründet und Anonymisierungslösungen auf Core-Banking-Systemen implementiert.</p>
+          <p>Ich habe ausserdem ein KI-Reifegradmodell mit 7 Achsen für eine Genfer Privatbank konzipiert, das Governance, Cybersicherheit, regulatorische Konformität, Infrastruktur, Datenqualität, Kompetenzen und Applikationsportfolio abdeckt.</p>
         </div>
       </Col>
       <Col span="2" />
