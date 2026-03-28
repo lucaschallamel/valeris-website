@@ -10,6 +10,7 @@ const i18n = t('de');
 ---
 
 <BaseLayout title={`${i18n.site.title} - ${i18n.hero.headline}`}>
+  <!-- Hero -->
   <Section id="hero" padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
@@ -28,6 +29,7 @@ const i18n = t('de');
     </Row>
   </Section>
 
+  <!-- Services -->
   <Section id="services" padding="both">
     <Row>
       <Col span="12" align="center" classes="mb-12">
@@ -37,36 +39,62 @@ const i18n = t('de');
     <Row>
       <Col span="4">
         <div class="rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-lg">
-          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">{i18n.services.aiGovernance.name}</h3>
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary-50">
+            <svg class="h-6 w-6 text-secondary-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+          </div>
+          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">
+            {i18n.services.aiGovernance.name}
+          </h3>
           <p class="mb-4 text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
-          <Button type="link" style="primary" variation="link" link="/de/leistungen/ki-governance/">{i18n.cta.secondary} &rarr;</Button>
+          <Button type="link" style="primary" variation="link" link="/de/leistungen/ki-governance/">
+            {i18n.cta.secondary} &rarr;
+          </Button>
         </div>
       </Col>
       <Col span="4">
         <div class="rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-lg">
-          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">{i18n.services.teamPerformance.name}</h3>
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary-50">
+            <svg class="h-6 w-6 text-secondary-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+          </div>
+          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">
+            {i18n.services.teamPerformance.name}
+          </h3>
           <p class="mb-4 text-neutral-500">{i18n.services.teamPerformance.tagline}</p>
-          <Button type="link" style="primary" variation="link" link="/de/leistungen/team-performance/">{i18n.cta.secondary} &rarr;</Button>
+          <Button type="link" style="primary" variation="link" link="/de/leistungen/team-performance/">
+            {i18n.cta.secondary} &rarr;
+          </Button>
         </div>
       </Col>
       <Col span="4">
         <div class="rounded-lg border border-neutral-200 p-6 transition-shadow hover:shadow-lg">
-          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">{i18n.services.executiveCoaching.name}</h3>
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary-50">
+            <svg class="h-6 w-6 text-secondary-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" /></svg>
+          </div>
+          <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">
+            {i18n.services.executiveCoaching.name}
+          </h3>
           <p class="mb-4 text-neutral-500">{i18n.services.executiveCoaching.tagline}</p>
-          <Button type="link" style="primary" variation="link" link="/de/leistungen/executive-coaching/">{i18n.cta.secondary} &rarr;</Button>
+          <Button type="link" style="primary" variation="link" link="/de/leistungen/executive-coaching/">
+            {i18n.cta.secondary} &rarr;
+          </Button>
         </div>
       </Col>
     </Row>
   </Section>
 
+  <!-- CTA -->
   <Section id="cta" padding="both">
     <Row>
       <Col span="1" />
       <Col span="10">
         <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
           <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
-          <p class="mx-auto mb-6 max-w-xl text-secondary-100">{i18n.contact.expectation}</p>
-          <Button type="link" size="lg" style="white" variation="outline" link="/de/kontakt/">{i18n.cta.primary}</Button>
+          <p class="mx-auto mb-6 max-w-xl text-secondary-100">
+            Ein 30-minütiges Gespräch, kein Verkaufspitch.
+          </p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/de/kontakt/">
+            {i18n.cta.primary}
+          </Button>
         </div>
       </Col>
       <Col span="1" />

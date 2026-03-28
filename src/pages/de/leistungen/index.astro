@@ -26,6 +26,33 @@ const i18n = t('de');
       </Col>
       <Col span="2" />
     </Row>
+    <!-- Altitude diagram -->
+    <Row>
+      <Col span="3" />
+      <Col span="6" align="center" classes="mt-8">
+        <div class="flex flex-col items-center gap-1">
+          <div class="flex w-48 items-center justify-center rounded-t-lg bg-secondary-700 px-4 py-3 text-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-100">Governance</p>
+              <p class="text-sm text-white">Das Was</p>
+            </div>
+          </div>
+          <div class="flex w-64 items-center justify-center bg-secondary-500 px-4 py-3 text-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-100">Umsetzung</p>
+              <p class="text-sm text-white">Das Wie</p>
+            </div>
+          </div>
+          <div class="flex w-80 items-center justify-center rounded-b-lg bg-secondary-300 px-4 py-3 text-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-800">Leadership</p>
+              <p class="text-sm text-secondary-700">Das Wer</p>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="3" />
+    </Row>
   </Section>
 
   <!-- Three Pillars -->
@@ -48,7 +75,7 @@ const i18n = t('de');
           {i18n.services.aiGovernance.tagline}
         </p>
         <p class="mb-6 text-neutral-600">
-          Was sollen wir mit KI tun? Reifegrad-Diagnose, Governance-Framework, Richtlinien, Use-Case-Bewertung, ISO 42001-Vorbereitung.
+          Was sollen wir mit KI tun? Reifegrad-Diagnose auf 7 Achsen, Governance-Framework gemäss ISO 42001, KI-Souveränitätsstrategie, Aktivierungs-Sprint mit integrierter Governance.
         </p>
         <p class="mb-2 text-sm text-neutral-400">Ab CHF 8 500</p>
         <Button type="link" style="primary" variation="link" link="/de/leistungen/ki-governance/">
@@ -84,7 +111,7 @@ const i18n = t('de');
           {i18n.services.teamPerformance.tagline}
         </p>
         <p class="mb-6 text-neutral-600">
-          Wie liefern wir wirklich? Health Check, DORA-Metriken, Delivery-Beschleunigung, Kultur-Workshops, technische Leadership-Offsites.
+          Wie liefern wir wirklich? Flash-Diagnose, eingebettetes Coach & Craft Coaching auf echten Sprints, Specification-Driven Development (SDD), messbare DORA-Metriken ab Monat 3.
         </p>
         <p class="mb-2 text-sm text-neutral-400">Ab CHF 5 500</p>
         <Button type="link" style="primary" variation="link" link="/de/leistungen/team-performance/">
@@ -106,7 +133,7 @@ const i18n = t('de');
           {i18n.services.executiveCoaching.tagline}
         </p>
         <p class="mb-6 text-neutral-600">
-          Wer hält alles zusammen? Individuelles Coaching, 6-Monats-Programm, 100-Tage-Beschleuniger, Alignment des technischen Führungsteams.
+          Wer hält alles zusammen? Ausgebildet im High-Performance-Coaching (Vantaset, 9 Monate), dann Coach von 100+ Mitarbeitenden. Clarity Session, 6-Monats-Programm, 100-Tage-Beschleuniger.
         </p>
         <p class="mb-2 text-sm text-neutral-400">Ab CHF 1 500</p>
         <Button type="link" style="primary" variation="link" link="/de/leistungen/executive-coaching/">
@@ -132,7 +159,7 @@ const i18n = t('de');
         <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
           <h2 class="mb-6 font-headings text-2xl font-bold text-white">Ein Kunde, drei Zugänge</h2>
           <p class="mx-auto mb-8 max-w-xl text-secondary-100">
-            Die drei Angebote sind miteinander verbunden. Eine KI-Diagnose zeigt, dass die Teams nicht liefern können. Ein Team-Assessment zeigt, dass der CTO der Engpass ist. Das CTO-Coaching zeigt, dass der Verwaltungsrat eine KI-Strategie will. Jede Tür führt zu den anderen.
+            Die drei Angebote sind miteinander verbunden. Eine KI-Diagnose zeigt, dass das Team die identifizierten Use Cases nicht umsetzen kann. Das Team-Coaching zeigt, dass der CTO der Engpass ist. Das CTO-Coaching zeigt, dass der Verwaltungsrat eine strukturierte KI-Strategie erwartet. Jede Tür führt zu den anderen - und der ideale Kunde berührt alle drei über 12-18 Monate.
           </p>
           <Button type="link" size="lg" style="white" variation="outline" link="/de/kontakt/">
             {i18n.cta.primary}

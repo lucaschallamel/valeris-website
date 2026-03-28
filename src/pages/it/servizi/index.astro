@@ -3,18 +3,139 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Section from '../../../components/ui/Section.astro';
 import Row from '../../../components/ui/Row.astro';
 import Col from '../../../components/ui/Col.astro';
+import Button from '../../../components/ui/Button.astro';
+import Feature from '../../../components/ui/Feature.astro';
 import { t } from '../../../i18n';
 
 const i18n = t('it');
 ---
 
 <BaseLayout title={`${i18n.nav.services} - ${i18n.site.title}`}>
-  <Section padding="both">
+
+  <!-- Hero -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
-      <Col span="12">
-        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.nav.services}</h1>
-        <p class="text-neutral-500">Pagina servizi - contenuto in arrivo.</p>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
+          Tre altitudini, un solo obiettivo.
+        </h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
+          La trasformazione tecnologica fallisce raramente per mancanza di strategia. Fallisce quando l'esecuzione è disconnessa dalla leadership. Le mie tre offerte affrontano questo problema a ogni livello.
+        </p>
       </Col>
+      <Col span="2" />
+    </Row>
+    <Row>
+      <Col span="3" />
+      <Col span="6" align="center" classes="mt-8">
+        <div class="flex flex-col items-center gap-1">
+          <div class="flex w-48 items-center justify-center rounded-t-lg bg-secondary-700 px-4 py-3 text-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-100">Governance</p>
+              <p class="text-sm text-white">Il cosa</p>
+            </div>
+          </div>
+          <div class="flex w-64 items-center justify-center bg-secondary-500 px-4 py-3 text-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-100">Esecuzione</p>
+              <p class="text-sm text-white">Il come</p>
+            </div>
+          </div>
+          <div class="flex w-80 items-center justify-center rounded-b-lg bg-secondary-300 px-4 py-3 text-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-800">Leadership</p>
+              <p class="text-sm text-secondary-700">Il chi</p>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="3" />
     </Row>
   </Section>
+
+  <Section padding="both">
+    <Row>
+      <Col span="12" align="center" classes="mb-12">
+        <p class="text-sm font-bold uppercase tracking-widest text-secondary-500">Governance / Esecuzione / Leadership</p>
+      </Col>
+    </Row>
+
+    <Row classes="mb-16">
+      <Col span="1" />
+      <Col span="5">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Il cosa</p>
+        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">{i18n.services.aiGovernance.name}</h2>
+        <p class="mb-4 text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
+        <p class="mb-6 text-neutral-600">Cosa dobbiamo fare con l'IA? Diagnosi di maturità su 7 assi, quadro di governance allineato ISO 42001, strategia di sovranità IA, sprint di attivazione con governance integrata.</p>
+        <p class="mb-2 text-sm text-neutral-400">A partire da CHF 8 500</p>
+        <Button type="link" style="primary" variation="link" link="/it/servizi/governance-ia/">Scoprite questa offerta &rarr;</Button>
+      </Col>
+      <Col span="5">
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
+          <Feature icon="heroicons:shield-check" title="Per chi?" align="left">
+            <p class="text-sm text-neutral-500">CTO, CISO, responsabili conformità, CEO di PMI che cercano di strutturare la loro adozione dell'IA.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+
+    <Row classes="mb-16">
+      <Col span="1" />
+      <Col span="5">
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
+          <Feature icon="heroicons:users" title="Per chi?" align="left">
+            <p class="text-sm text-neutral-500">CTO, VP Engineering, Head of IT confrontati con problemi di delivery, qualità o retention dei talenti.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="5">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Il come</p>
+        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">{i18n.services.teamPerformance.name}</h2>
+        <p class="mb-4 text-neutral-500">{i18n.services.teamPerformance.tagline}</p>
+        <p class="mb-6 text-neutral-600">Come consegniamo realmente? Diagnosi flash, coaching integrato Coach & Craft su sprint reali, Specification-Driven Development (SDD), metriche DORA misurabili dal mese 3.</p>
+        <p class="mb-2 text-sm text-neutral-400">A partire da CHF 5 500</p>
+        <Button type="link" style="primary" variation="link" link="/it/servizi/performance-team/">Scoprite questa offerta &rarr;</Button>
+      </Col>
+      <Col span="1" />
+    </Row>
+
+    <Row>
+      <Col span="1" />
+      <Col span="5">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Il chi</p>
+        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">{i18n.services.executiveCoaching.name}</h2>
+        <p class="mb-4 text-neutral-500">{i18n.services.executiveCoaching.tagline}</p>
+        <p class="mb-6 text-neutral-600">Chi tiene tutto insieme? Formato al coaching di alta performance (Vantaset, 9 mesi), poi coach di 100+ collaboratori. Sessione di chiarezza, programma 6 mesi, acceleratore 100 giorni.</p>
+        <p class="mb-2 text-sm text-neutral-400">A partire da CHF 1 500</p>
+        <Button type="link" style="primary" variation="link" link="/it/servizi/coaching-dirigenti/">Scoprite questa offerta &rarr;</Button>
+      </Col>
+      <Col span="5">
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
+          <Feature icon="heroicons:academic-cap" title="Per chi?" align="left">
+            <p class="text-sm text-neutral-500">Dirigenti tecnici in carica o in transizione, DRH alla ricerca di un coach per un leader tecnico, CEO che vogliono allineare la loro direzione tecnica.</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
+  <Section padding="both">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
+          <h2 class="mb-6 font-headings text-2xl font-bold text-white">Un cliente, tre porte d'ingresso</h2>
+          <p class="mx-auto mb-8 max-w-xl text-secondary-100">
+            Le tre offerte sono interconnesse. Una diagnosi IA rivela che il team non riesce a consegnare i casi d'uso identificati. Il coaching del team rivela che il CTO è il collo di bottiglia. Il coaching del CTO rivela che il consiglio di amministrazione si aspetta una strategia IA strutturata. Ogni porta d'ingresso conduce alle altre - e il cliente ideale tocca tutte e tre su 12-18 mesi.
+          </p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/it/contatto/">{i18n.cta.primary}</Button>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
 </BaseLayout>

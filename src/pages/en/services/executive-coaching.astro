@@ -6,6 +6,7 @@ import Col from '../../../components/ui/Col.astro';
 import Button from '../../../components/ui/Button.astro';
 import Feature from '../../../components/ui/Feature.astro';
 import List from '../../../components/ui/List.astro';
+import MetricBar from '../../../components/ui/MetricBar.astro';
 import { t } from '../../../i18n';
 
 const i18n = t('en');
@@ -13,60 +14,51 @@ const i18n = t('en');
 
 <BaseLayout title={`${i18n.services.executiveCoaching.name} - ${i18n.site.title}`}>
 
-  <!-- Hero -->
   <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8" align="center">
         <p class="mb-4 text-sm font-bold uppercase tracking-widest text-secondary-500">Leadership</p>
-        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
-          {i18n.services.executiveCoaching.name}
-        </h1>
-        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
-          {i18n.services.executiveCoaching.tagline}
-        </p>
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">{i18n.services.executiveCoaching.name}</h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">{i18n.services.executiveCoaching.tagline}</p>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
-  <!-- The problem -->
   <Section padding="both">
     <Row>
       <Col span="2" />
       <Col span="8">
-        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">The problem you face</h2>
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">The problem you are facing</h2>
         <div class="space-y-4 text-neutral-600">
-          <p>You went from "best engineer" to "technical leader". The role changed, but nobody gave you the new operating manual.</p>
-          <p>You manage budgets, stakeholders, political tensions. You make decisions that affect dozens or hundreds of people. And you often do it alone, because there is nobody else in the organisation who truly understands your position.</p>
-          <p>Generalist coaches do not understand technology. Technical consultants do not understand leadership. You need someone who has done both.</p>
+          <p>You have moved from "best engineer" to "technical leader". The role has changed, but nobody gave you the new playbook. You manage budgets, stakeholders, political tensions. The board asks for an AI strategy and you do not know where to start.</p>
+          <p>You lead dozens or hundreds of people, but your team works in silos. Engagement is low. The best are leaving. You feel the potential is there, but you cannot unlock it.</p>
+          <p>Generalist coaches do not understand technology. Technical consultants do not understand leadership. You need someone who has lived both sides: coached for 9 months in a high-performance programme, then coach of 100+ staff for 4 years.</p>
         </div>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
-  <!-- The approach -->
   <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8">
         <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">My approach</h2>
-        <p class="mb-8 text-neutral-600">
-          I am not a coach who has read books about technology. I am a technical leader who learned coaching. You will feel the difference from the very first session.
-        </p>
+        <p class="mb-8 text-neutral-600">I am not a coach who read books about technology. I am a technical leader who was trained in high-performance coaching (Vantaset programme, 9 intensive months), then deployed those methods across 15 tech leads and 100+ staff at NAB/UBank in Sydney. The difference is felt from the first session.</p>
         <div class="grid gap-8 md:grid-cols-2">
           <Feature icon="heroicons:sparkles" title="Clarity session" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">A 2-hour deep-dive on a specific challenge. Problem framing, options, action plan.</p>
+            <p class="text-sm text-neutral-500">A 2-hour deep-dive on a specific challenge: AI strategy, team reorganisation, onboarding, board conflict. Problem framing, options, concrete action plan.</p>
           </Feature>
           <Feature icon="heroicons:calendar-days" title="Coaching programme" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">6 months, bi-weekly 90-minute sessions, 360 assessment, personalised development plan.</p>
+            <p class="text-sm text-neutral-500">6 months, bi-monthly 90-min sessions. 360 assessment, personalised development plan. Work on self-awareness, feedback, leadership and coaching skills.</p>
           </Feature>
           <Feature icon="heroicons:fire" title="100-day accelerator" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Intensive coaching for a leader stepping into a new role. Weekly then bi-weekly.</p>
+            <p class="text-sm text-neutral-500">Intensive coaching for a leader starting a new role. Weekly then bi-monthly sessions. The first 100 days define the trajectory: best to get them right.</p>
           </Feature>
-          <Feature icon="heroicons:user-group" title="Team alignment" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Group coaching for 4-6 technical leaders. 4 months to create an aligned leadership team.</p>
+          <Feature icon="heroicons:user-group" title="Leadership team alignment" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Group coaching for 4-6 technical leaders. 4 months to move from silos to an aligned leadership team, with rituals, feedback, and shared vision.</p>
           </Feature>
         </div>
       </Col>
@@ -74,8 +66,100 @@ const i18n = t('en');
     </Row>
   </Section>
 
-  <!-- Packages -->
   <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">The strategic questions of the AI era</h2>
+        <p class="mb-6 text-neutral-600"><strong>AI is not a product. It is infrastructure.</strong> Like electricity or the printing press, it becomes a fundamental capability that transforms work. A CTO cannot "sell an AI project" to the board - they must explain a structural transformation. I support you on the questions that matter:</p>
+        <div class="space-y-4">
+          <div class="mb-6 flex flex-col items-center gap-2 md:flex-row md:gap-4">
+            <div class="flex-1 rounded-lg border border-neutral-200 bg-neutral-50 p-4 text-center">
+              <p class="text-xs font-bold uppercase tracking-widest text-neutral-400">Before</p>
+              <p class="mt-1 font-headings text-lg font-bold text-neutral-700">Orchestrator</p>
+              <p class="mt-1 text-xs text-neutral-500">Managing teams that code</p>
+            </div>
+            <div class="text-2xl text-secondary-500">&#x2192;</div>
+            <div class="flex-1 rounded-lg border-2 border-secondary-200 bg-secondary-50 p-4 text-center">
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-500">Now</p>
+              <p class="mt-1 font-headings text-lg font-bold text-secondary-700">Systems Engineer</p>
+              <p class="mt-1 text-xs text-neutral-500">Designing systems in which AI agents operate</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="shrink-0 text-2xl text-secondary-500">&bull;</div>
+            <div>
+              <h3 class="mb-1 font-headings text-lg font-bold text-neutral-900">The evolution of the human role</h3>
+              <p class="text-neutral-500">The CIO consensus is clear: the key skill is no longer coding, but designing the systems in which AI agents operate. Architecture, specification, test design: that is where the value lies.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="shrink-0 text-2xl text-secondary-500">&bull;</div>
+            <div>
+              <h3 class="mb-1 font-headings text-lg font-bold text-neutral-900">Reorganising teams</h3>
+              <p class="text-neutral-500">Roles in an AI-augmented team change radically. The Product Owner focuses on vision and ROI while AI agents draft user stories. The Tech Lead shifts from "doing" to "supervising" and "validating". The Scrum Master steers agents, not humans. How do you structure this transition?</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="shrink-0 text-2xl text-secondary-500">&bull;</div>
+            <div>
+              <h3 class="mb-1 font-headings text-lg font-bold text-neutral-900">The strategic window</h3>
+              <p class="text-neutral-500">There is a 12-24 month window during which organisations make their transition to AI. After that, they become autonomous. The time to invest in transformation is now - not in two years when competitors will have already moved.</p>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Documented results</h2>
+        <p class="mb-6 text-neutral-600">At NAB/UBank (Sydney), I was first coached for 9 months in the Vantaset Performance-OS programme, then deployed the programme across my 100+ staff and 15 tech leads for 4 years. Results are documented in an official case study:</p>
+        <div class="grid gap-4 md:grid-cols-4">
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">54% → 80%</p>
+            <p class="text-xs text-neutral-500">team engagement</p>
+          </div>
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">x4</p>
+            <p class="text-xs text-neutral-500">productivity</p>
+          </div>
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">-60%</p>
+            <p class="text-xs text-neutral-500">turnover (25% → 10%)</p>
+          </div>
+          <div class="rounded-lg bg-secondary-50 p-4 text-center">
+            <p class="font-headings text-2xl font-black text-secondary-600">-75%</p>
+            <p class="text-xs text-neutral-500">time to market</p>
+          </div>
+        </div>
+        <div class="mt-6 rounded-lg border border-neutral-200 p-6">
+          <p class="mb-4 text-xs font-bold uppercase tracking-widest text-secondary-500">Progression over 4 years</p>
+          <MetricBar label="Team engagement" before="54%" after="80%+" beforeValue={54} afterValue={82} />
+          <MetricBar label="Productivity" before="Baseline" after="x4" beforeValue={25} afterValue={100} />
+          <MetricBar label="Turnover" before="25%/yr" after="<10%/yr" beforeValue={100} afterValue={40} inverted />
+          <MetricBar label="Time to market" before="6 months" after="6 weeks" beforeValue={100} afterValue={25} inverted />
+        </div>
+        <div class="mt-6 space-y-4">
+          <blockquote class="border-l-2 border-secondary-200 pl-4 text-sm italic text-neutral-500">
+            "It allowed us to not only galvanise our thinking as a leadership team, but shift our thinking from 'we can't do it' to 'a clear pathway to success'."
+            <span class="mt-1 block not-italic font-medium text-neutral-600">Glen Aiton, Chief Operating Officer, UBank</span>
+          </blockquote>
+          <blockquote class="border-l-2 border-secondary-200 pl-4 text-sm italic text-neutral-500">
+            "The number one thing for me is how we've lifted the performance of every individual in the business. From a value for money perspective, it's been more than excellent."
+            <span class="mt-1 block not-italic font-medium text-neutral-600">Lee Hatton, CEO, UBank</span>
+          </blockquote>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8">
@@ -84,7 +168,7 @@ const i18n = t('en');
           <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
             <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Entry point</p>
             <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Clarity session</h3>
-            <p class="mb-4 text-sm text-neutral-500">A 2-hour deep-dive. No procurement needed. You leave with an action plan.</p>
+            <p class="mb-4 text-sm text-neutral-500">A 2-hour deep-dive on a specific challenge. No procurement needed. You leave with a summary and action plan.</p>
             <List type="checklist" listItems={[
               { listItem: "2 hours" },
               { listItem: "Deliverable: summary + action plan" },
@@ -92,43 +176,62 @@ const i18n = t('en');
             ]} />
           </div>
           <div class="rounded-lg border border-neutral-200 p-6">
-            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Full journey</p>
-            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Leadership transformation</h3>
-            <p class="mb-4 text-sm text-neutral-500">Clarity session, then 6-month coaching programme, potentially expanded to the leadership team.</p>
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Programme</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">6-month executive coaching</h3>
+            <p class="mb-4 text-sm text-neutral-500">Bi-monthly 90-min sessions, 360 assessment, personalised development plan. Self-awareness, feedback, coaching skills.</p>
             <List type="checklist" listItems={[
-              { listItem: "6-12 months" },
-              { listItem: "CHF 40,000 - 50,000" },
+              { listItem: "6 months, 12-14 sessions" },
+              { listItem: "CHF 18,000 - 22,000" },
               { listItem: "360 assessment + development plan" },
             ]} />
           </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Intensive</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">100-day accelerator</h3>
+            <p class="mb-4 text-sm text-neutral-500">For a leader starting a new role. Weekly then bi-monthly sessions. Structure the first 100 days to lay the foundations.</p>
+            <List type="checklist" listItems={[
+              { listItem: "100 days, 10-12 sessions" },
+              { listItem: "CHF 16,000 - 19,000" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Group</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Leadership team alignment</h3>
+            <p class="mb-4 text-sm text-neutral-500">Group coaching for 4-6 technical leaders. 4 months to create an aligned, high-performing leadership team.</p>
+            <List type="checklist" listItems={[
+              { listItem: "4 months, bi-monthly sessions" },
+              { listItem: "CHF 22,000 - 28,000" },
+              { listItem: "4-6 participants" },
+            ]} />
+          </div>
         </div>
+        <p class="mt-6 text-sm text-neutral-400">Full journey (clarity session + 6-month programme + potentially team alignment): CHF 40,000 - 50,000.</p>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
-  <!-- Who this is for -->
-  <Section padding="both" classes="bg-neutral-50">
+  <Section padding="both">
     <Row>
       <Col span="2" />
       <Col span="8">
-        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Who this is for</h2>
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Who is it for</h2>
         <div class="grid gap-6 md:grid-cols-2">
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">CTO / VP Engineering in role</h3>
-            <p class="text-sm text-neutral-500">Who want to reach the next level in their role and grow their strategic impact.</p>
+            <p class="text-sm text-neutral-500">Who want to reach the next level: develop their strategic impact, learn to coach their own tech leads, build a high-performance culture.</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Leaders in transition</h3>
-            <p class="text-sm text-neutral-500">New CTOs, internal promotions, scope changes - the first 100 days are critical.</p>
+            <p class="text-sm text-neutral-500">New CTOs, internal promotions, scope changes. The first 100 days are critical: best to have a sparring partner who has lived the same thing.</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">HR / Talent</h3>
-            <p class="text-sm text-neutral-500">Looking for a specialised coach for a technical leader and wanting a structured programme.</p>
+            <p class="text-sm text-neutral-500">Looking for a specialised coach for a technical leader. Not a generalist coach who does not understand the job, but someone who speaks both languages.</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">SME CEOs</h3>
-            <p class="text-sm text-neutral-500">Who want to align their technical leadership team and create a shared execution culture.</p>
+            <p class="text-sm text-neutral-500">Who want to align their technical leadership team, break silos, and create a shared execution culture. Engagement, productivity, retention: everything is connected.</p>
           </div>
         </div>
       </Col>
@@ -136,19 +239,14 @@ const i18n = t('en');
     </Row>
   </Section>
 
-  <!-- CTA -->
-  <Section padding="both">
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="1" />
       <Col span="10">
         <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
           <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
-          <p class="mx-auto mb-6 max-w-xl text-secondary-100">
-            A 30-minute conversation, not a sales pitch.
-          </p>
-          <Button type="link" size="lg" style="white" variation="outline" link="/en/contact/">
-            {i18n.cta.primary}
-          </Button>
+          <p class="mx-auto mb-6 max-w-xl text-secondary-100">A 30-minute conversation to understand your situation and see if I can help.</p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/en/contact/">{i18n.cta.primary}</Button>
         </div>
       </Col>
       <Col span="1" />

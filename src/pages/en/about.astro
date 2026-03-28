@@ -5,7 +5,13 @@ import Row from '../../components/ui/Row.astro';
 import Col from '../../components/ui/Col.astro';
 import Button from '../../components/ui/Button.astro';
 import Feature from '../../components/ui/Feature.astro';
+import { Image } from 'astro:assets';
 import { t } from '../../i18n';
+import portrait from '../../assets/lucas-challamel.jpg';
+import logoNab from '../../assets/logos/clients/nab.png';
+import logoUbank from '../../assets/logos/clients/ubank.jpg';
+import logoInfostrates from '../../assets/logos/clients/infostrates.jpg';
+import logoProcess from '../../assets/logos/clients/process-creative.png';
 
 const i18n = t('en');
 ---
@@ -21,7 +27,7 @@ const i18n = t('en');
           Lucas Challamel
         </h1>
         <p class="mx-auto max-w-2xl text-lg text-neutral-500">
-          Founder, Valeris Coaching. Technical director, solution architect, executive coach. Based in Geneva.
+          Founder, Valeris Coaching. 25 years of technology leadership, from startup to international consulting. Trilingual and tricultural: France, Australia, Switzerland. Based in Geneva.
         </p>
       </Col>
       <Col span="2" />
@@ -33,26 +39,134 @@ const i18n = t('en');
     <Row>
       <Col span="1" />
       <Col span="5">
-        <!-- TODO: Replace with professional photo -->
-        <div class="flex h-80 items-center justify-center rounded-lg bg-neutral-100">
-          <p class="text-neutral-400">[Professional photo]</p>
+        <div class="mx-auto max-w-[80%]">
+          <Image
+            src={portrait}
+            alt="Lucas Challamel"
+            class="rounded-lg object-cover grayscale"
+            width={600}
+            quality={85}
+          />
         </div>
       </Col>
       <Col span="5">
         <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">The journey</h2>
         <div class="space-y-4 text-neutral-600">
           <p>
-            Over 15 years in technology leadership, from France to Australia then Switzerland. I have built, led and governed technical teams at every scale - from startup to international consulting firm.
+            25 years in software development, architecture and digital transformation. From Grenoble to Marseille, then Sydney, and now Geneva. I have built, led and governed technical teams at every scale.
           </p>
           <p>
-            As Technical Director at Talan SA, I led digital transformation programmes for Swiss companies across finance, pharma and the public sector. I designed solution architectures, established AI governance frameworks, and coached technical leadership teams.
+            <strong>General Manager Technology at NAB/UBank</strong> in Sydney, I led 100+ professionals, 12 agile squads, with a budget of AUD 30M+. I launched the first Australian banking chatbot and steered the integration of the real-time payments network (AUD 15M programme). Recognised as <strong>top 1% performer</strong> among 34,000 employees.
           </p>
           <p>
-            What sets me apart: I have held every role I now advise on. I did not read a book about being a CTO - I lived through the sleepless nights, the impossible decisions and the successful transformations.
+            Back in Europe, <strong>Director of Engineering at Azqore</strong> (Indosuez Wealth Management), then <strong>CTO Advisory at Union Bancaire Privée</strong> where I steered the technology integration of a CHF 160 billion AUM acquisition. Most recently, <strong>Technical Director and Head of IT Governance at Talan SA</strong> for Switzerland.
+          </p>
+          <p>
+            Before all that, I co-founded and ran <strong>Infostrates</strong> in Marseille for 11 years - 25 employees, with the full reality of entrepreneurship: P&L, business development, and technical delivery.
           </p>
         </div>
       </Col>
       <Col span="1" />
+    </Row>
+  </Section>
+
+  <!-- Key numbers -->
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="grid gap-8 text-center md:grid-cols-5">
+          <div>
+            <p class="font-headings text-3xl font-black text-secondary-500">25+</p>
+            <p class="text-sm text-neutral-500">years of experience</p>
+          </div>
+          <div>
+            <p class="font-headings text-3xl font-black text-secondary-500">100+</p>
+            <p class="text-sm text-neutral-500">professionals led</p>
+          </div>
+          <div>
+            <p class="font-headings text-3xl font-black text-secondary-500">Top 1%</p>
+            <p class="text-sm text-neutral-500">at NAB (34,000 employees)</p>
+          </div>
+          <div>
+            <p class="font-headings text-3xl font-black text-secondary-500">3 countries</p>
+            <p class="text-sm text-neutral-500">France, Australia, Switzerland</p>
+          </div>
+          <div>
+            <p class="font-headings text-3xl font-black text-secondary-500">11 years</p>
+            <p class="text-sm text-neutral-500">of entrepreneurship</p>
+          </div>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
+  <!-- Career highlights -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Selected experience</h2>
+        <div class="space-y-6">
+          <div class="flex gap-6 border-l-2 border-secondary-200 pl-6">
+            <div class="shrink-0 text-center">
+              <p class="text-sm font-bold text-secondary-500">2025</p>
+              <span class="mt-1 inline-block rounded bg-red-50 px-1.5 py-0.5 text-[0.6rem] font-medium text-red-400">CH</span>
+            </div>
+            <div>
+              <h3 class="font-headings text-lg font-bold text-neutral-900">Technical Director & Head of IT Governance</h3>
+              <p class="text-sm text-neutral-400">Talan SA, Geneva</p>
+              <p class="mt-1 text-neutral-600">Leading the IT Governance practice for Talan Switzerland (60+ consultants). Advising Swiss enterprises on enterprise architecture, AI strategy and technology governance.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 border-l-2 border-secondary-200 pl-6">
+            <div class="shrink-0 text-center">
+              <p class="text-sm font-bold text-secondary-500">2024</p>
+              <span class="mt-1 inline-block rounded bg-red-50 px-1.5 py-0.5 text-[0.6rem] font-medium text-red-400">CH</span>
+            </div>
+            <div>
+              <h3 class="font-headings text-lg font-bold text-neutral-900">CTO Advisory - Private Bank</h3>
+              <p class="text-sm text-neutral-400">Union Bancaire Privée (UBP), Geneva</p>
+              <p class="mt-1 text-neutral-600">IT Cutover Lead for the Société Générale Switzerland & UK acquisition (CHF 160bn+ AUM). Created the Strategic Data Protection Council. C-suite interface (CIO, CISO, Chief Architect).</p>
+            </div>
+          </div>
+          <div class="flex gap-6 border-l-2 border-secondary-200 pl-6">
+            <div class="shrink-0 text-center">
+              <p class="text-sm font-bold text-secondary-500">2022</p>
+              <span class="mt-1 inline-block rounded bg-red-50 px-1.5 py-0.5 text-[0.6rem] font-medium text-red-400">CH</span>
+            </div>
+            <div>
+              <h3 class="font-headings text-lg font-bold text-neutral-900">Director of Engineering, APIs</h3>
+              <p class="text-sm text-neutral-400">Azqore S.A. (Indosuez Wealth Management), Lausanne</p>
+              <p class="mt-1 text-neutral-600">API and microservices strategy for wealth management platform (50+ client banks). Managing 20+ engineers. Legacy modernisation to containerised framework.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 border-l-2 border-secondary-200 pl-6">
+            <div class="shrink-0 text-center">
+              <p class="text-sm font-bold text-secondary-500">2016</p>
+              <span class="mt-1 inline-block rounded bg-blue-50 px-1.5 py-0.5 text-[0.6rem] font-medium text-blue-400">AU</span>
+            </div>
+            <div>
+              <h3 class="font-headings text-lg font-bold text-neutral-900">General Manager Technology</h3>
+              <p class="text-sm text-neutral-400">NAB / UBank, Sydney</p>
+              <p class="mt-1 text-neutral-600">Leading 100+ professionals, 12 agile squads. Budget AUD 30M+. First Australian banking chatbot (IBM Watson). Real-time payments network integration (AUD 15M programme, 45 people, 18 months). Top 1% performer.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 border-l-2 border-secondary-200 pl-6">
+            <div class="shrink-0 text-center">
+              <p class="text-sm font-bold text-secondary-500">1997</p>
+              <span class="mt-1 inline-block rounded bg-indigo-50 px-1.5 py-0.5 text-[0.6rem] font-medium text-indigo-400">FR</span>
+            </div>
+            <div>
+              <h3 class="font-headings text-lg font-bold text-neutral-900">Founder & Technical Director</h3>
+              <p class="text-sm text-neutral-400">Infostrates, Marseille</p>
+              <p class="mt-1 text-neutral-600">Co-founder and Managing Director of a technology consultancy (25 employees). 11 years of entrepreneurship: P&L, business development, technical delivery.</p>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
     </Row>
   </Section>
 
@@ -61,22 +175,25 @@ const i18n = t('en');
     <Row>
       <Col span="2" />
       <Col span="8">
-        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900 text-center">Expertise and credentials</h2>
-        <div class="grid gap-8 md:grid-cols-3">
-          <Feature icon="heroicons:building-office" title="Experience" align="center">
-            <p class="text-sm text-neutral-500">
-              15+ years in technical leadership. Former Technical Director, Talan SA. France, Australia, Switzerland.
-            </p>
+        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900 text-center">Education and certifications</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <Feature icon="heroicons:academic-cap" title="Artificial Intelligence Programme" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">MIT, 2024</p>
           </Feature>
-          <Feature icon="heroicons:academic-cap" title="Certifications" align="center">
-            <p class="text-sm text-neutral-500">
-              ISO 42001 (in progress). AI/ML, Cloud, IT Governance expertise. TOGAF (planned).
-            </p>
+          <Feature icon="heroicons:academic-cap" title="Cambridge CTO Programme" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Cambridge Judge Business School, 2018</p>
           </Feature>
-          <Feature icon="heroicons:globe-europe-africa" title="Context" align="center">
-            <p class="text-sm text-neutral-500">
-              Based in Geneva. Bilingual French/English. Operating in French-speaking Switzerland and internationally.
-            </p>
+          <Feature icon="heroicons:shield-check" title="AWS Cloud Certified Engineer" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Amazon Web Services, 2017</p>
+          </Feature>
+          <Feature icon="heroicons:shield-check" title="Certified Scrum Master" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Scrum Alliance, 2014</p>
+          </Feature>
+          <Feature icon="heroicons:building-library" title="MBA Finance & Economics" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Sciences Po Grenoble, 1993</p>
+          </Feature>
+          <Feature icon="heroicons:building-library" title="Engineering Degree" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">ENSE3 Grenoble INP, 1991</p>
           </Feature>
         </div>
       </Col>
@@ -84,8 +201,142 @@ const i18n = t('en');
     </Row>
   </Section>
 
-  <!-- Methodology -->
+  <!-- References -->
   <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900 text-center">Coaching and transformation missions</h2>
+        <div class="space-y-8">
+
+          <!-- NAB/UBank -->
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <div class="mb-4 flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-secondary-500">Team transformation</p>
+                <h3 class="font-headings text-xl font-bold text-neutral-900">NAB / UBank</h3>
+                <p class="text-sm text-neutral-400">Sydney, Australia - 5 years - 100+ people</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <img src={logoNab.src} alt="NAB" class="h-8 w-auto grayscale opacity-60" />
+                <img src={logoUbank.src} alt="UBank" class="h-6 w-auto grayscale opacity-60" />
+              </div>
+            </div>
+            <p class="mb-4 text-neutral-600">
+              General Manager Technology. Vantaset coaching programme (first coached for 9 months, then rolled out to 15 tech leads and 100+ staff). Complete cultural transformation: from silos to collaboration, from 54% to 80%+ engagement.
+            </p>
+            <div class="mb-4 grid gap-3 text-sm md:grid-cols-4">
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">+45 pts</p>
+                <p class="text-xs text-neutral-500">engagement</p>
+              </div>
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">x4</p>
+                <p class="text-xs text-neutral-500">productivity</p>
+              </div>
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">-75%</p>
+                <p class="text-xs text-neutral-500">time to market</p>
+              </div>
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">-60%</p>
+                <p class="text-xs text-neutral-500">turnover</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <blockquote class="border-l-2 border-secondary-200 pl-4 text-sm italic text-neutral-500">
+                "People are far more productive and doing better work; in fact they're telling me they are ahead of demand for the first time."
+                <span class="mt-1 block not-italic font-medium text-neutral-600">Rohan Anderson, Learning & Development Manager, UBank</span>
+              </blockquote>
+              <blockquote class="border-l-2 border-secondary-200 pl-4 text-sm italic text-neutral-500">
+                "From a value for money perspective, it's been more than excellent. It has completely ignited our people in a new way of working."
+                <span class="mt-1 block not-italic font-medium text-neutral-600">Lee Hatton, CEO, UBank</span>
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Infostrates -->
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <div class="mb-4 flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-secondary-500">Technical coaching</p>
+                <h3 class="font-headings text-xl font-bold text-neutral-900">Digital agency</h3>
+                <p class="text-sm text-neutral-400">Marseille, France - 6 months - 30 people</p>
+              </div>
+              <img src={logoInfostrates.src} alt="Infostrates" class="h-8 w-auto grayscale opacity-60" />
+            </div>
+            <p class="mb-4 text-neutral-600">
+              Senior technical coach. Introduced TDD/BDD, industrialised CI/CD pipelines, reduced technical debt, established code standards. The team became autonomous: tech leads now run code reviews and train new joiners.
+            </p>
+            <div class="mb-4 grid gap-3 text-sm md:grid-cols-4">
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">5% → 65%</p>
+                <p class="text-xs text-neutral-500">test coverage</p>
+              </div>
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">-70%</p>
+                <p class="text-xs text-neutral-500">prod regressions</p>
+              </div>
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">-96%</p>
+                <p class="text-xs text-neutral-500">lead time</p>
+              </div>
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">-73%</p>
+                <p class="text-xs text-neutral-500">technical debt</p>
+              </div>
+            </div>
+            <blockquote class="border-l-2 border-secondary-200 pl-4 text-sm italic text-neutral-500">
+              "Lucas transformed our approach to development. In 6 months, we went from a team that suffered bugs to a team that prevents them. That is exactly what we expected: a lasting transfer of skills."
+              <span class="mt-1 block not-italic font-medium text-neutral-600">The Managing Director</span>
+            </blockquote>
+          </div>
+
+          <!-- Process Creative -->
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <div class="mb-4 flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-secondary-500">AI coaching</p>
+                <h3 class="font-headings text-xl font-bold text-neutral-900">E-commerce consultancy</h3>
+                <p class="text-sm text-neutral-400">Sydney, Australia - 3 months - 10 people</p>
+              </div>
+              <img src={logoProcess.src} alt="Process Creative" class="h-8 w-auto grayscale opacity-60" />
+            </div>
+            <p class="mb-4 text-neutral-600">
+              AI coach. Built an AI roadmap, trained the team in AI-assisted pair programming (Copilot, Claude), introduced context engineering and prompt design, deployed AI agents for automation. The team moved from "players" to strategic AI users.
+            </p>
+            <div class="mb-4 grid gap-3 text-sm md:grid-cols-4">
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">20% → 95%</p>
+                <p class="text-xs text-neutral-500">Copilot adoption</p>
+              </div>
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">+30%</p>
+                <p class="text-xs text-neutral-500">dev productivity</p>
+              </div>
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">-75%</p>
+                <p class="text-xs text-neutral-500">documentation time</p>
+              </div>
+              <div class="rounded bg-secondary-50 px-3 py-2 text-center">
+                <p class="font-bold text-secondary-600">-83%</p>
+                <p class="text-xs text-neutral-500">project onboarding</p>
+              </div>
+            </div>
+            <blockquote class="border-l-2 border-secondary-200 pl-4 text-sm italic text-neutral-500">
+              "The team is autonomous and enthusiastic. They share their discoveries, create their own prompts, and see AI as a multiplier of their talent, not a threat."
+              <span class="mt-1 block not-italic font-medium text-neutral-600">The CEO</span>
+            </blockquote>
+          </div>
+
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <!-- Methodology -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8">
@@ -97,17 +348,17 @@ const i18n = t('en');
           <div class="text-center">
             <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-400 text-lg font-bold text-white">1</div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Diagnostic</h3>
-            <p class="text-sm text-neutral-500">Understand your situation, your constraints, your objectives. Measure before acting.</p>
+            <p class="text-sm text-neutral-500">Understand your situation, your constraints, your objectives. Measure before acting. Interviews, data, observation.</p>
           </div>
           <div class="text-center">
             <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-400 text-lg font-bold text-white">2</div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Framing</h3>
-            <p class="text-sm text-neutral-500">Define together the scope, measurable objectives and action plan.</p>
+            <p class="text-sm text-neutral-500">Define together the scope, measurable objectives and action plan. No surprises, no ambiguity.</p>
           </div>
           <div class="text-center">
             <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-400 text-lg font-bold text-white">3</div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Support</h3>
-            <p class="text-sm text-neutral-500">Execute, measure, adjust. Capability transfer so you become autonomous.</p>
+            <p class="text-sm text-neutral-500">Execute, measure, adjust. Integrated capability transfer so you become autonomous.</p>
           </div>
         </div>
       </Col>
@@ -123,24 +374,31 @@ const i18n = t('en');
         <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">How I work</h2>
         <div class="space-y-6">
           <div class="flex gap-4">
-            <div class="shrink-0 text-2xl text-primary-500">&bull;</div>
+            <div class="shrink-0 text-2xl text-secondary-500">&bull;</div>
             <div>
               <h3 class="mb-1 font-headings text-lg font-bold text-neutral-900">Directly with you</h3>
               <p class="text-neutral-500">No juniors, no subcontractors. You work directly with me. The scarcity of the interlocutor is part of the value.</p>
             </div>
           </div>
           <div class="flex gap-4">
-            <div class="shrink-0 text-2xl text-primary-500">&bull;</div>
+            <div class="shrink-0 text-2xl text-secondary-500">&bull;</div>
             <div>
               <h3 class="mb-1 font-headings text-lg font-bold text-neutral-900">Radical honesty</h3>
               <p class="text-neutral-500">I say no to engagements where I cannot deliver real value. I prefer a relationship of trust over an additional contract.</p>
             </div>
           </div>
           <div class="flex gap-4">
-            <div class="shrink-0 text-2xl text-primary-500">&bull;</div>
+            <div class="shrink-0 text-2xl text-secondary-500">&bull;</div>
             <div>
               <h3 class="mb-1 font-headings text-lg font-bold text-neutral-900">Capability transfer</h3>
               <p class="text-neutral-500">The goal is your autonomy, not your dependency. I work with leaders, not for them.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="shrink-0 text-2xl text-secondary-500">&bull;</div>
+            <div>
+              <h3 class="mb-1 font-headings text-lg font-bold text-neutral-900">Trilingual, tricultural, global</h3>
+              <p class="text-neutral-500">Native French, bilingual English (15 years in Australia), professional Italian. Three cultures, three ways of thinking. France, Australia, Switzerland: I have built and led teams across three continents, including offshore teams in Ukraine, Vietnam and Malaysia. I translate between business and technology, and between cultures.</p>
             </div>
           </div>
         </div>

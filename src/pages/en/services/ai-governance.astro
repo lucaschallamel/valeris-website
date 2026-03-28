@@ -13,60 +13,51 @@ const i18n = t('en');
 
 <BaseLayout title={`${i18n.services.aiGovernance.name} - ${i18n.site.title}`}>
 
-  <!-- Hero -->
   <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8" align="center">
         <p class="mb-4 text-sm font-bold uppercase tracking-widest text-secondary-500">Governance</p>
-        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">
-          {i18n.services.aiGovernance.name}
-        </h1>
-        <p class="mx-auto max-w-2xl text-lg text-neutral-500">
-          {i18n.services.aiGovernance.tagline}
-        </p>
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">{i18n.services.aiGovernance.name}</h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
-  <!-- The problem -->
   <Section padding="both">
     <Row>
       <Col span="2" />
       <Col span="8">
-        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">The problem you face</h2>
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">The problem you are facing</h2>
         <div class="space-y-4 text-neutral-600">
-          <p>Your board is asking for an AI strategy. Your teams are experimenting without a framework. Regulators are moving faster than your governance.</p>
-          <p>You have seen the impressive demos. You have launched one or two POCs. But between experimentation and production deployment, there is a chasm that nobody in the organisation knows how to bridge.</p>
-          <p>The risk is not failing to adopt AI. It is adopting it poorly - without governance, without risk assessment, without alignment with your regulatory obligations.</p>
+          <p>Your board is asking for an AI strategy. Your teams are experimenting individually, without a common framework, without risk assessment. Regulators are moving faster than your governance: EU AI Act, Swiss nDSG, FINMA directives.</p>
+          <p>You have seen the impressive demos. You have launched one or two POCs. But between experimentation and production deployment, there is a chasm. Nobody in the organisation knows how to classify data for AI, assess the risks of a model, or estimate the real cost of LLMs in production.</p>
+          <p>The risk is not failing to adopt AI. It is adopting it poorly: without governance, without a risk policy, without regulatory alignment, and with costs spiralling out of control.</p>
         </div>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
-  <!-- The approach -->
   <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8">
         <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">My approach</h2>
-        <p class="mb-8 text-neutral-600">
-          I combine deep technical expertise in AI/ML with hands-on experience in corporate governance. My approach is aligned with international standards (ISO 42001, EU AI Act) while remaining pragmatic and adapted to the Swiss context.
-        </p>
+        <p class="mb-8 text-neutral-600">I combine deep technical expertise in AI/ML with hands-on governance experience in regulated sectors (Geneva private banks, FINMA, APRA). My approach is built on a 7-axis AI maturity model, aligned with ISO 42001 and the EU AI Act, while remaining pragmatic and adapted to the Swiss context.</p>
         <div class="grid gap-8 md:grid-cols-2">
-          <Feature icon="heroicons:magnifying-glass" title="Maturity diagnostic" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Gap analysis against ISO 42001, maturity scoring, 90-day action plan.</p>
+          <Feature icon="heroicons:magnifying-glass" title="AI maturity diagnostic" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Assessment across 7 axes: governance, cybersecurity, regulatory compliance, infrastructure, data quality, skills, application portfolio. Maturity scoring (levels 1-4: Emerging to Strategic). 90-day action plan.</p>
           </Feature>
           <Feature icon="heroicons:document-text" title="Governance framework" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Policies, RACI, risk methodology, use case evaluation matrix, workshops.</p>
+            <p class="text-sm text-neutral-500">AI policies, RACI matrix, risk management methodology, data classification, use case assessment matrix, awareness workshops. Aligned with ISO 42001, EU AI Act, nDSG.</p>
           </Feature>
-          <Feature icon="heroicons:shield-check" title="ISO 42001 readiness" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">Complete AIMS documentation, internal audit, management review, training.</p>
+          <Feature icon="heroicons:shield-check" title="ISO 42001 preparation" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Complete AIMS documentation, internal audit, management review, stakeholder training. Guidance towards certification.</p>
           </Feature>
           <Feature icon="heroicons:rocket-launch" title="AI activation sprint" type="side-icon" iconStyle="square" align="left">
-            <p class="text-sm text-neutral-500">One use case from idea to working pilot, with governance built in from the start.</p>
+            <p class="text-sm text-neutral-500">One concrete use case, from idea to working pilot in 8-10 days. Governance built in from the start: risk assessment, data classification, cost monitoring (FinOps).</p>
           </Feature>
         </div>
       </Col>
@@ -74,63 +65,186 @@ const i18n = t('en');
     </Row>
   </Section>
 
-  <!-- Packages -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">AI sovereignty: a deliberate choice</h2>
+        <p class="mb-6 text-neutral-600">AI sovereignty does not mean rejecting the cloud or hyperscalers. It is a <strong>deliberate choice</strong>: what runs where, based on risk, regulation and strategic priorities. Some workloads are perfectly suited to public cloud. Others demand total control. I help you articulate the three zones:</p>
+        <div class="overflow-hidden rounded-lg border border-neutral-200">
+          <div class="flex h-3">
+            <div class="flex-1 bg-blue-300"></div>
+            <div class="flex-1 bg-secondary-400"></div>
+            <div class="flex-1 bg-secondary-700"></div>
+          </div>
+          <div class="grid md:grid-cols-3">
+            <div class="border-b border-r border-neutral-100 p-5 text-center md:border-b-0">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-blue-500">Speed</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Public cloud</p>
+              <p class="text-sm text-neutral-500">Azure OpenAI, Anthropic, Google. Fast, integrated, enterprise support. Suited for non-sensitive workloads.</p>
+            </div>
+            <div class="border-b border-r border-neutral-100 p-5 text-center md:border-b-0">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Balance</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Private cloud</p>
+              <p class="text-sm text-neutral-500">Open-source models (Mistral, Llama) on dedicated infrastructure. Data control, predictable cost, portability.</p>
+            </div>
+            <div class="p-5 text-center">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-700">Control</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Sovereign on-premise</p>
+              <p class="text-sm text-neutral-500">Local LLMs for sensitive data (banking secrecy, patient data). Maximum compliance, minimal latency.</p>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">AI FinOps and data protection</h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <h3 class="mb-3 font-headings text-lg font-bold text-neutral-900">AI FinOps: controlling costs</h3>
+            <p class="mb-4 text-neutral-600">CFOs are asking: "What will AI cost at scale?" Without governance, LLM costs spiral. I help you put in place:</p>
+            <ul class="space-y-2 text-sm text-neutral-500">
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Predictive cost modelling per use case</li>
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Token consumption monitoring</li>
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Model optimisation (right-sizing, caching, routing)</li>
+              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> ROI framework for AI investments</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-3 font-headings text-lg font-bold text-neutral-900">Data protection for AI</h3>
+            <p class="mb-4 text-neutral-600">You cannot feed your LLMs with unprotected sensitive data. My 4-step approach lets you fuel AI safely:</p>
+            <div class="grid grid-cols-4 gap-1">
+              <div class="rounded-l-lg bg-secondary-50 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">1. Discover</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Map sensitive data</p>
+              </div>
+              <div class="relative bg-secondary-100 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">2. Tokenise</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Replace with secure tokens</p>
+              </div>
+              <div class="bg-secondary-100 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">3. Augment</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Generate synthetic data</p>
+              </div>
+              <div class="rounded-r-lg bg-secondary-200 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-700">4. Apply</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Feed RAG safely</p>
+              </div>
+            </div>
+            <div class="mt-2 flex justify-between px-2">
+              <span class="text-[0.6rem] text-neutral-400">Raw data</span>
+              <span class="text-[0.6rem] text-secondary-500">&#x2192; &#x2192; &#x2192;</span>
+              <span class="text-[0.6rem] text-neutral-400">AI fed safely</span>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Certifications and expertise</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <Feature icon="heroicons:shield-check" title="ISO 42001" type="side-icon" align="left">
+            <p class="text-sm text-neutral-500">Lead Auditor in preparation (target 2026). International standard for AI management systems.</p>
+          </Feature>
+          <Feature icon="heroicons:building-library" title="TOGAF 10" type="side-icon" align="left">
+            <p class="text-sm text-neutral-500">Certification in progress. Enterprise architecture and transformation framework.</p>
+          </Feature>
+          <Feature icon="heroicons:cpu-chip" title="Microsoft AI" type="side-icon" align="left">
+            <p class="text-sm text-neutral-500">AI-102, AI-900, SC-300 certifications in preparation. Governance and security of the Microsoft AI ecosystem.</p>
+          </Feature>
+        </div>
+        <p class="mt-6 text-sm text-neutral-400">In addition: MIT AI Programme (2024), Cambridge CTO Programme (2018), AWS Certified (2017). 25+ years of experience in architecture and IT governance in regulated sectors (FINMA, APRA, nDSG, GDPR).</p>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
   <Section padding="both">
     <Row>
       <Col span="2" />
       <Col span="8">
         <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Engagement formats</h2>
         <div class="grid gap-6 md:grid-cols-2">
-          <!-- Entry point -->
           <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
             <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Entry point</p>
-            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">AI Diagnostic</h3>
-            <p class="mb-4 text-sm text-neutral-500">Gap analysis vs ISO 42001, maturity scoring, 90-day action plan.</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">AI maturity diagnostic</h3>
+            <p class="mb-4 text-sm text-neutral-500">Complete assessment across 7 axes, maturity scoring, identification of regulatory gaps, 90-day action plan. You leave with a costed roadmap.</p>
             <List type="checklist" listItems={[
-              { listItem: "5-6 days" },
-              { listItem: "Deliverable: report + roadmap" },
+              { listItem: "5 days" },
+              { listItem: "Deliverable: maturity report + roadmap" },
               { listItem: "From CHF 8,500" },
             ]} />
           </div>
-          <!-- Full journey -->
           <div class="rounded-lg border border-neutral-200 p-6">
-            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Full journey</p>
-            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">From curiosity to certification</h3>
-            <p class="mb-4 text-sm text-neutral-500">Diagnostic, then framework build + activation sprint in parallel, then ISO 42001 readiness.</p>
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Build</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">AI governance framework</h3>
+            <p class="mb-4 text-sm text-neutral-500">Suite of policies, RACI, risk methodology, use case assessment matrix. 2 awareness workshops included.</p>
             <List type="checklist" listItems={[
-              { listItem: "6-9 months" },
-              { listItem: "CHF 55,000 - 75,000" },
-              { listItem: "Goal: ISO 42001 certification" },
+              { listItem: "10-15 days over 2-3 months" },
+              { listItem: "CHF 18,000 - 25,000" },
+              { listItem: "Aligned with ISO 42001, EU AI Act, nDSG" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Certification</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">ISO 42001 preparation</h3>
+            <p class="mb-4 text-sm text-neutral-500">Complete AIMS documentation, internal audit, management review, training. Objective: ready for certification.</p>
+            <List type="checklist" listItems={[
+              { listItem: "15-20 days over 4-6 months" },
+              { listItem: "CHF 28,000 - 40,000" },
+              { listItem: "Objective: ISO 42001 certification" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Activation</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">AI activation sprint</h3>
+            <p class="mb-4 text-sm text-neutral-500">One concrete use case from idea to working pilot, with governance built in from the start.</p>
+            <List type="checklist" listItems={[
+              { listItem: "8-10 days" },
+              { listItem: "CHF 14,000 - 18,000" },
+              { listItem: "Includes: risk assessment + FinOps" },
             ]} />
           </div>
         </div>
+        <p class="mt-6 text-sm text-neutral-400">Full journey (diagnostic + framework + activation + certification): CHF 55,000 - 75,000 over 6-9 months.</p>
       </Col>
       <Col span="2" />
     </Row>
   </Section>
 
-  <!-- Who this is for -->
   <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="2" />
       <Col span="8">
-        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Who this is for</h2>
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Who is it for</h2>
         <div class="grid gap-6 md:grid-cols-2">
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Technical directors (CTO/CIO)</h3>
-            <p class="text-sm text-neutral-500">Who need to structure AI adoption beyond POCs and present a credible strategy to the board.</p>
+            <p class="text-sm text-neutral-500">Who need to structure AI adoption beyond POCs and present a credible strategy to the board. Need a maturity model and roadmap.</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Compliance officers / CISO</h3>
-            <p class="text-sm text-neutral-500">Who need to assess AI risks and establish a governance framework before the regulator requires it.</p>
+            <p class="text-sm text-neutral-500">Who need to assess AI risks, classify data, and put in place a governance framework before the regulator demands it (FINMA, nDSG, EU AI Act).</p>
           </div>
           <div>
             <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">SME CEOs (50-500 employees)</h3>
-            <p class="text-sm text-neutral-500">Who see AI transforming their industry and want to act in a structured way rather than reactively.</p>
+            <p class="text-sm text-neutral-500">Who see AI transforming their sector and want to act in a structured way. Need a framework without hiring a specialised team.</p>
           </div>
           <div>
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Innovation leaders</h3>
-            <p class="text-sm text-neutral-500">Who need a framework to rigorously evaluate, prioritise and launch AI use cases.</p>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Regulated sectors</h3>
+            <p class="text-sm text-neutral-500">Banking, insurance, healthcare, public administration. Where compliance is not optional and every use of AI must be documented and traceable.</p>
           </div>
         </div>
       </Col>
@@ -138,19 +252,28 @@ const i18n = t('en');
     </Row>
   </Section>
 
-  <!-- CTA -->
   <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Field experience</h2>
+        <div class="space-y-4 text-neutral-600">
+          <p>I have designed and deployed AI governance frameworks for Swiss financial institutions regulated by FINMA. I steered the technology integration of a CHF 160 billion AUM acquisition, created a Strategic Data Protection Council with the CISO and DPO, and implemented anonymisation solutions on core banking systems.</p>
+          <p>I also designed a 7-axis AI maturity model for a Geneva private bank, covering governance, cybersecurity, regulatory compliance, infrastructure, data quality, skills and application portfolio.</p>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
       <Col span="1" />
       <Col span="10">
         <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
           <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
-          <p class="mx-auto mb-6 max-w-xl text-secondary-100">
-            A 30-minute conversation, not a sales pitch.
-          </p>
-          <Button type="link" size="lg" style="white" variation="outline" link="/en/contact/">
-            {i18n.cta.primary}
-          </Button>
+          <p class="mx-auto mb-6 max-w-xl text-secondary-100">A 30-minute conversation to understand where you stand and identify the next concrete steps.</p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/en/contact/">{i18n.cta.primary}</Button>
         </div>
       </Col>
       <Col span="1" />

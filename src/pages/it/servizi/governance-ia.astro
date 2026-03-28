@@ -3,18 +3,210 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Section from '../../../components/ui/Section.astro';
 import Row from '../../../components/ui/Row.astro';
 import Col from '../../../components/ui/Col.astro';
+import Button from '../../../components/ui/Button.astro';
+import Feature from '../../../components/ui/Feature.astro';
+import List from '../../../components/ui/List.astro';
 import { t } from '../../../i18n';
 
 const i18n = t('it');
 ---
 
 <BaseLayout title={`${i18n.services.aiGovernance.name} - ${i18n.site.title}`}>
-  <Section padding="both">
+
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
-      <Col span="12">
-        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.services.aiGovernance.name}</h1>
-        <p class="text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-secondary-500">Governance</p>
+        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">{i18n.services.aiGovernance.name}</h1>
+        <p class="mx-auto max-w-2xl text-lg text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
       </Col>
+      <Col span="2" />
     </Row>
   </Section>
+
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Il problema che affrontate</h2>
+        <div class="space-y-4 text-neutral-600">
+          <p>Il vostro consiglio di amministrazione chiede una strategia IA. I vostri team sperimentano ciascuno per conto proprio, senza un quadro comune, senza valutazione dei rischi. I regolatori si muovono più velocemente della vostra governance: EU AI Act, nDSG svizzera, direttive FINMA.</p>
+          <p>Avete visto le demo impressionanti. Avete lanciato uno o due POC. Ma tra la sperimentazione e il deployment in produzione, c'è un abisso. Nessuno nell'organizzazione sa classificare i dati per l'IA, valutare i rischi di un modello, o calcolare il costo reale dei LLM in produzione.</p>
+          <p>Il rischio non è non adottare l'IA. È adottarla male: senza governance, senza politica di rischio, senza allineamento normativo, e con costi che esplodono senza che nessuno li piloti.</p>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Il mio approccio</h2>
+        <p class="mb-8 text-neutral-600">Combino un'expertise tecnica approfondita in IA/ML con un'esperienza concreta di governance nei settori regolamentati (banche private ginevrine, FINMA, APRA). Il mio approccio si basa su un modello di maturità IA a 7 assi, allineato con ISO 42001 e l'EU AI Act, restando pragmatico e adattato al contesto svizzero.</p>
+        <div class="grid gap-8 md:grid-cols-2">
+          <Feature icon="heroicons:magnifying-glass" title="Diagnosi di maturità IA" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Valutazione su 7 assi: governance, cybersicurezza, conformità normativa, infrastruttura, qualità dei dati, competenze, portafoglio applicativo. Scoring di maturità (livelli 1-4: Emergente a Strategico). Piano d'azione a 90 giorni.</p>
+          </Feature>
+          <Feature icon="heroicons:document-text" title="Quadro di governance" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Politiche IA, matrice RACI, metodologia di gestione dei rischi, classificazione dei dati, matrice di valutazione dei casi d'uso, workshop di sensibilizzazione. Allineato ISO 42001, EU AI Act, nDSG.</p>
+          </Feature>
+          <Feature icon="heroicons:shield-check" title="Preparazione ISO 42001" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Documentazione AIMS completa, audit interno, revisione della direzione, formazione degli stakeholder. Accompagnamento verso la certificazione.</p>
+          </Feature>
+          <Feature icon="heroicons:rocket-launch" title="Sprint di attivazione IA" type="side-icon" iconStyle="square" align="left">
+            <p class="text-sm text-neutral-500">Un caso d'uso concreto, dall'idea al pilota funzionante in 8-10 giorni. Governance integrata fin dall'inizio: valutazione dei rischi, classificazione dei dati, monitoraggio dei costi (FinOps).</p>
+          </Feature>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Sovranità IA: una scelta deliberata</h2>
+        <p class="mb-6 text-neutral-600">La sovranità IA non significa rifiutare il cloud o gli hyperscaler. È una <strong>scelta deliberata</strong>: cosa gira dove, basata sul rischio, la normativa e le priorità strategiche. Alcuni workload sono perfettamente adatti al cloud pubblico. Altri esigono un controllo totale. Vi aiuto ad articolare le tre zone:</p>
+        <div class="overflow-hidden rounded-lg border border-neutral-200">
+          <div class="flex h-3">
+            <div class="flex-1 bg-blue-300"></div>
+            <div class="flex-1 bg-secondary-400"></div>
+            <div class="flex-1 bg-secondary-700"></div>
+          </div>
+          <div class="grid md:grid-cols-3">
+            <div class="border-b border-r border-neutral-100 p-5 text-center md:border-b-0">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-blue-500">Velocità</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Cloud pubblico</p>
+              <p class="text-sm text-neutral-500">Azure OpenAI, Anthropic, Google. Rapido, integrato, supporto enterprise. Adatto per workload non sensibili.</p>
+            </div>
+            <div class="border-b border-r border-neutral-100 p-5 text-center md:border-b-0">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Equilibrio</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Cloud privato</p>
+              <p class="text-sm text-neutral-500">Modelli open source (Mistral, Llama) su infrastruttura dedicata. Controllo dei dati, costo prevedibile, portabilità.</p>
+            </div>
+            <div class="p-5 text-center">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-700">Controllo</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Sovrano on-premise</p>
+              <p class="text-sm text-neutral-500">LLM locali per dati sensibili (segreto bancario, dati pazienti). Conformità massima, latenza minima.</p>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Formati di ingaggio</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-lg border-2 border-secondary-200 bg-secondary-50/30 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Punto di ingresso</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Diagnosi di maturità IA</h3>
+            <p class="mb-4 text-sm text-neutral-500">Valutazione completa su 7 assi, scoring di maturità, identificazione dei gap normativi, piano d'azione a 90 giorni. Ripartite con una roadmap quantificata.</p>
+            <List type="checklist" listItems={[
+              { listItem: "5 giorni" },
+              { listItem: "Deliverable: rapporto di maturità + roadmap" },
+              { listItem: "A partire da CHF 8 500" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Costruzione</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Quadro di governance IA</h3>
+            <p class="mb-4 text-sm text-neutral-500">Suite di politiche, RACI, metodologia di rischio, matrice di valutazione dei casi d'uso. 2 workshop di sensibilizzazione inclusi.</p>
+            <List type="checklist" listItems={[
+              { listItem: "10-15 giorni su 2-3 mesi" },
+              { listItem: "CHF 18 000 - 25 000" },
+              { listItem: "Allineato ISO 42001, EU AI Act, nDSG" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Certificazione</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Preparazione ISO 42001</h3>
+            <p class="mb-4 text-sm text-neutral-500">Documentazione AIMS completa, audit interno, revisione della direzione, formazione. Obiettivo: pronti per la certificazione.</p>
+            <List type="checklist" listItems={[
+              { listItem: "15-20 giorni su 4-6 mesi" },
+              { listItem: "CHF 28 000 - 40 000" },
+              { listItem: "Obiettivo: certificazione ISO 42001" },
+            ]} />
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-6">
+            <p class="mb-1 text-xs font-bold uppercase tracking-widest text-neutral-400">Attivazione</p>
+            <h3 class="mb-2 font-headings text-xl font-bold text-neutral-900">Sprint di attivazione IA</h3>
+            <p class="mb-4 text-sm text-neutral-500">Un caso d'uso concreto dall'idea al pilota funzionante, con governance integrata fin dall'inizio.</p>
+            <List type="checklist" listItems={[
+              { listItem: "8-10 giorni" },
+              { listItem: "CHF 14 000 - 18 000" },
+              { listItem: "Include: valutazione rischi + FinOps" },
+            ]} />
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-neutral-400">Percorso completo (diagnosi + quadro + attivazione + certificazione): CHF 55 000 - 75 000 su 6-9 mesi.</p>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Per chi</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Direttori tecnici (CTO/CIO)</h3>
+            <p class="text-sm text-neutral-500">Che devono strutturare l'adozione dell'IA oltre i POC e presentare una strategia credibile al consiglio. Necessità di un modello di maturità e di una roadmap.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Responsabili conformità / CISO</h3>
+            <p class="text-sm text-neutral-500">Che devono valutare i rischi IA, classificare i dati e mettere in atto un quadro di governance prima che il regolatore lo esiga (FINMA, nDSG, EU AI Act).</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">CEO di PMI (50-500 dipendenti)</h3>
+            <p class="text-sm text-neutral-500">Che vedono l'IA trasformare il loro settore e vogliono agire in modo strutturato. Necessità di un quadro senza assumere un team specializzato.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Settori regolamentati</h3>
+            <p class="text-sm text-neutral-500">Banche, assicurazioni, sanità, amministrazione pubblica. Dove la conformità non è opzionale e ogni utilizzo dell'IA deve essere documentato e tracciabile.</p>
+          </div>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <h2 class="mb-6 font-headings text-2xl font-bold text-neutral-900">Esperienza sul campo</h2>
+        <div class="space-y-4 text-neutral-600">
+          <p>Ho progettato e implementato quadri di governance IA per istituzioni finanziarie svizzere soggette a FINMA. Ho pilotato l'integrazione tecnologica di un'acquisizione di CHF 160 miliardi di attivi in gestione, creato un Consiglio Strategico per la Protezione dei Dati con il CISO e il DPO, e implementato soluzioni di anonimizzazione su sistemi core banking.</p>
+          <p>Ho anche progettato un modello di maturità IA a 7 assi per una banca privata ginevrina, coprendo governance, cybersicurezza, conformità normativa, infrastruttura, qualità dei dati, competenze e portafoglio applicativo.</p>
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
+  <Section padding="both" classes="bg-neutral-50">
+    <Row>
+      <Col span="1" />
+      <Col span="10">
+        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
+          <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
+          <p class="mx-auto mb-6 max-w-xl text-secondary-100">Uno scambio di 30 minuti per capire dove vi trovate e identificare i prossimi passi concreti.</p>
+          <Button type="link" size="lg" style="white" variation="outline" link="/it/contatto/">{i18n.cta.primary}</Button>
+        </div>
+      </Col>
+      <Col span="1" />
+    </Row>
+  </Section>
+
 </BaseLayout>
