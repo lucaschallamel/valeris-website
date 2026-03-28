@@ -1,19 +1,19 @@
 {
   "site": {
     "title": "Valeris Coaching",
-    "description": "Conseil en leadership technologique a Geneve. Gouvernance IA, performance des equipes d'ingenierie et coaching de dirigeants techniques pour les entreprises suisses.",
+    "description": "Conseil en leadership technologique à Genève. Gouvernance IA, performance des équipes d'ingénierie et coaching de dirigeants techniques pour les entreprises suisses.",
     "descriptions": {
-      "home": "Conseil en leadership technologique a Geneve. Gouvernance IA, performance des equipes d'ingenierie et coaching de dirigeants techniques pour les entreprises suisses.",
-      "services": "Trois offres de conseil pour les dirigeants techniques suisses : gouvernance IA et ISO 42001, performance des equipes d'ingenierie, coaching de CTO et VP Engineering.",
-      "aiGovernance": "Diagnostic de maturite IA, cadre de gouvernance aligne ISO 42001 et EU AI Act, souverainete des donnees et AI FinOps. Pour les CTO et CISO suisses.",
-      "teamPerformance": "Coaching technique embarque, TDD/BDD, CI/CD, revues de code. La methode Coach-Craft pour transformer la performance de vos equipes d'ingenierie en 12 semaines.",
-      "executiveCoaching": "Coaching individuel pour CTO, VP Engineering et directeurs techniques. Programme Vantaset, prise de poste, alignement avec le board. Geneve et Suisse romande.",
-      "blog": "Articles et podcasts sur le leadership technologique, l'intelligence artificielle et la transformation des organisations. Par Lucas Challamel, consultant a Geneve.",
-      "publications": "Livres blancs et ressources sur la gouvernance IA, la souverainete numerique et le leadership technologique pour les entreprises suisses.",
-      "partners": "Ecosysteme de partenaires technologiques et strategiques : Microsoft, Anthropic, AWS, Cloudflare. Alliances consulting et certifications ISO 42001, TOGAF.",
-      "about": "Lucas Challamel, 30 ans de leadership technologique. France, Australie, Suisse. Ex-NAB/UBank, Azqore, UBP. Trilingue, triculturel. Base a Geneve.",
-      "contact": "Reservez un echange de 30 minutes avec Lucas Challamel. Conseil en leadership technologique, gouvernance IA et coaching de dirigeants. Geneve, Suisse.",
-      "legal": "Mentions legales, politique de confidentialite (nLPD et RGPD) et conditions d'utilisation du site valeris.fr. Valeris Coaching, Geneve."
+      "home": "Conseil en leadership technologique à Genève. Gouvernance IA, performance des équipes d'ingénierie et coaching de dirigeants techniques pour les entreprises suisses.",
+      "services": "Trois offres de conseil pour les dirigeants techniques suisses : gouvernance IA et ISO 42001, performance des équipes d'ingénierie, coaching de CTO et VP Engineering.",
+      "aiGovernance": "Diagnostic de maturité IA, cadre de gouvernance aligné ISO 42001 et EU AI Act, souveraineté des données et AI FinOps. Pour les CTO et CISO suisses.",
+      "teamPerformance": "Coaching technique embarqué, TDD/BDD, CI/CD, revues de code. La méthode Coach-Craft pour transformer la performance de vos équipes d'ingénierie en 12 semaines.",
+      "executiveCoaching": "Coaching individuel pour CTO, VP Engineering et directeurs techniques. Programme Vantaset, prise de poste, alignement avec le board. Genève et Suisse romande.",
+      "blog": "Articles et podcasts sur le leadership technologique, l'intelligence artificielle et la transformation des organisations. Par Lucas Challamel, consultant à Genève.",
+      "publications": "Livres blancs et ressources sur la gouvernance IA, la souveraineté numérique et le leadership technologique pour les entreprises suisses.",
+      "partners": "Écosystème de partenaires technologiques et stratégiques : Microsoft, Anthropic, AWS, Cloudflare. Alliances consulting et certifications ISO 42001, TOGAF.",
+      "about": "Lucas Challamel, 30 ans de leadership technologique. France, Australie, Suisse. Ex-NAB/UBank, Azqore, UBP. Trilingue, triculturel. Basé à Genève.",
+      "contact": "Réservez un échange de 30 minutes avec Lucas Challamel. Conseil en leadership technologique, gouvernance IA et coaching de dirigeants. Genève, Suisse.",
+      "legal": "Mentions légales, politique de confidentialité (nLPD et RGPD) et conditions d'utilisation du site valeris.fr. Valeris Coaching, Genève."
     }
   },
   "nav": {
@@ -67,7 +67,7 @@
       "serviceInterest": "Quel service vous intéresse ?",
       "selectService": "Sélectionnez un service",
       "noPreference": "Pas de préférence",
-      "whitepaper": "Whitepaper : Souveraineté IA (Suisse)",
+      "whitepaper": "Livre blanc : Souveraineté IA (Suisse)",
       "firstName": "Prénom",
       "lastName": "Nom",
       "email": "Adresse e-mail",

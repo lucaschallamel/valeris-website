@@ -1,18 +1,18 @@
 {
   "site": {
     "title": "Valeris Coaching",
-    "description": "Consulenza in leadership tecnologico a Ginevra. Governance IA, performance dei team di ingegneria e coaching per dirigenti tecnici per le imprese svizzere.",
+    "description": "Consulenza in leadership tecnologica a Ginevra. Governance IA, performance dei team di ingegneria e coaching per dirigenti tecnici per le imprese svizzere.",
     "descriptions": {
-      "home": "Consulenza in leadership tecnologico a Ginevra. Governance IA, performance dei team di ingegneria e coaching per dirigenti tecnici per le imprese svizzere.",
+      "home": "Consulenza in leadership tecnologica a Ginevra. Governance IA, performance dei team di ingegneria e coaching per dirigenti tecnici per le imprese svizzere.",
       "services": "Tre offerte di consulenza per i dirigenti tecnici svizzeri: governance IA e ISO 42001, performance dei team di ingegneria, coaching per CTO e VP Engineering.",
       "aiGovernance": "Diagnosi di maturita IA, quadro di governance allineato ISO 42001 e EU AI Act, sovranita dei dati e AI FinOps. Per CTO e CISO svizzeri.",
       "teamPerformance": "Coaching tecnico integrato, TDD/BDD, CI/CD, revisioni del codice. Il metodo Coach-Craft per trasformare la performance del vostro team di ingegneria in 12 settimane.",
       "executiveCoaching": "Coaching individuale per CTO, VP Engineering e direttori tecnici. Programma Vantaset, presa di funzione, allineamento con il consiglio. Ginevra e Svizzera romanda.",
-      "blog": "Articoli e podcast su leadership tecnologico, intelligenza artificiale e trasformazione delle organizzazioni. Di Lucas Challamel, consulente a Ginevra.",
-      "publications": "White paper e risorse su governance IA, sovranita digitale e leadership tecnologico per le imprese svizzere.",
+      "blog": "Articoli e podcast su leadership tecnologica, intelligenza artificiale e trasformazione delle organizzazioni. Di Lucas Challamel, consulente a Ginevra.",
+      "publications": "White paper e risorse su governance IA, sovranita digitale e leadership tecnologica per le imprese svizzere.",
       "partners": "Partner tecnologici e strategici: Microsoft, Anthropic, AWS, Cloudflare. Alleanze di consulenza e certificazioni ISO 42001, TOGAF.",
-      "about": "Lucas Challamel, 30 anni di leadership tecnologico. Francia, Australia, Svizzera. Ex NAB/UBank, Azqore, UBP. Trilingue, triculturale. Sede a Ginevra.",
-      "contact": "Prenotate una conversazione di 30 minuti con Lucas Challamel. Consulenza in leadership tecnologico, governance IA e coaching dirigenti. Ginevra, Svizzera.",
+      "about": "Lucas Challamel, 30 anni di leadership tecnologica. Francia, Australia, Svizzera. Ex NAB/UBank, Azqore, UBP. Trilingue, triculturale. Sede a Ginevra.",
+      "contact": "Prenotate una conversazione di 30 minuti con Lucas Challamel. Consulenza in leadership tecnologica, governance IA e coaching dirigenti. Ginevra, Svizzera.",
       "legal": "Note legali, politica sulla privacy (nLPD e RGPD) e condizioni d'uso di valeris.fr. Valeris Coaching, Ginevra."
     }
   },
