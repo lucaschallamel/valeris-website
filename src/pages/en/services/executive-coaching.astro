@@ -10,6 +10,7 @@ import MetricBar from '../../../components/ui/MetricBar.astro';
 import { t } from '../../../i18n';
 
 const i18n = t('en');
+import CtaBanner from '../../../components/CtaBanner.astro';
 ---
 
 <BaseLayout title={`${i18n.services.executiveCoaching.name} - ${i18n.site.title}`}>
@@ -238,19 +239,6 @@ const i18n = t('en');
       <Col span="2" />
     </Row>
   </Section>
-
-  <Section padding="both" classes="bg-neutral-50">
-    <Row>
-      <Col span="1" />
-      <Col span="10">
-        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
-          <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
-          <p class="mx-auto mb-6 max-w-xl text-secondary-100">A 30-minute conversation to understand your situation and see if I can help.</p>
-          <Button type="link" size="lg" style="white" variation="outline" link="/en/contact/">{i18n.cta.primary}</Button>
-        </div>
-      </Col>
-      <Col span="1" />
-    </Row>
-  </Section>
+  <CtaBanner lang="en" />
 
 </BaseLayout>

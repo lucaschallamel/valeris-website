@@ -9,6 +9,7 @@ import List from '../../components/ui/List.astro';
 import { t } from '../../i18n';
 
 const i18n = t('fr');
+import CtaBanner from '../../components/CtaBanner.astro';
 ---
 
 <BaseLayout title={`${i18n.services.aiGovernance.name} - ${i18n.site.title}`}>
@@ -83,18 +84,30 @@ const i18n = t('fr');
         <p class="mb-6 text-neutral-600">
           La souveraineté IA ne signifie pas rejeter le cloud ou les hyperscalers. C'est un <strong>choix délibéré</strong> : quoi tourne où, basé sur le risque, la réglementation et les priorités stratégiques. Certains workloads sont parfaitement adaptés au cloud public. D'autres exigent un contrôle total. Je vous aide à articuler les trois zones :
         </p>
-        <div class="grid gap-6 md:grid-cols-3">
-          <div class="rounded-lg border border-neutral-200 p-5 text-center">
-            <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Cloud public</p>
-            <p class="text-sm text-neutral-500">Azure OpenAI, Anthropic, Google. Rapide, intégré, support enterprise. Adapté pour les workloads non sensibles.</p>
+        <!-- Spectre de souverainete -->
+        <div class="overflow-hidden rounded-lg border border-neutral-200">
+          <!-- Gradient bar -->
+          <div class="flex h-3">
+            <div class="flex-1 bg-blue-300"></div>
+            <div class="flex-1 bg-secondary-400"></div>
+            <div class="flex-1 bg-secondary-700"></div>
           </div>
-          <div class="rounded-lg border border-neutral-200 p-5 text-center">
-            <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Cloud privé</p>
-            <p class="text-sm text-neutral-500">Modèles open source (Mistral, Llama) sur infrastructure dédiée. Contrôle des données, coût prévisible, portabilité.</p>
-          </div>
-          <div class="rounded-lg border border-neutral-200 p-5 text-center">
-            <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Souverain on-premise</p>
-            <p class="text-sm text-neutral-500">LLM locaux pour données sensibles (secret bancaire, données patients). Conformité maximale, latence minimale.</p>
+          <div class="grid md:grid-cols-3">
+            <div class="border-b border-r border-neutral-100 p-5 text-center md:border-b-0">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-blue-500">Vitesse</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Cloud public</p>
+              <p class="text-sm text-neutral-500">Azure OpenAI, Anthropic, Google. Rapide, intégré, support enterprise. Adapté pour les workloads non sensibles.</p>
+            </div>
+            <div class="border-b border-r border-neutral-100 p-5 text-center md:border-b-0">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-500">Équilibre</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Cloud privé</p>
+              <p class="text-sm text-neutral-500">Modèles open source (Mistral, Llama) sur infrastructure dédiée. Contrôle des données, coût prévisible, portabilité.</p>
+            </div>
+            <div class="p-5 text-center">
+              <p class="mb-1 text-xs font-bold uppercase tracking-widest text-secondary-700">Contrôle</p>
+              <p class="mb-2 font-headings text-lg font-bold text-neutral-900">Souverain on-premise</p>
+              <p class="text-sm text-neutral-500">LLM locaux pour données sensibles (secret bancaire, données patients). Conformité maximale, latence minimale.</p>
+            </div>
           </div>
         </div>
       </Col>
@@ -124,14 +137,31 @@ const i18n = t('fr');
           <div>
             <h3 class="mb-3 font-headings text-lg font-bold text-neutral-900">Protection des données pour l'IA</h3>
             <p class="mb-4 text-neutral-600">
-              Vous ne pouvez pas nourrir vos LLM avec des données sensibles non protégées. L'approche DADA (Discover, Tokenise, Augment, Apply) permet d'alimenter l'IA en toute sécurité :
+              Vous ne pouvez pas nourrir vos LLM avec des données sensibles non protégées. Mon approche en 4 étapes permet d'alimenter l'IA en toute sécurité :
             </p>
-            <ul class="space-y-2 text-sm text-neutral-500">
-              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Cartographie des données sensibles (PII, secret bancaire)</li>
-              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Tokenisation pour traitement sécurisé</li>
-              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Génération de données synthétiques pour le test et l'entraînement</li>
-              <li class="flex items-start gap-2"><span class="mt-1 shrink-0 text-secondary-500">&#x2713;</span> Alimentation sécurisée des pipelines RAG</li>
-            </ul>
+            <div class="grid grid-cols-4 gap-1">
+              <div class="rounded-l-lg bg-secondary-50 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">1. Discover</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Cartographier les données sensibles</p>
+              </div>
+              <div class="relative bg-secondary-100 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">2. Tokenise</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Remplacer par des tokens sécurisés</p>
+              </div>
+              <div class="bg-secondary-100 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-600">3. Augment</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Générer des données synthétiques</p>
+              </div>
+              <div class="rounded-r-lg bg-secondary-200 p-3 text-center">
+                <p class="text-xs font-bold text-secondary-700">4. Apply</p>
+                <p class="mt-1 text-[0.65rem] text-neutral-500">Alimenter le RAG en sécurité</p>
+              </div>
+            </div>
+            <div class="mt-2 flex justify-between px-2">
+              <span class="text-[0.6rem] text-neutral-400">Données brutes</span>
+              <span class="text-[0.6rem] text-secondary-500">&#x2192; &#x2192; &#x2192;</span>
+              <span class="text-[0.6rem] text-neutral-400">IA alimentée en sécurité</span>
+            </div>
           </div>
         </div>
       </Col>
@@ -269,22 +299,6 @@ const i18n = t('fr');
   </Section>
 
   <!-- CTA -->
-  <Section padding="both" classes="bg-neutral-50">
-    <Row>
-      <Col span="1" />
-      <Col span="10">
-        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
-          <h2 class="mb-4 font-headings text-2xl font-bold text-white">{i18n.cta.primary}</h2>
-          <p class="mx-auto mb-6 max-w-xl text-secondary-100">
-            Un échange de 30 minutes pour comprendre où vous en êtes et identifier les prochaines étapes concrètes.
-          </p>
-          <Button type="link" size="lg" style="white" variation="outline" link="/contact/">
-            {i18n.cta.primary}
-          </Button>
-        </div>
-      </Col>
-      <Col span="1" />
-    </Row>
-  </Section>
+  <CtaBanner lang="fr" />
 
 </BaseLayout>

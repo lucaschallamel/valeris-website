@@ -1,0 +1,54 @@
+---
+// CtaBanner - Reusable CTA banner with phone and LinkedIn
+// Used across all pages in all 4 languages
+
+import Section from './ui/Section.astro';
+import Row from './ui/Row.astro';
+import Col from './ui/Col.astro';
+import Button from './ui/Button.astro';
+import type { Lang } from '../i18n';
+import { t, getLocalePath } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  subtitle?: string;
+}
+
+const { lang, title, subtitle } = Astro.props;
+const i18n = t(lang);
+
+const ctaTitle = title || i18n.cta.primary;
+const ctaSubtitle = subtitle || i18n.contact.expectation;
+const contactLink = getLocalePath('/contact/', lang);
+---
+
+<Section id="cta" padding="both">
+  <Row>
+    <Col span="1" />
+    <Col span="10">
+      <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
+        <h2 class="mb-4 font-headings text-2xl font-bold text-white">{ctaTitle}</h2>
+        <p class="mx-auto mb-6 max-w-xl text-secondary-100">{ctaSubtitle}</p>
+
+        <!-- Phone -->
+        <p class="mb-6">
+          <a href="tel:+41782223159" class="font-headings text-2xl font-bold text-white transition-opacity hover:opacity-80">
+            +41 78 222 31 59
+          </a>
+        </p>
+
+        <!-- Actions -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <Button type="link" size="lg" style="white" variation="outline" link={contactLink}>
+            {i18n.cta.primary}
+          </Button>
+          <Button type="link" size="lg" style="white" variation="outline" link="https://www.linkedin.com/in/lucaschallamel/">
+            LinkedIn
+          </Button>
+        </div>
+      </div>
+    </Col>
+    <Col span="1" />
+  </Row>
+</Section>

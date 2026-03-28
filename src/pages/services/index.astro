@@ -8,6 +8,7 @@ import Feature from '../../components/ui/Feature.astro';
 import { t } from '../../i18n';
 
 const i18n = t('fr');
+import CtaBanner from '../../components/CtaBanner.astro';
 ---
 
 <BaseLayout title={`${i18n.nav.services} - ${i18n.site.title}`}>
@@ -25,6 +26,33 @@ const i18n = t('fr');
         </p>
       </Col>
       <Col span="2" />
+    </Row>
+    <!-- Altitude diagram -->
+    <Row>
+      <Col span="3" />
+      <Col span="6" align="center" classes="mt-8">
+        <div class="flex flex-col items-center gap-1">
+          <div class="flex w-48 items-center justify-center rounded-t-lg bg-secondary-700 px-4 py-3 text-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-100">Gouvernance</p>
+              <p class="text-sm text-white">Le quoi</p>
+            </div>
+          </div>
+          <div class="flex w-64 items-center justify-center bg-secondary-500 px-4 py-3 text-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-100">Exécution</p>
+              <p class="text-sm text-white">Le comment</p>
+            </div>
+          </div>
+          <div class="flex w-80 items-center justify-center rounded-b-lg bg-secondary-300 px-4 py-3 text-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-secondary-800">Leadership</p>
+              <p class="text-sm text-secondary-700">Le qui</p>
+            </div>
+          </div>
+        </div>
+      </Col>
+      <Col span="3" />
     </Row>
   </Section>
 
@@ -125,22 +153,6 @@ const i18n = t('fr');
   </Section>
 
   <!-- Cross-selling -->
-  <Section padding="both">
-    <Row>
-      <Col span="1" />
-      <Col span="10">
-        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
-          <h2 class="mb-6 font-headings text-2xl font-bold text-white">Un client, trois portes d'entrée</h2>
-          <p class="mx-auto mb-8 max-w-xl text-secondary-100">
-            Les trois offres sont interconnectées. Un diagnostic IA révèle que l'équipe ne peut pas livrer les cas d'usage identifiés. Le coaching d'équipe révèle que le CTO est le goulot d'étranglement. Le coaching du CTO révèle que le board attend une stratégie IA structurée. Chaque porte d'entrée mène aux autres - et le client idéal touche les trois sur 12-18 mois.
-          </p>
-          <Button type="link" size="lg" style="white" variation="outline" link="/contact/">
-            {i18n.cta.primary}
-          </Button>
-        </div>
-      </Col>
-      <Col span="1" />
-    </Row>
-  </Section>
+  <CtaBanner lang="fr" />
 
 </BaseLayout>

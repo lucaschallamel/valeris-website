@@ -106,9 +106,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       }
     );
 
-    const turnstileResult = (await turnstileResponse.json()) as { success: boolean };
+    const turnstileResult = (await turnstileResponse.json()) as { success: boolean; 'error-codes'?: string[] };
     if (!turnstileResult.success) {
-      return new Response(JSON.stringify({ error: 'Captcha verification failed' }), {
+      console.error('Turnstile verification failed:', JSON.stringify(turnstileResult));
+      return new Response(JSON.stringify({ error: 'Captcha verification failed', details: turnstileResult['error-codes'] }), {
         status: 403,
         headers: { ...headers, 'Content-Type': 'application/json' },
       });
@@ -150,8 +151,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     if (!resendResponse.ok) {
       const resendError = await resendResponse.text();
-      console.error('Resend error:', resendError);
-      return new Response(JSON.stringify({ error: 'Email delivery failed' }), {
+      console.error('Resend error:', resendResponse.status, resendError);
+      return new Response(JSON.stringify({ error: 'Email delivery failed', status: resendResponse.status, details: resendError }), {
         status: 500,
         headers: { ...headers, 'Content-Type': 'application/json' },
       });

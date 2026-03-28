@@ -8,6 +8,7 @@ import Feature from '../../../components/ui/Feature.astro';
 import { t } from '../../../i18n';
 
 const i18n = t('de');
+import CtaBanner from '../../../components/CtaBanner.astro';
 ---
 
 <BaseLayout title={`${i18n.nav.services} - ${i18n.site.title}`}>
@@ -152,22 +153,6 @@ const i18n = t('de');
   </Section>
 
   <!-- Cross-selling -->
-  <Section padding="both">
-    <Row>
-      <Col span="1" />
-      <Col span="10">
-        <div class="rounded-xl bg-secondary-600 px-8 py-12 text-center">
-          <h2 class="mb-6 font-headings text-2xl font-bold text-white">Ein Kunde, drei Zugänge</h2>
-          <p class="mx-auto mb-8 max-w-xl text-secondary-100">
-            Die drei Angebote sind miteinander verbunden. Eine KI-Diagnose zeigt, dass das Team die identifizierten Use Cases nicht umsetzen kann. Das Team-Coaching zeigt, dass der CTO der Engpass ist. Das CTO-Coaching zeigt, dass der Verwaltungsrat eine strukturierte KI-Strategie erwartet. Jede Tür führt zu den anderen - und der ideale Kunde berührt alle drei über 12-18 Monate.
-          </p>
-          <Button type="link" size="lg" style="white" variation="outline" link="/de/kontakt/">
-            {i18n.cta.primary}
-          </Button>
-        </div>
-      </Col>
-      <Col span="1" />
-    </Row>
-  </Section>
+  <CtaBanner lang="de" />
 
 </BaseLayout>

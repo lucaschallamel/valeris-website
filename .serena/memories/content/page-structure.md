@@ -2,32 +2,45 @@
 
 ## Pages (30 total: 10 FR + 10 DE + 10 EN)
 
-### Fully Scaffolded (structure + placeholder content)
-| Page | FR Route | Sections |
-|------|---------|----------|
-| Home | `/` | Hero + 3 service cards + teal CTA rectangle |
-| Services index | `/services/` | Hero + 3 pillars (alternating layout) + cross-selling CTA |
-| AI Governance | `/services/gouvernance-ia/` | Hero + Problem + Approach (4 features) + Packages (2 cards) + Audience + CTA |
-| Team Performance | `/services/performance-equipes/` | Same 6-section structure |
-| Executive Coaching | `/services/coaching-executif/` | Same 6-section structure |
-| About | `/a-propos/` | Hero + Portrait + Narrative + Credentials + Methodology (3-step) + Values + CTA |
-| Publications | `/publications/` | Hero + White paper (featured) + 2 essays (upcoming) + Blog link CTA |
-| Blog | `/blog/` | Teal banner + podcast filters + Substack article grid |
-| Contact | `/contact/` | Teal banner + 9-field form with Turnstile |
-| Legal | `/mentions-legales/` | Stub |
+### FR Pages - Real Content (March 2026)
 
-### Content TODOs
-- Real career narrative (from CV and experience)
-- Professional headshot photo
-- Real certifications list
-- White paper content (AI sovereignty)
-- Service pages: enrich with real examples from commercial proposals
-- Legal page: nDSG/CGU content
+| Page | Status | Key Content |
+|------|--------|-------------|
+| Home | Scaffolded | Hero + 3 service cards + teal CTA |
+| Services index | Enriched | 3 pillars with real methodology names, cross-selling narrative |
+| **AI Governance** | **Real content** | 7-axis maturity model, ISO 42001/EU AI Act/nDSG, sovereignty (3 zones), AI FinOps, DADA framework, 4 packages (CHF 8.5K-40K), certifications (ISO 42001, TOGAF 10, Microsoft AI in progress), anonymised UBP reference |
+| **Team Performance** | **Real content** | Coach-Craft 4-step method, "Code is Cattle" manifesto, SDD methodology, 4 legacy pain points (Comprendre/Documenter/Securiser/Evoluer), SDLC Assessment (new, CHF 15-25K), 5 packages total, real Infostrates metrics |
+| **Executive Coaching** | **Real content** | Vantaset Performance-OS reference, "AI is infrastructure" framing, system engineering skill evolution, Augmented Scrum roles, 12-24 month window, NAB metrics + 2 C-suite quotes, 4 packages (CHF 1.5K-28K) |
+| **About** | **Real content** | Professional photo (B&W), full career (NAB/Azqore/UBP/Talan/Infostrates), key numbers, timeline, 6 certifications, 3 reference cards with metrics + quotes (NAB, Infostrates, Process Creative), methodology, values |
+| Publications | Scaffolded | White paper AI sovereignty + 2 upcoming essays |
+| Blog | Complete | 31 articles from Substack RSS + manual entries |
+| Contact | Complete | Trilingual form with Resend + Turnstile |
+| Legal | Stub | nDSG/CGU content needed |
 
-### Design Patterns
+### DE/EN Pages
+Still scaffolded structure from previous session. Need propagation of real content.
+
+### Content Sources Used
+- CV: Lucas_Challamel_CV_Malt.md, Lucas_Challamel_Consultant_Malt.md
+- References: REF_01_INFOSTRATES, REF_02_PROCESS_CREATIVE, REF_03_NAB_UBANK
+- Vantaset UBank Case Study PDF (Lee Hatton + Glen Aiton quotes)
+- OCSIN Coaching offer (Coach-Craft methodology, champion model)
+- AI Offers catalogue + GLA Flash Strategy (FinOps, DADA, "Code is Cattle", 4 legacy pain points, SDLC Assessment, Augmented Scrum, system engineering insight)
+- UBP ideation pack (7-axis maturity model, sovereignty zones)
+- TotalEnergies proposal (Coach & Craft 12-week, KPI framework)
+- BTP offer (diagnostic flash, progressive engagement)
+
+### Key Methodologies Referenced
+- **Coach-Craft**: 4 steps (demonstrate, guided practice, progressive autonomy, lasting anchoring)
+- **SDD** (Specification-Driven Development): specify first, generate second
+- **DADA** (Discover, Tokenise, Augment, Apply): data protection for AI
+- **Onion Model**: legacy modernisation from outside in (UI/API, business logic, data model)
+- **7-axis AI Maturity Model**: governance, cybersecurity, regulatory, infrastructure, data quality, competencies, application portfolio
+- **Performance-OS** (Vantaset): high-performance coaching programme
+
+### Design Patterns (unchanged)
 - Altitude labels: `text-sm font-bold uppercase tracking-widest text-secondary-500`
 - Entry-point cards: `border-2 border-secondary-200 bg-secondary-50/30`
-- CTA rectangles: `rounded-xl bg-secondary-600` with `style="white" variation="outline"` buttons
-- Teal banners (blog, contact): full-width `bg-secondary-600` with white text
-- Section padding: `py-8` / `3.5rem` desktop (reduced from Foxi default)
-- Footer: copyright + legal + contact links, teal hover
+- CTA rectangles: `rounded-xl bg-secondary-600` with white outline buttons
+- Legacy pain points: `border-l-4 border-secondary-400` cards
+- Metrics badges: `bg-secondary-50` with `text-secondary-600` numbers

@@ -1,0 +1,34 @@
+---
+// MetricBar - Before/After progress bar for metrics visualization
+// Usage: <MetricBar label="Couverture tests" before="5%" after="65%" beforeValue={5} afterValue={65} />
+
+interface Props {
+  label: string;
+  before: string;
+  after: string;
+  beforeValue: number;
+  afterValue: number;
+  inverted?: boolean; // true = lower is better (e.g. regressions, lead time)
+}
+
+const { label, before, after, beforeValue, afterValue, inverted = false } = Astro.props;
+---
+
+<div class="mb-4">
+  <div class="mb-1 flex items-baseline justify-between">
+    <span class="text-sm font-medium text-neutral-700">{label}</span>
+    <span class="text-xs text-neutral-400">{before} &rarr; <span class="font-bold text-secondary-600">{after}</span></span>
+  </div>
+  <div class="relative h-2 w-full overflow-hidden rounded-full bg-neutral-200">
+    <!-- Before (grey, behind) -->
+    <div
+      class="absolute left-0 top-0 h-full rounded-full bg-neutral-300 transition-all duration-700"
+      style={`width: ${inverted ? beforeValue : beforeValue}%`}
+    />
+    <!-- After (teal, on top) -->
+    <div
+      class="absolute left-0 top-0 h-full rounded-full bg-secondary-400 transition-all duration-700"
+      style={`width: ${inverted ? (100 - afterValue) : afterValue}%`}
+    />
+  </div>
+</div>
