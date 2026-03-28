@@ -1,45 +1,35 @@
-# Operations - Current State (2026-03-28 late evening)
+# Operations - Current State (2026-03-28 end of day)
 
 ## Site
 - **URL**: https://valeris.fr (+ www.valeris.fr)
 - **Pages**: 44 (11 per language: FR/DE/EN/IT)
-- **Build**: ~1.9 seconds, zero errors
-- **Deploy**: `npm run deploy`
-- **SEO score**: ~8/10 (from 5.5/10)
+- **Build**: ~2 seconds, zero errors
+- **SEO score**: ~8/10
 
-## SEO (implemented 2026-03-28)
-- Canonical URLs on all pages
-- Open Graph (og:type, url, title, description, site_name, locale fr_CH/de_CH/it_CH/en)
-- Twitter Card (summary)
-- JSON-LD ProfessionalService (address Geneva, geo, phone, price range, founder)
-- Person schema on about pages, Service schema on service pages
-- 11 unique meta descriptions per language (150-160 chars, geographic keywords)
-- SeoSchema.astro shared component
+## Key Features Complete
+- Cal.eu booking (cal.eu/valeris/30min-meet-and-greet)
+- SVG icons on all CTA buttons (calendar, envelope, LinkedIn, phone, download)
+- Home hero: 2 buttons (Cal.eu booking + Contact form)
+- Contact form: Turnstile + Resend (Ireland eu-west-1)
+- Blog: 31 Substack articles, 5 podcast filters
+- Partners: 18 partners, 5 categories, filterable cards
+- SEO: canonical, OG, JSON-LD, unique meta descriptions
+- Mobile hamburger menu
+- Watermark filigrane 2.5%
 
-## PageSpeed
-- Critical fonts preloaded from /public/fonts/ (stable URLs)
-- CerebriSans-Regular + Montserrat preloaded in head
-- font-display: swap (critical) / optional (italic)
-- CSS->font dependency chain broken
+## Bio Details (current)
+- 30 years experience (not 25)
+- Master Finance & Economie (not MBA) - Sciences Po Grenoble
+- Diplome d'Ingenieur & DEA - ENSE3 Grenoble INP
+- UBP: data protection platform + SG acquisition data migration (no CHF amounts)
+- CTO/CIO Advisory (not just CTO Advisory)
+- Top 1% performer at NAB
+- Trilingue, triculturel, global (FR/AU/CH + offshore UA/VN/MY)
+- Region PACA (anonymised reference, not Marseille)
+- Infostrates and Process Creative logos removed
 
 ## Infrastructure
-- Cloudflare Pages + Workers (contact form)
-- DNS at Cloudflare (nova/osmar.ns.cloudflare.com)
-- Resend: domain valeris.fr verified (Ireland eu-west-1)
-- Turnstile: configured, token reset on error
-- Secrets: RESEND_API_KEY, TURNSTILE_SECRET_KEY, CONTACT_EMAIL
-
-## Documentation
-- 7 READMEs (root, docs-valeris, src, components, lib, functions, ADR index)
-- CLAUDE.md fully up to date
-- 6 operations guides (DNS, Resend, Turnstile, Substack, Partners, Deployment)
-- 8 dev journal entries
-- 3 ADRs
-
-## Remaining
-- Contact form e2e test needed
-- robots.txt sitemap reference
-- www -> non-www redirect
-- Cal.com booking widget
-- Analytics (Plausible/Fathom)
-- Translation review (DE, IT)
+- Cloudflare Pages + Workers, DNS at Cloudflare
+- Resend verified (Ireland), Turnstile configured
+- Cal.eu (EU-hosted, GDPR), CalDAV with Infomaniak in progress
+- 4 ADRs, 9 dev journal entries, 7 READMEs, 6 ops guides

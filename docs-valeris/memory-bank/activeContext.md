@@ -27,15 +27,17 @@
 1. ~~SEO quick wins~~ (done)
 2. ~~Documentation overhaul~~ (done)
 3. ~~PageSpeed fonts~~ (done)
-4. ~~Cal.eu booking~~ (done - cal.eu/valeris/30min-meet-and-greet)
-5. Complete CalDAV connection with Infomaniak KSuite
-6. Test contact form end-to-end
-7. Add robots.txt sitemap reference
-8. Configure www -> non-www redirect in Cloudflare
-9. Lighthouse full audit
-10. Privacy-respecting analytics (Plausible/Fathom)
-11. German and Italian translation review by native speakers
-12. Launch announcement
+4. ~~Cal.eu booking~~ (done)
+5. ~~SVG icons on all CTA buttons~~ (done, 4 languages)
+6. ~~Bio updates~~ (done: 30 years, Master, DEA, UBP, PACA, photo caption)
+7. Complete CalDAV connection with Infomaniak KSuite
+8. Test contact form end-to-end
+9. Add robots.txt sitemap reference
+10. Configure www -> non-www redirect in Cloudflare
+11. Lighthouse full audit
+12. Privacy-respecting analytics (Plausible/Fathom)
+13. German and Italian translation review by native speakers
+14. Launch announcement
 
 ## Blockers
 

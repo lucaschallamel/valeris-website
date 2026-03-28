@@ -51,12 +51,20 @@
 - [x] **PageSpeed**: critical fonts preloaded (/public/fonts/), CSS->font chain broken
 - [x] Estimated SEO score: 5.5/10 -> 8/10
 
-### 2026-03-28 - Sprint 3d: Cal.eu Booking
+### 2026-03-28 - Sprint 3d: Cal.eu Booking + UI Polish
 - [x] **Cal.eu** account created (EU-hosted, GDPR compliant, cal.eu/valeris)
 - [x] Event: 30min-meet-and-greet
 - [x] Booking link integrated in CtaBanner (28 pages) and ContactForm
 - [x] ADR-004 written (Cal.eu over Calendly, link over embed)
 - [x] CalDAV connection with Infomaniak KSuite in progress
+- [x] **SVG icons** on all CTA buttons (calendar, envelope, LinkedIn, phone, download) - 4 languages
+- [x] **Home hero** split into 2 buttons: Cal.eu booking + Contact form - 4 languages
+- [x] **Bio**: 30 years (not 25), Master (not MBA), DEA/MPhil added, UBP rewritten, CTO/CIO Advisory
+- [x] **Photo caption**: name + title + LinkedIn icon button - 4 languages
+- [x] **Top 1% performer** added - 4 languages
+- [x] **Region PACA** (anonymised reference) - 4 languages
+- [x] **Contact page** LinkedIn button same size as booking button
+- [x] **Publications** download icon on white paper button - 4 languages
 
 ## Upcoming
 
