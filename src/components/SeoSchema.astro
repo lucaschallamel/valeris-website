@@ -1,0 +1,100 @@
+---
+// SeoSchema - JSON-LD structured data for SEO
+// Outputs ProfessionalService schema on all pages
+// Add Person schema on about pages, Service schema on service pages
+
+import type { Lang } from '../i18n';
+
+interface Props {
+  type?: 'website' | 'about' | 'service';
+  serviceName?: string;
+  serviceDescription?: string;
+  lang?: Lang;
+}
+
+const { type = 'website', serviceName, serviceDescription, lang = 'fr' } = Astro.props;
+const siteUrl = 'https://valeris.fr';
+
+// Base organization/professional service (always present)
+const professionalService = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Valeris Coaching',
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.svg`,
+  image: `${siteUrl}/favicon.svg`,
+  telephone: '+41782223159',
+  email: 'contact@valeris.fr',
+  description: lang === 'fr'
+    ? 'Conseil en leadership technologique pour les entreprises suisses. Gouvernance IA, performance des equipes d\'ingenierie, coaching de dirigeants techniques.'
+    : lang === 'de'
+    ? 'Technologie-Leadership-Beratung fuer Schweizer Unternehmen. KI-Governance, Engineering-Team-Performance, Coaching fuer technische Fuehrungskraefte.'
+    : lang === 'it'
+    ? 'Consulenza in leadership tecnologico per le imprese svizzere. Governance IA, performance dei team di ingegneria, coaching per dirigenti tecnici.'
+    : 'Technology leadership advisory for Swiss enterprises. AI governance, engineering team performance, technical executive coaching.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: lang === 'de' ? 'Genf' : lang === 'it' ? 'Ginevra' : lang === 'en' ? 'Geneva' : 'Geneve',
+    addressRegion: lang === 'de' ? 'Genf' : 'Geneve',
+    addressCountry: 'CH',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 46.2044,
+    longitude: 6.1432,
+  },
+  areaServed: [
+    { '@type': 'Country', name: lang === 'de' ? 'Schweiz' : lang === 'it' ? 'Svizzera' : lang === 'en' ? 'Switzerland' : 'Suisse' },
+    { '@type': 'Country', name: 'France' },
+  ],
+  priceRange: 'CHF 1500 - 75000',
+  sameAs: [
+    'https://www.linkedin.com/in/lucaschallamel/',
+    'https://thecamelhall.substack.com/',
+  ],
+  founder: {
+    '@type': 'Person',
+    name: 'Lucas Challamel',
+    jobTitle: lang === 'fr' ? 'Fondateur et Consultant' : lang === 'de' ? 'Gruender und Berater' : lang === 'it' ? 'Fondatore e Consulente' : 'Founder and Consultant',
+    url: `${siteUrl}/${lang === 'fr' ? 'a-propos/' : lang === 'de' ? 'de/ueber-mich/' : lang === 'it' ? 'it/chi-sono/' : 'en/about/'}`,
+  },
+  knowsLanguage: ['fr', 'en', 'de', 'it'],
+};
+
+// Person schema for about page
+const personSchema = type === 'about' ? {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Lucas Challamel',
+  jobTitle: lang === 'fr' ? 'Consultant en leadership technologique' : lang === 'de' ? 'Berater fuer Technologie-Leadership' : lang === 'it' ? 'Consulente in leadership tecnologico' : 'Technology Leadership Consultant',
+  url: `${siteUrl}/${lang === 'fr' ? 'a-propos/' : lang === 'de' ? 'de/ueber-mich/' : lang === 'it' ? 'it/chi-sono/' : 'en/about/'}`,
+  worksFor: { '@type': 'Organization', name: 'Valeris Coaching', url: siteUrl },
+  knowsAbout: ['AI Governance', 'Engineering Leadership', 'Digital Transformation', 'ISO 42001', 'Agile Coaching'],
+  knowsLanguage: ['French', 'English', 'German', 'Italian'],
+  alumniOf: [
+    { '@type': 'EducationalOrganization', name: 'MIT' },
+    { '@type': 'EducationalOrganization', name: 'Cambridge Judge Business School' },
+    { '@type': 'EducationalOrganization', name: 'Sciences Po Grenoble' },
+    { '@type': 'EducationalOrganization', name: 'Grenoble INP ENSE3' },
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/lucaschallamel/',
+    'https://thecamelhall.substack.com/',
+  ],
+} : null;
+
+// Service schema for service pages
+const serviceSchema = type === 'service' && serviceName ? {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: serviceName,
+  description: serviceDescription,
+  provider: { '@type': 'ProfessionalService', name: 'Valeris Coaching', url: siteUrl },
+  areaServed: { '@type': 'Country', name: 'Switzerland' },
+  serviceType: 'Consulting',
+} : null;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(professionalService)} />
+{personSchema && <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />}
+{serviceSchema && <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />}

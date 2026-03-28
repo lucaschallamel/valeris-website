@@ -15,7 +15,7 @@ const i18n = t('fr');
 import CtaBanner from '../components/CtaBanner.astro';
 ---
 
-<BaseLayout title={`${i18n.about.title} - ${i18n.site.title}`}>
+<BaseLayout title={`${i18n.about.title} - ${i18n.site.title}`} description={i18n.site.descriptions.about} seoType="about">
 
   <!-- Hero -->
   <Section padding="both" classes="bg-neutral-50">

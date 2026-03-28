@@ -1,7 +1,20 @@
 {
   "site": {
     "title": "Valeris Coaching",
-    "description": "Technologie-Leadership-Beratung fuer Schweizer Unternehmen"
+    "description": "Technologie-Leadership-Beratung in Genf. KI-Governance, Engineering-Team-Performance und Coaching fuer technische Fuehrungskraefte in der Schweiz.",
+    "descriptions": {
+      "home": "Technologie-Leadership-Beratung in Genf. KI-Governance, Engineering-Team-Performance und Coaching fuer technische Fuehrungskraefte in der Schweiz.",
+      "services": "Drei Beratungsangebote fuer Schweizer Technologie-Fuehrungskraefte: KI-Governance und ISO 42001, Engineering-Team-Performance, CTO- und VP-Engineering-Coaching.",
+      "aiGovernance": "KI-Reifegraddiagnose, Governance-Framework nach ISO 42001 und EU AI Act, Datensouveraenitaet und AI FinOps. Fuer CTOs und CISOs in der Schweiz.",
+      "teamPerformance": "Eingebettetes technisches Coaching, TDD/BDD, CI/CD, Code Reviews. Die Coach-Craft-Methode zur Transformation Ihrer Engineering-Team-Leistung in 12 Wochen.",
+      "executiveCoaching": "Individuelles Coaching fuer CTOs, VP Engineering und technische Direktoren. Vantaset-Programm, Stellenantritt, Board-Alignment. Genf und Westschweiz.",
+      "blog": "Artikel und Podcasts zu Technologie-Leadership, kuenstlicher Intelligenz und Organisationstransformation. Von Lucas Challamel, Berater in Genf.",
+      "publications": "Whitepaper und Ressourcen zu KI-Governance, digitaler Souveraenitaet und Technologie-Leadership fuer Schweizer Unternehmen.",
+      "partners": "Technologie- und Strategiepartner: Microsoft, Anthropic, AWS, Cloudflare. Beratungsallianzen und Zertifizierungen ISO 42001, TOGAF.",
+      "about": "Lucas Challamel, 25 Jahre Technologie-Leadership. Frankreich, Australien, Schweiz. Ex-NAB/UBank, Azqore, UBP. Dreisprachig, trikulturell. Sitz in Genf.",
+      "contact": "Vereinbaren Sie ein 30-minuetiges Gespraech mit Lucas Challamel. Technologie-Leadership-Beratung, KI-Governance und Fuehrungskraefte-Coaching. Genf, Schweiz.",
+      "legal": "Impressum, Datenschutzerklaerung (nDSG und DSGVO) und Nutzungsbedingungen von valeris.fr. Valeris Coaching, Genf."
+    }
   },
   "nav": {
     "services": "Leistungen",
