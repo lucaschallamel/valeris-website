@@ -3,56 +3,56 @@
 ## Completed Milestones
 
 ### 2026-03-27 - Project Inception & Scaffolding
-- [x] Architecture brainstorming, stack decision (Astro + Cloudflare Pages)
-- [x] ADR-001, ADR-002, ADR-003
-- [x] Astro 6.x, i18n, Foxi components, Tailwind v4, brand assets
-- [x] Blog (31 articles from Substack, 5 podcast filters)
-- [x] Contact form (Resend + Turnstile)
-- [x] Teal palette + warm stone neutrals
+- [x] Architecture, stack, ADRs, Foxi components, blog, contact form, teal palette
 
 ### 2026-03-27 - Sprint 1: Real FR Content
-- [x] About page: photo, career narrative, key numbers, timeline, certifications, references, methodology, values
-- [x] AI Governance: 7-axis maturity model, sovereignty, AI FinOps, DADA, 4 packages
-- [x] Team Performance: Coach-Craft, "Code is Cattle", SDD, SDLC Assessment, 5 packages
-- [x] Executive Coaching: Vantaset Performance-OS, Augmented Scrum, 4 packages
-- [x] Services index: enriched descriptions with methodology names
+- [x] About, services x4, publications - all with real content from CV and commercial offers
 
 ### 2026-03-28 - Sprint 2: Quadrilingual + Infrastructure
-- [x] Italian added as 4th language (10 pages, full i18n)
-- [x] All FR content translated to DE, EN, IT (30 translated pages, 2560 lines)
-- [x] DNS migrated from Infomaniak to Cloudflare (nameservers, DNSSEC, custom domain)
-- [x] Site live at valeris.fr and www.valeris.fr
-- [x] KSuite email preserved (MX, SPF, DKIM, DMARC intact)
-- [x] Resend DNS records fixed (deleted legacy _domainkey NS delegation)
-- [x] Turnstile reset fix (token single-use handling)
-- [x] Opera browser fix (List component native CSS)
-- [x] White paper cover image on publications pages
-- [x] About page: trilingue/triculturel, offshore teams, anonymised references
-- [x] CtaBanner shared component: phone +41 78 222 31 59 + LinkedIn on all 28 pages
-- [x] Worker error logging improved (Turnstile + Resend details)
-- [x] 40 pages total, all building in ~2s
+- [x] Italian 4th language, all content translated (DE/EN/IT), DNS migration, contact form debug
+
+### 2026-03-28 - Sprint 3: Partners, Legal, Visuals
+- [x] **Partners page**: 18 partners (Talan, RegData, Cloudflare, Resend, Infomaniak, Azure, Apple, Astro, OpenCode, Anthropic, NVIDIA, Ollama, Obsidian, TOGAF, ISO 42001, GAICC, IAPP, ICF)
+- [x] 5 categories (Business, Technology, Tools, Standards, Certifications)
+- [x] PartnersGrid shared component with logos, filters, 4 languages
+- [x] 18 logos normalised and copied
+- [x] All partner URLs verified
+- [x] **Legal page**: Complete mentions legales (LCEN), politique de confidentialite (nLPD + RGPD), conditions d'utilisation, zero cookies declaration
+- [x] SIRET 419 129 101 00038, 1 rue Jean Jaures, 74500 Evian-les-Bains
+- [x] Legal page translated to DE, EN, IT
+- [x] **Visual assets Sprint A**: Icons, 3-altitudes diagram, data protection pipeline, Specs/Tests/Code pyramid, CTO role evolution, client logos, WP cover placeholder
+- [x] **Visual assets Sprint B**: MetricBar component, sovereignty spectrum, progress bars (Infostrates + NAB), career timeline with country badges
+- [x] **Service enrichment**: AI FinOps, data protection pipeline, Coach-Craft 4 steps, "Code is Cattle", 4 legacy pain points, SDLC Assessment, Vantaset Performance-OS, system engineering insight, Augmented Scrum
+- [x] **Reference DADA supprimee** (acronyme incoherent)
+
+### 2026-03-28 - Sprint 3b: Mobile, Translations Audit, Polish
+- [x] **Mobile hamburger menu**: slide-down panel, service sub-items, language switcher, active section highlighting
+- [x] **DE/IT service pages completed to 100%**: systematic audit, all sections/diagrams/packages now match FR
+- [x] **Watermark filigrane**: valeris-icon-black.svg, 2.5% opacity, centered, fixed
+- [x] **Contact form**: whitepaper option (4 languages), Turnstile reset fix, error logging
+- [x] **External links**: all open in new tab with rel="noopener noreferrer"
+- [x] **Opera fix**: List component native CSS
+- [x] **White paper cover**: wp_ai_sovereignty_ch.webp on FR/DE/EN publications
+- [x] **About page**: trilingue/triculturel, offshore teams, anonymised references, removed logos
+- [x] 44 pages, all deployed to valeris.fr
 
 ## Upcoming
 
-### Sprint 3: Launch Polish (April 2026 Week 1)
-- [ ] Test contact form end-to-end (Resend domain verification)
-- [ ] Mobile hamburger menu
-- [ ] Cal.com booking widget on contact page
-- [ ] Legal page content (nDSG, CGU)
+### Sprint 4: Launch Polish (April 2026 Week 1)
+- [ ] Integrate diffusion images (hero home)
 - [ ] Lighthouse optimisation (target 95+)
+- [ ] Cal.com booking widget
 - [ ] Privacy-respecting analytics (Plausible/Fathom)
+- [ ] Test contact form end-to-end (Resend domain now verified)
 
-### Sprint 4: Review & Launch (April 2026 Week 2)
+### Sprint 5: Review & Launch (April 2026 Week 2)
 - [ ] German translation review by native speaker
 - [ ] Italian translation review by native speaker
-- [ ] Professional photo retouching
 - [ ] Mobile responsive testing across devices
-- [ ] Launch announcement
-- [ ] Substack cross-promotion
+- [ ] Launch announcement + Substack cross-promotion
 
 ## Technical Debt
-- DE service pages slightly shorter than FR (agent kept existing partial content)
 - 26 Foxi components not yet Tailwind v4 adapted (fix when used)
-- Substack podcast mapping is manual (src/lib/podcasts.ts)
-- No mobile navigation menu (hamburger) - critical for launch
+- Substack podcast mapping is manual
 - Publications lead capture flow not yet built (D1 + R2 + Resend)
+- Some partner logos low-res (source higher quality when available)

@@ -1,9 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Section from '../../components/ui/Section.astro';
-import Row from '../../components/ui/Row.astro';
-import Col from '../../components/ui/Col.astro';
-import Button from '../../components/ui/Button.astro';
+import PartnersGrid from '../../components/PartnersGrid.astro';
 import CtaBanner from '../../components/CtaBanner.astro';
 import { t } from '../../i18n';
 
@@ -11,86 +8,6 @@ const i18n = t('de');
 ---
 
 <BaseLayout title={`${i18n.nav.partners} - ${i18n.site.title}`}>
-
-  <Section padding="both" classes="bg-neutral-50">
-    <Row>
-      <Col span="2" />
-      <Col span="8" align="center">
-        <h1 class="mb-4 font-headings text-4xl font-black tracking-tight text-neutral-900 lg:text-5xl">{i18n.nav.partners}</h1>
-        <p class="mx-auto max-w-2xl text-lg text-neutral-500">Ich arbeite mit einem Oekosystem von Technologie- und Strategiepartnern, um meinen Kunden die besten Loesungen zu bieten.</p>
-      </Col>
-      <Col span="2" />
-    </Row>
-  </Section>
-
-  <Section padding="both">
-    <Row>
-      <Col span="2" />
-      <Col span="8">
-        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Technologiepartner</h2>
-        <div class="grid gap-6 md:grid-cols-2">
-          <div class="rounded-lg border border-neutral-200 p-6">
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Microsoft</h3>
-            <p class="text-sm text-neutral-500">Azure OpenAI, Microsoft 365 Copilot, Power Platform. Bereitstellung und Governance von KI-Unternehmensloesungen im Microsoft-Oekosystem.</p>
-          </div>
-          <div class="rounded-lg border border-neutral-200 p-6">
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Anthropic</h3>
-            <p class="text-sm text-neutral-500">Claude, Claude Code, Agent SDK. Integration fortschrittlicher Sprachmodelle mit einem auf Sicherheit und Ethik ausgerichteten Ansatz.</p>
-          </div>
-          <div class="rounded-lg border border-neutral-200 p-6">
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">AWS</h3>
-            <p class="text-sm text-neutral-500">Amazon Bedrock, SageMaker. Cloud-Infrastruktur fuer den skalierbaren Einsatz von KI-Modellen, mit AWS Cloud-Zertifizierung.</p>
-          </div>
-          <div class="rounded-lg border border-neutral-200 p-6">
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Open Source</h3>
-            <p class="text-sm text-neutral-500">Mistral, Llama, Ollama, LangChain. Souveraene Loesungen fuer Organisationen, die volle Kontrolle ueber ihre Daten und Modelle verlangen.</p>
-          </div>
-        </div>
-      </Col>
-      <Col span="2" />
-    </Row>
-  </Section>
-
-  <Section padding="both" classes="bg-neutral-50">
-    <Row>
-      <Col span="2" />
-      <Col span="8">
-        <h2 class="mb-8 font-headings text-2xl font-bold text-neutral-900">Strategische Allianzen</h2>
-        <div class="grid gap-6 md:grid-cols-2">
-          <div class="rounded-lg border border-neutral-200 bg-white p-6">
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Beratungsunternehmen</h3>
-            <p class="text-sm text-neutral-500">Zusammenarbeit mit Strategie- und Managementberatungen, um technische Expertise und KI-Governance in Transformationsprojekte einzubringen.</p>
-          </div>
-          <div class="rounded-lg border border-neutral-200 bg-white p-6">
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Zertifizierungsstellen</h3>
-            <p class="text-sm text-neutral-500">Partnerschaften mit ISO 42001-Zertifizierungsstellen und zugelassenen Auditoren zur Begleitung von Unternehmen bis zur Zertifizierung.</p>
-          </div>
-          <div class="rounded-lg border border-neutral-200 bg-white p-6">
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Hochschulen und Universitaeten</h3>
-            <p class="text-sm text-neutral-500">Interventionen und Kooperationen mit Schweizer Hochschulen und Universitaeten zu den Themen Technologie-Leadership und KI-Governance.</p>
-          </div>
-          <div class="rounded-lg border border-neutral-200 bg-white p-6">
-            <h3 class="mb-2 font-headings text-lg font-bold text-neutral-900">Coaches und Moderatoren</h3>
-            <p class="text-sm text-neutral-500">Netzwerk zertifizierter Coaches und Moderatoren fuer Team-Coaching-Programme und technische Fuehrungskraefte-Offsites.</p>
-          </div>
-        </div>
-      </Col>
-      <Col span="2" />
-    </Row>
-  </Section>
-
-  <Section padding="both">
-    <Row>
-      <Col span="2" />
-      <Col span="8" align="center">
-        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">Partner werden</h2>
-        <p class="mx-auto mb-6 max-w-xl text-neutral-500">Sie sind ein Beratungsunternehmen, ein Technologie-Integrator oder eine Bildungseinrichtung? Lassen Sie uns ueber eine Zusammenarbeit sprechen.</p>
-        <Button type="link" size="lg" style="primary" link="/de/kontakt/" elevated>{i18n.nav.contact}</Button>
-      </Col>
-      <Col span="2" />
-    </Row>
-  </Section>
-
+  <PartnersGrid lang="de" />
   <CtaBanner lang="de" />
-
 </BaseLayout>

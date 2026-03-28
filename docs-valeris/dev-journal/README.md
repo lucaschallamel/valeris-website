@@ -16,3 +16,4 @@ Each entry follows the pattern: `YYYY-MM-DD-session-description.md`
 | [2026-03-27](2026-03-27-foxi-branding-blog-contact.md) | Foxi theme, brand assets, Substack blog federation, contact form with Resend + Turnstile |
 | [2026-03-27](2026-03-27-content-scaffolding-palette-teal.md) | Content scaffolding (all pages), teal palette, warm stone neutrals, trilingual propagation |
 | [2026-03-28](2026-03-28-translations-dns-contact-form.md) | Quadrilingual translations, DNS migration, contact form debugging, CTA standardisation |
+| [2026-03-28](2026-03-28-partners-legal-visuals.md) | Partners page (18 partners), legal content (nLPD/RGPD), visual assets Sprint A+B, service enrichment |

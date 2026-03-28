@@ -1,37 +1,34 @@
-# Operations - Current State (2026-03-28)
+# Operations - Current State (2026-03-28 evening)
 
-## Deployment
-- **Production URL**: https://valeris.fr (+ www.valeris.fr)
-- **Pages URL**: https://valeris-website.pages.dev
-- **Deploy command**: `npm run deploy` (astro build + wrangler pages deploy)
-- **Build**: 40 pages in ~2 seconds
-- **CI/CD**: manual deploy via wrangler, GitHub push for source control
+## Site
+- **URL**: https://valeris.fr (+ www.valeris.fr)
+- **Pages**: 44 (11 per language: FR/DE/EN/IT)
+- **Build**: ~2 seconds, zero errors
+- **Deploy**: `npm run deploy`
 
-## DNS (Cloudflare)
-- Nameservers: nova.ns.cloudflare.com, osmar.ns.cloudflare.com
-- CNAME @ -> valeris-website.pages.dev (proxied, CNAME flattening)
-- CNAME www -> valeris-website.pages.dev (proxied)
-- MX valeris.fr -> mta-gw.infomaniak.ch (priority 5) - KSuite email
-- MX send -> feedback-smtp.eu-west-1.amazonses.com (priority 10) - Resend
-- TXT resend._domainkey (DKIM for Resend)
-- TXT send (SPF for Resend)
-- CNAME autoconfig/autodiscover -> infomaniak.com (DNS only, for KSuite)
-- DNSSEC: disabled (was causing issues during migration)
+## Pages (11 per language)
+Home, Services index, AI Governance, Team Performance, Executive Coaching,
+Blog (Substack RSS), Publications, Partners (18 partners), About, Contact, Legal
 
-## Secrets (Cloudflare Pages)
-- RESEND_API_KEY: configured
-- TURNSTILE_SECRET_KEY: configured
-- CONTACT_EMAIL: configured
+## Infrastructure
+- Cloudflare Pages (hosting) + Workers (contact form)
+- DNS at Cloudflare (migrated from Infomaniak, DNSSEC disabled)
+- KSuite email preserved (MX to mta-gw.infomaniak.ch)
+- Resend: domain valeris.fr verified (DKIM fixed by deleting legacy _domainkey NS records)
+- Turnstile: site key 0x4AAAAAACw1vy6U50c8ODeg
+- Secrets: RESEND_API_KEY, TURNSTILE_SECRET_KEY, CONTACT_EMAIL
 
-## Known Issues
-- Resend domain verification in progress (was blocked by legacy _domainkey NS records, now fixed)
-- DE service pages slightly shorter than FR (partial translations from earlier session)
-- No mobile hamburger menu yet
-- Publications lead capture not yet built
+## Recent Completions
+- Mobile hamburger menu (lg breakpoint, slide-down, service sub-items, language switcher)
+- DE/IT service pages audited and completed to 100% match with FR
+- Watermark filigrane (2.5% opacity, valeris-icon-black.svg)
+- Whitepaper option in contact form (4 languages)
+- External links: all open in new tab (rel=noopener noreferrer)
+- Opera fix: List component native CSS
+- About: trilingue/triculturel, offshore teams, anonymised references
 
-## Lessons Learned
-- Always disable DNSSEC before changing nameservers
-- Delete legacy NS records for subdomains when migrating DNS providers
-- Turnstile tokens are single-use: always call turnstile.reset() after submission
-- Tailwind v4 @apply with responsive variants fails in scoped styles: use native CSS
-- Resend needs DKIM, SPF (on send subdomain), and MX (on send subdomain) to verify domain
+## Technical Debt
+- 26 Foxi components not Tailwind v4 adapted (fix when used)
+- Substack podcast mapping manual
+- Publications lead capture not built
+- Some partner logos low-res
