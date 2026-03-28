@@ -24,13 +24,18 @@ const alternateLinks = (Object.keys(languages) as Lang[]).map((l) => ({
 const homeLink = lang === 'fr' ? '/' : `/${lang}/`;
 
 // Active section detection - maps DE/EN slugs to FR section keys
-const pathWithoutLang = currentPath.replace(/^\/(de|en)/, '') || '/';
+const pathWithoutLang = currentPath.replace(/^\/(de|en|it)/, '') || '/';
 const sectionMap: Record<string, string> = {
   '/leistungen/': '/services/',
   '/ueber-mich/': '/a-propos/',
   '/kontakt/': '/contact/',
   '/impressum/': '/mentions-legales/',
   '/publikationen/': '/publications/',
+  '/servizi/': '/services/',
+  '/chi-sono/': '/a-propos/',
+  '/contatto/': '/contact/',
+  '/note-legali/': '/mentions-legales/',
+  '/pubblicazioni/': '/publications/',
 };
 const normalisedPath = Object.entries(sectionMap).reduce(
   (path, [from, to]) => path.replace(from, to),

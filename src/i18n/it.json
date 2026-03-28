@@ -1,0 +1,76 @@
+{
+  "site": {
+    "title": "Valeris Coaching",
+    "description": "Consulenza in leadership tecnologico per le imprese svizzere"
+  },
+  "nav": {
+    "services": "Servizi",
+    "blog": "Blog",
+    "publications": "Pubblicazioni",
+    "about": "Chi sono",
+    "contact": "Contatto"
+  },
+  "footer": {
+    "copyright": "Valeris Coaching - Ginevra, Svizzera",
+    "legal": "Note legali"
+  },
+  "blog": {
+    "subtitle": "Riflessioni sulla leadership tecnologica, l'IA e la trasformazione delle organizzazioni.",
+    "readArticle": "Leggi l'articolo",
+    "onSubstack": "su Substack",
+    "noArticles": "Nessun articolo al momento."
+  },
+  "cta": {
+    "primary": "Prenota una conversazione",
+    "secondary": "Scopri di più"
+  },
+  "services": {
+    "aiGovernance": {
+      "name": "Attivazione IA & Governance",
+      "tagline": "Dalla curiosità IA alla fiducia IA - un'adozione responsabile che produce risultati."
+    },
+    "teamPerformance": {
+      "name": "Performance dei Team di Ingegneria",
+      "tagline": "Un software migliore inizia con un team migliore - non con uno strumento migliore."
+    },
+    "executiveCoaching": {
+      "name": "Coaching per Dirigenti Tecnici",
+      "tagline": "Il ruolo è cambiato. Anche il vostro metodo dovrebbe."
+    }
+  },
+  "hero": {
+    "headline": "Una leadership tecnologica che produce risultati.",
+    "subheadline": "Aiuto le imprese svizzere a realizzare la loro trasformazione tecnologica - non solo la strategia, ma l'esecuzione."
+  },
+  "about": {
+    "title": "Chi sono",
+    "methodology": "Il mio metodo"
+  },
+  "contact": {
+    "title": "Contatto",
+    "expectation": "Uno scambio di 30 minuti, non una presentazione commerciale. Discuteremo della vostra situazione e vi dirò onestamente se posso aiutarvi.",
+    "form": {
+      "serviceInterest": "Quale servizio vi interessa?",
+      "selectService": "Selezionate un servizio",
+      "noPreference": "Nessuna preferenza",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "email": "Indirizzo e-mail",
+      "phone": "Telefono",
+      "company": "Azienda",
+      "jobTitle": "Funzione",
+      "orgSize": "Dimensione dell'organizzazione",
+      "orgSizes": {
+        "1-49": "1-49 dipendenti",
+        "50-199": "50-199 dipendenti",
+        "200-999": "200-999 dipendenti",
+        "1000+": "1000+ dipendenti"
+      },
+      "message": "Il vostro messaggio (facoltativo)",
+      "submit": "Inviare",
+      "required": "Campi obbligatori",
+      "success": "Grazie per il vostro messaggio. Vi risponderò entro 48 ore.",
+      "error": "Si è verificato un errore. Riprovate o scrivetemi direttamente."
+    }
+  }
+}

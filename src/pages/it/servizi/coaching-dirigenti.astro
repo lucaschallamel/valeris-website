@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Row from '../../../components/ui/Row.astro';
+import Col from '../../../components/ui/Col.astro';
+import { t } from '../../../i18n';
+
+const i18n = t('it');
+---
+
+<BaseLayout title={`${i18n.services.executiveCoaching.name} - ${i18n.site.title}`}>
+  <Section padding="both">
+    <Row>
+      <Col span="12">
+        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.services.executiveCoaching.name}</h1>
+        <p class="text-neutral-500">{i18n.services.executiveCoaching.tagline}</p>
+      </Col>
+    </Row>
+  </Section>
+</BaseLayout>

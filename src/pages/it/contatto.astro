@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { t } from '../../i18n';
+
+const i18n = t('it');
+---
+
+<BaseLayout title={`${i18n.contact.title} - ${i18n.site.title}`}>
+  <ContactForm lang="it" />
+</BaseLayout>
