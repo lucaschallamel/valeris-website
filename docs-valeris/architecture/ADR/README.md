@@ -6,7 +6,9 @@ This directory contains Architecture Decision Records (ADRs) for the Valeris Coa
 
 | ADR | Title | Status | Date |
 |-----|-------|--------|------|
-| [ADR-001](ADR-001-astro-payload-cloudflare.md) | Astro + Payload CMS + Cloudflare Pages | Accepted | 2026-03-27 |
+| [ADR-001](ADR-001-astro-payload-cloudflare.md) | Astro + Payload CMS + Cloudflare Pages | Partially superseded | 2026-03-27 |
+| [ADR-002](ADR-002-static-content-no-cms-cloudflare-stack.md) | Static content, Cloudflare full stack | Accepted | 2026-03-27 |
+| [ADR-003](ADR-003-foxi-components-substack-resend-turnstile.md) | Foxi, Substack, Resend, Turnstile | Accepted | 2026-03-27 |
 
 ## ADR Template
 

@@ -1,39 +1,32 @@
-# Valeris Website - Page Structure (March 2026)
+# Content - Page Structure (2026-03-28)
 
-## Pages: 44 total (11 per language x 4 languages)
+## Pages (44 total: 11 per language)
 
-| Page | FR Route | Status |
-|------|---------|--------|
-| Home | `/` | Real content, service icons, teal CTA |
-| Services index | `/services/` | 3 pillars + altitude diagram + cross-selling |
-| AI Governance | `/services/gouvernance-ia/` | Full: maturity model, FinOps, sovereignty spectrum, data protection pipeline, certifications, 4 packages |
-| Team Performance | `/services/performance-equipes/` | Full: Coach-Craft, SDD pyramid, 4 pain points, MetricBars, SDLC Assessment, 5 packages |
-| Executive Coaching | `/services/coaching-executif/` | Full: Vantaset, role evolution diagram, strategic questions, MetricBars, 4 packages |
-| About | `/a-propos/` | Photo B&W, career timeline with country badges, 3 references with logos + quotes, methodology, values |
-| Partners | `/partenaires/` | NEW: 18 partners, 5 categories, filterable cards, logos grayscale/hover |
-| Publications | `/publications/` | White paper cover, 2 upcoming essays |
-| Blog | `/blog/` | 31 articles, Substack RSS + manual, podcast filters |
-| Contact | `/contact/` | Teal banner, 9-field form, Turnstile |
-| Legal | `/mentions-legales/` | COMPLETE: nLPD + RGPD + LCEN, SIRET, zero cookies |
+| Page | FR | DE | EN | IT |
+|------|----|----|----|----|
+| Home | / | /de/ | /en/ | /it/ |
+| Services index | /services/ | /de/leistungen/ | /en/services/ | /it/servizi/ |
+| AI Governance | /services/gouvernance-ia/ | /de/leistungen/ki-governance/ | /en/services/ai-governance/ | /it/servizi/governance-ia/ |
+| Team Performance | /services/performance-equipes/ | /de/leistungen/team-performance/ | /en/services/team-performance/ | /it/servizi/performance-team/ |
+| Executive Coaching | /services/coaching-executif/ | /de/leistungen/executive-coaching/ | /en/services/executive-coaching/ | /it/servizi/coaching-dirigenti/ |
+| Blog | /blog/ | /de/blog/ | /en/blog/ | /it/blog/ |
+| Publications | /publications/ | /de/publikationen/ | /en/publications/ | /it/pubblicazioni/ |
+| Partners | /partenaires/ | /de/partner/ | /en/partners/ | /it/partner/ |
+| About | /a-propos/ | /de/ueber-mich/ | /en/about/ | /it/chi-sono/ |
+| Contact | /contact/ | /de/kontakt/ | /en/contact/ | /it/contatto/ |
+| Legal | /mentions-legales/ | /de/impressum/ | /en/legal/ | /it/note-legali/ |
 
-## Partners (18)
-- Business: Talan SA, RegData
-- Technology: Cloudflare, Resend, Infomaniak, Microsoft Azure, Apple, Astro
-- Tools: OpenCode, Anthropic Claude, NVIDIA, Ollama, Obsidian
-- Standards: TOGAF, ISO 42001
-- Certifications: GAICC, IAPP AIGP, ICF
+## Shared Components
+- **CtaBanner**: phone +41 78 222 31 59, LinkedIn, Contact button (28 pages)
+- **ContactForm**: Turnstile, 9 fields + whitepaper option, phone/LinkedIn header
+- **BlogGrid**: Substack RSS, 5 podcast filters (4 blog pages)
+- **PartnersGrid**: 18 partners, 5 categories, filterable cards with logos (4 pages)
+- **MetricBar**: before/after progress bars (2 service pages)
 
-## Components Created
-- `PartnersGrid.astro`: shared across 4 languages, teal banner + filters + cards
-- `MetricBar.astro`: reusable before/after progress bars
-- `CtaBanner.astro`: shared CTA with phone + LinkedIn
-
-## Visual Assets (CSS/SVG, no bitmaps)
-- 3-altitudes pyramid (services index)
-- Data protection pipeline (4-step grid, gouvernance-ia)
-- Sovereignty spectrum (gradient 3 zones, gouvernance-ia)
-- Specs/Tests/Code inverted pyramid (performance-equipes)
-- CTO role evolution cards + arrow (coaching-executif)
-- MetricBar x4 (performance-equipes + coaching-executif)
-- Career timeline with FR/AU/CH country badges (a-propos)
-- Service icons (shield, chart, academic-cap SVG, home)
+## Key Numbers
+- 18 partners across 5 categories
+- 31 Substack articles with 5 podcast filters
+- 3 service offerings with CHF pricing
+- White paper cover image (wp_ai_sovereignty_ch.webp)
+- Mobile hamburger menu at lg breakpoint (1024px)
+- Watermark filigrane at 2.5% opacity
