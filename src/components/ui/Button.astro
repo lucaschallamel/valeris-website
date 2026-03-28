@@ -41,6 +41,7 @@ const {
 		<a
 			href={link}
 			target={link?.startsWith('http') ? '_blank' : '_self'}
+			rel={link?.startsWith('http') ? 'noopener noreferrer' : undefined}
 			class:list={[
 				'button',
 				{ ['button--' + `${size}`]: size },
