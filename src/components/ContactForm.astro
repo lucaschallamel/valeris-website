@@ -17,7 +17,9 @@ const i18n = t(lang);
 const form = i18n.contact.form;
 ---
 
-<div class="bg-secondary-600 px-6 py-10 text-center">
+<div class="relative overflow-hidden bg-secondary-600 px-6 py-10 text-center">
+  <div class="section__abstract-bg absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none" data-abstract-bg></div>
+  <div class="relative z-[1]">
   <h1 class="mb-3 font-headings text-4xl font-bold text-white">{i18n.contact.title}</h1>
   <p class="mx-auto mb-4 max-w-2xl text-lg text-secondary-100">{i18n.contact.expectation}</p>
   <p class="mb-4">
@@ -36,9 +38,10 @@ const form = i18n.contact.form;
       LinkedIn
     </a>
   </div>
+  </div>
 </div>
 
-<Section padding="both">
+<Section padding="both" classes="bg-white">
   <Row>
     <Col span="2" />
     <Col span="8">

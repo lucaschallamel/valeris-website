@@ -30,7 +30,18 @@ type Props = {
 	bgPosition?: string
 	bgHeight?: string
 	classes?: string
+	abstractBg?: boolean
 }
+
+// 5 abstract background images (WebP, ~100KB each)
+const abstractImages = [
+	'/images/abstract/abstract-01.webp',
+	'/images/abstract/abstract-02.webp',
+	'/images/abstract/abstract-03.webp',
+	'/images/abstract/abstract-04.webp',
+	'/images/abstract/abstract-05.webp',
+];
+
 const {
 	id,
 	fullWidth,
@@ -40,8 +51,11 @@ const {
 	bg,
 	bgPosition = 'center',
 	bgHeight = '100%',
-	classes
+	classes,
+	abstractBg = false,
 } = Astro.props
+
+// Abstract bg is applied client-side for true randomisation per visit
 
 const bgStyle = bg
 	? {
@@ -68,6 +82,7 @@ const bgStyle = bg
 	]}
 >
 	<div class="section__bg" style={bgStyle}></div>
+	{abstractBg && <div class="section__abstract-bg" data-abstract-bg></div>}
 	<div class="container">
 		<slot />
 	</div>
@@ -104,6 +119,11 @@ const bgStyle = bg
 	.section__bg {
 		@apply absolute inset-0 bg-cover;
 	}
+	.section__abstract-bg {
+		@apply absolute inset-0 bg-cover bg-center;
+		opacity: 0.1;
+		pointer-events: none;
+	}
 	.container {
 		@apply relative z-[1] mx-auto max-w-7xl px-6;
 	}
@@ -113,3 +133,18 @@ const bgStyle = bg
 		padding-right: 0;
 	}
 </style>
+
+<script>
+	// Randomise abstract background images on each page load
+	const images = [
+		'/images/abstract/abstract-01.webp',
+		'/images/abstract/abstract-02.webp',
+		'/images/abstract/abstract-03.webp',
+		'/images/abstract/abstract-04.webp',
+		'/images/abstract/abstract-05.webp',
+	];
+	document.querySelectorAll<HTMLElement>('[data-abstract-bg]').forEach((el) => {
+		const src = images[Math.floor(Math.random() * images.length)];
+		el.style.backgroundImage = `url(${src})`;
+	});
+</script>
