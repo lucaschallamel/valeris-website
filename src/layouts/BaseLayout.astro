@@ -72,8 +72,8 @@ function isActiveSection(section: string): boolean {
           <span class="font-headings text-2xl font-extrabold tracking-wide text-neutral-900">valeris</span>
         </a>
 
-        <!-- Navigation -->
-        <ul class="hidden items-center gap-8 font-medium md:flex">
+        <!-- Desktop Navigation -->
+        <ul class="hidden items-center gap-8 font-medium lg:flex">
           <!-- Services dropdown -->
           <li class="services-dropdown relative flex h-full items-center">
             <a href={getLocalePath('/services/', lang)}
@@ -111,68 +111,131 @@ function isActiveSection(section: string): boolean {
           </li>
           <li>
             <a href={getLocalePath('/blog/', lang)}
-               class:list={[
-                 'rounded-full px-4 py-2 transition-colors',
-                 isActiveSection('/blog/')
-                   ? 'bg-primary-500 text-white'
-                   : 'hover:text-primary-500'
-               ]}>
+               class:list={['rounded-full px-4 py-2 transition-colors', isActiveSection('/blog/') ? 'bg-primary-500 text-white' : 'hover:text-primary-500']}>
               {i18n.nav.blog}
             </a>
           </li>
           <li>
             <a href={getLocalePath('/publications/', lang)}
-               class:list={[
-                 'rounded-full px-4 py-2 transition-colors',
-                 isActiveSection('/publications/')
-                   ? 'bg-primary-500 text-white'
-                   : 'hover:text-primary-500'
-               ]}>
+               class:list={['rounded-full px-4 py-2 transition-colors', isActiveSection('/publications/') ? 'bg-primary-500 text-white' : 'hover:text-primary-500']}>
               {i18n.nav.publications}
             </a>
           </li>
           <li>
             <a href={getLocalePath('/a-propos/', lang)}
-               class:list={[
-                 'rounded-full px-4 py-2 transition-colors',
-                 isActiveSection('/a-propos/')
-                   ? 'bg-primary-500 text-white'
-                   : 'hover:text-primary-500'
-               ]}>
+               class:list={['rounded-full px-4 py-2 transition-colors', isActiveSection('/a-propos/') ? 'bg-primary-500 text-white' : 'hover:text-primary-500']}>
               {i18n.nav.about}
             </a>
           </li>
           <li>
             <a href={getLocalePath('/contact/', lang)}
-               class:list={[
-                 'rounded-full px-4 py-2 transition-colors',
-                 isActiveSection('/contact/')
-                   ? 'bg-primary-500 text-white'
-                   : 'hover:text-primary-500'
-               ]}>
+               class:list={['rounded-full px-4 py-2 transition-colors', isActiveSection('/contact/') ? 'bg-primary-500 text-white' : 'hover:text-primary-500']}>
               {i18n.nav.contact}
             </a>
           </li>
         </ul>
 
-        <!-- Language switcher -->
-        <div class="flex items-center gap-1 text-sm">
+        <!-- Desktop Language switcher -->
+        <div class="hidden items-center gap-1 text-sm lg:flex">
           {(Object.keys(languages) as Lang[]).map((l) => (
             <a
               href={getLocalePath(currentPath, l)}
-              class:list={[
-                'rounded px-2 py-1 transition-colors',
-                l === lang
-                  ? 'font-bold text-primary-500'
-                  : 'text-neutral-400 hover:text-neutral-700'
-              ]}
+              class:list={['rounded px-2 py-1 transition-colors', l === lang ? 'font-bold text-primary-500' : 'text-neutral-400 hover:text-neutral-700']}
               aria-label={languages[l]}
             >
               {l.toUpperCase()}
             </a>
           ))}
         </div>
+
+        <!-- Mobile hamburger button -->
+        <button
+          id="mobile-menu-btn"
+          class="flex h-10 w-10 items-center justify-center rounded-lg transition-colors hover:bg-neutral-100 lg:hidden"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <svg id="menu-icon-open" class="h-6 w-6 text-neutral-700" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg id="menu-icon-close" class="hidden h-6 w-6 text-neutral-700" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </nav>
+
+      <!-- Mobile menu panel -->
+      <div id="mobile-menu" class="mobile-menu hidden border-t border-neutral-100 bg-white lg:hidden">
+        <div class="mx-auto max-w-7xl px-6 py-4">
+          <!-- Mobile nav links -->
+          <ul class="space-y-1 font-medium">
+            <li>
+              <a href={getLocalePath('/services/', lang)}
+                 class:list={['block rounded-lg px-4 py-3 transition-colors', isActiveSection('/services/') ? 'bg-primary-500 text-white' : 'hover:bg-neutral-50']}>
+                {i18n.nav.services}
+              </a>
+              <!-- Mobile service sub-items -->
+              <ul class="ml-4 space-y-1 border-l-2 border-neutral-100 pl-4">
+                <li>
+                  <a href={getLocalePath('/services/gouvernance-ia/', lang)}
+                     class="block rounded-lg px-4 py-2 text-sm text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-primary-500">
+                    {i18n.services.aiGovernance.name}
+                  </a>
+                </li>
+                <li>
+                  <a href={getLocalePath('/services/performance-equipes/', lang)}
+                     class="block rounded-lg px-4 py-2 text-sm text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-primary-500">
+                    {i18n.services.teamPerformance.name}
+                  </a>
+                </li>
+                <li>
+                  <a href={getLocalePath('/services/coaching-executif/', lang)}
+                     class="block rounded-lg px-4 py-2 text-sm text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-primary-500">
+                    {i18n.services.executiveCoaching.name}
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href={getLocalePath('/blog/', lang)}
+                 class:list={['block rounded-lg px-4 py-3 transition-colors', isActiveSection('/blog/') ? 'bg-primary-500 text-white' : 'hover:bg-neutral-50']}>
+                {i18n.nav.blog}
+              </a>
+            </li>
+            <li>
+              <a href={getLocalePath('/publications/', lang)}
+                 class:list={['block rounded-lg px-4 py-3 transition-colors', isActiveSection('/publications/') ? 'bg-primary-500 text-white' : 'hover:bg-neutral-50']}>
+                {i18n.nav.publications}
+              </a>
+            </li>
+            <li>
+              <a href={getLocalePath('/a-propos/', lang)}
+                 class:list={['block rounded-lg px-4 py-3 transition-colors', isActiveSection('/a-propos/') ? 'bg-primary-500 text-white' : 'hover:bg-neutral-50']}>
+                {i18n.nav.about}
+              </a>
+            </li>
+            <li>
+              <a href={getLocalePath('/contact/', lang)}
+                 class:list={['block rounded-lg px-4 py-3 transition-colors', isActiveSection('/contact/') ? 'bg-primary-500 text-white' : 'hover:bg-neutral-50']}>
+                {i18n.nav.contact}
+              </a>
+            </li>
+          </ul>
+
+          <!-- Mobile language switcher -->
+          <div class="mt-4 flex items-center gap-2 border-t border-neutral-100 pt-4">
+            {(Object.keys(languages) as Lang[]).map((l) => (
+              <a
+                href={getLocalePath(currentPath, l)}
+                class:list={['rounded-full px-3 py-1.5 text-sm transition-colors', l === lang ? 'bg-primary-500 font-bold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200']}
+                aria-label={languages[l]}
+              >
+                {l.toUpperCase()}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </header>
 
     <main class="flex-1">
@@ -199,7 +262,7 @@ function isActiveSection(section: string): boolean {
 </html>
 
 <style>
-  /* Invisible bridge above the menu to prevent hover gap */
+  /* Desktop services dropdown */
   .services-menu::before {
     content: '';
     position: absolute;
@@ -217,13 +280,38 @@ function isActiveSection(section: string): boolean {
     transform: rotate(180deg);
   }
   @keyframes dropdown {
-    from {
-      opacity: 0;
-      transform: translateY(-0.5rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-0.5rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Mobile menu animation */
+  .mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease-out;
+  }
+  .mobile-menu.is-open {
+    display: block;
+    max-height: 100vh;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (btn && menu && iconOpen && iconClose) {
+      btn.addEventListener('click', () => {
+        const isOpen = menu.classList.contains('is-open');
+        menu.classList.toggle('is-open');
+        menu.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+  });
+</script>

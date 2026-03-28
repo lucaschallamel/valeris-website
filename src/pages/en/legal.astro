@@ -6,17 +6,209 @@ import Col from '../../components/ui/Col.astro';
 import { t } from '../../i18n';
 
 const i18n = t('en');
+import CtaBanner from '../../components/CtaBanner.astro';
 ---
 
 <BaseLayout title={`${i18n.footer.legal} - ${i18n.site.title}`}>
-  <Section padding="both">
+
+  <!-- Header -->
+  <Section padding="both" classes="bg-neutral-50">
     <Row>
-
-      <Col span="12">
-        <h1 class="mb-4 font-headings text-3xl font-bold text-neutral-900">{i18n.footer.legal}</h1>
-        <p class="text-neutral-500">Legal notice - content coming soon.</p>
+      <Col span="2" />
+      <Col span="8" align="center">
+        <h1 class="mb-4 font-headings text-3xl font-black tracking-tight text-neutral-900">
+          Legal notice, privacy policy and terms of use
+        </h1>
+        <p class="text-sm text-neutral-400">Last updated: 28 March 2026</p>
       </Col>
-
+      <Col span="2" />
     </Row>
   </Section>
+
+  <!-- Content -->
+  <Section padding="both">
+    <Row>
+      <Col span="2" />
+      <Col span="8">
+        <div class="prose prose-neutral max-w-none text-neutral-600 [&_h2]:mb-4 [&_h2]:mt-10 [&_h2]:font-headings [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-neutral-900 [&_h3]:mb-3 [&_h3]:mt-6 [&_h3]:font-headings [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-neutral-800 [&_h4]:mb-2 [&_h4]:mt-4 [&_h4]:font-bold [&_h4]:text-neutral-700 [&_table]:text-sm [&_th]:bg-neutral-50 [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:font-bold [&_th]:text-neutral-700 [&_td]:border-t [&_td]:border-neutral-200 [&_td]:px-4 [&_td]:py-2 [&_a]:text-secondary-600 [&_a]:underline [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-1">
+
+          <h2>1. Legal notice</h2>
+
+          <h3>1.1 Website publisher</h3>
+          <p>The website <strong>valeris.fr</strong> is published by:</p>
+          <p>
+            <strong>Valeris Coaching</strong><br />
+            Company registered under French law<br />
+            SIRET: 419 129 101 00038<br />
+            Legal representative: Lucas Challamel<br />
+            1 rue Jean Jaurès, 74500 Évian-les-Bains, France<br />
+            <br />
+            Email: <a href="mailto:contact@valeris.fr">contact@valeris.fr</a><br />
+            Telephone: <a href="tel:+41782223159">+41 78 222 31 59</a>
+          </p>
+
+          <h3>1.2 Publication director</h3>
+          <p>Lucas Challamel.</p>
+
+          <h3>1.3 Hosting provider</h3>
+          <p>The website is hosted by:</p>
+          <p>
+            <strong>Cloudflare, Inc.</strong><br />
+            101 Townsend Street, San Francisco, CA 94107, United States<br />
+            <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">www.cloudflare.com</a>
+          </p>
+          <p>The transactional email service (contact form) is provided by:</p>
+          <p>
+            <strong>Resend, Inc.</strong><br />
+            United States<br />
+            <a href="https://resend.com" target="_blank" rel="noopener noreferrer">resend.com</a>
+          </p>
+
+          <!-- ============================================================ -->
+
+          <h2>2. Privacy policy</h2>
+
+          <p>This privacy policy describes how your personal data is collected, used and protected when you visit the website valeris.fr. It has been drawn up in accordance with the Swiss Federal Act on Data Protection (nDSG, in force since 1 September 2023), its implementing ordinance (DSV), the European Union General Data Protection Regulation (GDPR) and the French Informatique et Libertés Act.</p>
+
+          <h3>2.1 Data controller</h3>
+          <p>
+            <strong>Lucas Challamel</strong> - Valeris Coaching<br />
+            Email: <a href="mailto:contact@valeris.fr">contact@valeris.fr</a>
+          </p>
+
+          <h3>2.2 Data collected</h3>
+
+          <h4>a) Data submitted via the contact form</h4>
+          <p>When you fill in the contact form, the following data is collected:</p>
+          <ul>
+            <li>First name and surname (required)</li>
+            <li>Email address (required)</li>
+            <li>Telephone number (optional)</li>
+            <li>Company name (optional)</li>
+            <li>Job title (optional)</li>
+            <li>Organisation size (optional)</li>
+            <li>Desired service (optional)</li>
+            <li>Message (optional)</li>
+          </ul>
+
+          <h4>b) Technical data collected automatically</h4>
+          <p>When you visit the website, Cloudflare's servers automatically collect certain technical data in server logs: IP address, date and time of the request, pages viewed, browser type and version, operating system, referring URL (referrer).</p>
+          <p>This data is processed by Cloudflare as part of its hosting and security services (DDoS attack protection, performance optimisation).</p>
+
+          <h4>c) Security verification (Cloudflare Turnstile)</h4>
+          <p>The contact form uses Cloudflare Turnstile, a verification service designed to distinguish human submissions from automated ones. This service operates <strong>without placing cookies</strong> on your device. Cloudflare may process certain technical data (IP address, browser information) to carry out this verification.</p>
+
+          <h3>2.3 Purposes of processing</h3>
+          <table>
+            <thead>
+              <tr><th>Data</th><th>Purpose</th><th>Legal basis (nDSG)</th><th>Legal basis (GDPR)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Contact form</td>
+                <td>Responding to your enquiry, preparing a potential quotation</td>
+                <td>Overriding interest (art. 31 al. 1 nLPD)</td>
+                <td>Legitimate interest (art. 6 par. 1 let. f RGPD) and pre-contractual measures (art. 6 par. 1 let. b)</td>
+              </tr>
+              <tr>
+                <td>Server logs</td>
+                <td>Website security, protection against attacks</td>
+                <td>Overriding interest (art. 31 al. 1 nLPD)</td>
+                <td>Legitimate interest (art. 6 par. 1 let. f RGPD)</td>
+              </tr>
+              <tr>
+                <td>Cloudflare Turnstile</td>
+                <td>Spam protection</td>
+                <td>Overriding interest (art. 31 al. 1 nLPD)</td>
+                <td>Legitimate interest (art. 6 par. 1 let. f RGPD)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>2.4 Data recipients</h3>
+          <p>Your personal data may be shared with the following service providers acting as data processors:</p>
+          <table>
+            <thead>
+              <tr><th>Provider</th><th>Function</th><th>Location</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Cloudflare, Inc.</strong></td><td>Hosting, CDN, security, Turnstile</td><td>United States (global infrastructure, including European and Swiss data centres)</td></tr>
+              <tr><td><strong>Resend, Inc.</strong></td><td>Transactional email delivery</td><td>United States</td></tr>
+            </tbody>
+          </table>
+          <p>No data is sold, rented or transferred to third parties for commercial or advertising purposes.</p>
+
+          <h3>2.5 Data transfers outside Switzerland and the EEA</h3>
+          <p>Certain providers (Cloudflare, Resend) are based in the United States. Data transfers to the United States are governed by the following mechanisms:</p>
+          <ul>
+            <li><strong>Swiss-U.S. Data Privacy Framework</strong>: The United States is included on the list of states providing an adequate level of protection established by the Swiss Federal Council (Annex 1 DSV), subject to the provider's adherence to the Data Privacy Framework.</li>
+            <li><strong>EU-U.S. Data Privacy Framework</strong>: Adequacy decision of the European Commission dated 10 July 2023.</li>
+            <li><strong>Standard contractual clauses (SCCs)</strong>: Where applicable, transfers are safeguarded by the standard contractual clauses adopted by the European Commission and recognised by the FDPIC.</li>
+          </ul>
+
+          <h3>2.6 Retention period</h3>
+          <table>
+            <thead>
+              <tr><th>Data</th><th>Retention period</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Contact form</td><td>12 months after the last exchange, unless a contractual relationship has been established (duration of the contract + statutory limitation period)</td></tr>
+              <tr><td>Server logs (Cloudflare)</td><td>72 hours for detailed logs (Cloudflare policy)</td></tr>
+            </tbody>
+          </table>
+
+          <h3>2.7 Rights of data subjects</h3>
+          <p>In accordance with the nDSG and the GDPR, you have the following rights:</p>
+          <ul>
+            <li><strong>Right of access</strong> (art. 25 nLPD; art. 15 RGPD): obtain confirmation that your data is being processed and receive a copy.</li>
+            <li><strong>Right to rectification</strong> (art. 32 al. 1 nLPD; art. 16 RGPD): request the correction of inaccurate data.</li>
+            <li><strong>Right to erasure</strong> (art. 32 al. 2 let. c nLPD; art. 17 RGPD): request the deletion of your data, subject to statutory retention obligations.</li>
+            <li><strong>Right to restriction of processing</strong> (art. 18 RGPD).</li>
+            <li><strong>Right to data portability</strong> (art. 28 nLPD; art. 20 RGPD): receive your data in a structured, commonly used and machine-readable format.</li>
+            <li><strong>Right to object</strong> (art. 21 RGPD): object to processing based on legitimate interest.</li>
+          </ul>
+          <p>To exercise your rights, please send your request by email to: <a href="mailto:contact@valeris.fr">contact@valeris.fr</a>. For security reasons, we may ask you to verify your identity.</p>
+          <p>You also have the right to lodge a complaint with:</p>
+          <ul>
+            <li><strong>In Switzerland</strong>: The Federal Data Protection and Information Commissioner (FDPIC) - <a href="https://www.edoeb.admin.ch" target="_blank" rel="noopener noreferrer">edoeb.admin.ch</a></li>
+            <li><strong>In France / EU</strong>: The CNIL - <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">cnil.fr</a></li>
+          </ul>
+
+          <h3>2.8 Cookies and tracking technologies</h3>
+          <p><strong>This website does not use any cookies.</strong></p>
+          <p>No tracking cookies, analytics cookies, advertising cookies or session cookies are placed on your device when you visit. The Cloudflare Turnstile service operates without cookies. No audience measurement tool is currently used on this website.</p>
+
+          <h3>2.9 Profiling and automated decision-making</h3>
+          <p>No profiling or automated decision-making within the meaning of art. 21 nLPD or art. 22 RGPD is carried out on this website.</p>
+
+          <!-- ============================================================ -->
+
+          <h2>3. Terms of use</h2>
+
+          <h3>3.1 Intellectual property</h3>
+          <p>All content on the website valeris.fr (text, photographs, illustrations, logo, layout, source code) is the exclusive property of Lucas Challamel / Valeris Coaching or is used under authorisation, and is protected by Swiss copyright law (CopA), the French Intellectual Property Code and applicable international conventions.</p>
+          <p>Any reproduction, representation, modification or publication, in whole or in part, is prohibited without prior written authorisation.</p>
+          <p>Third-party logos displayed where applicable (client references) remain the property of their respective owners.</p>
+
+          <h3>3.2 Limitation of liability</h3>
+          <p>The information published on valeris.fr is provided for general informational purposes only. It does not constitute personalised professional advice or a legally binding offer of services.</p>
+          <p>Lucas Challamel endeavours to ensure the accuracy of the information published but cannot guarantee its completeness or currency. The publisher shall not be held liable for any inaccuracies, damage resulting from fraudulent intrusion or unavailability of the website.</p>
+
+          <h3>3.3 External links</h3>
+          <p>The website may contain links to third-party websites, in particular Substack (publications) and LinkedIn (professional profile). Lucas Challamel has no control over these websites and accepts no responsibility for their content or privacy practices.</p>
+
+          <h3>3.4 Applicable law and jurisdiction</h3>
+          <p>This website and its terms of use are governed by Swiss law. Any dispute relating to the use of the website shall be subject to the exclusive jurisdiction of the competent courts of the Canton of Geneva, Switzerland, subject to mandatory provisions on jurisdiction applicable to consumers.</p>
+
+          <!-- ============================================================ -->
+
+          <h2>4. Amendments</h2>
+          <p>Valeris Coaching reserves the right to amend this page at any time. Amendments take effect upon publication. The date of the last update is indicated at the top of this page.</p>
+
+        </div>
+      </Col>
+      <Col span="2" />
+    </Row>
+  </Section>
+
 </BaseLayout>
