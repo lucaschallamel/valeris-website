@@ -137,3 +137,24 @@
 .container {
   @apply mx-auto max-w-7xl px-6;
 }
+
+/* === Valeris watermark === */
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  height: 80vw;
+  max-width: 800px;
+  max-height: 800px;
+  background-image: url('../assets/logos/valeris-icon-black.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+}
