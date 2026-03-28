@@ -76,10 +76,10 @@
       "jobTitle": "Position",
       "orgSize": "Unternehmensgroesse",
       "orgSizes": {
-        "1-49": "1-49 Mitarbeiter",
-        "50-199": "50-199 Mitarbeiter",
-        "200-999": "200-999 Mitarbeiter",
-        "1000+": "1000+ Mitarbeiter"
+        "1-49": "1-49 Mitarbeitende",
+        "50-199": "50-199 Mitarbeitende",
+        "200-999": "200-999 Mitarbeitende",
+        "1000+": "1000+ Mitarbeitende"
       },
       "message": "Ihre Nachricht (optional)",
       "submit": "Absenden",
