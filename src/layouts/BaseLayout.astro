@@ -36,6 +36,8 @@ const sectionMap: Record<string, string> = {
   '/contatto/': '/contact/',
   '/note-legali/': '/mentions-legales/',
   '/pubblicazioni/': '/publications/',
+  '/partner/': '/partenaires/',
+  '/partners/': '/partenaires/',
 };
 const normalisedPath = Object.entries(sectionMap).reduce(
   (path, [from, to]) => path.replace(from, to),
@@ -119,6 +121,12 @@ function isActiveSection(section: string): boolean {
             <a href={getLocalePath('/publications/', lang)}
                class:list={['rounded-full px-4 py-2 transition-colors', isActiveSection('/publications/') ? 'bg-primary-500 text-white' : 'hover:text-primary-500']}>
               {i18n.nav.publications}
+            </a>
+          </li>
+          <li>
+            <a href={getLocalePath('/partenaires/', lang)}
+               class:list={['rounded-full px-4 py-2 transition-colors', isActiveSection('/partenaires/') ? 'bg-primary-500 text-white' : 'hover:text-primary-500']}>
+              {i18n.nav.partners}
             </a>
           </li>
           <li>
@@ -206,6 +214,12 @@ function isActiveSection(section: string): boolean {
               <a href={getLocalePath('/publications/', lang)}
                  class:list={['block rounded-lg px-4 py-3 transition-colors', isActiveSection('/publications/') ? 'bg-primary-500 text-white' : 'hover:bg-neutral-50']}>
                 {i18n.nav.publications}
+              </a>
+            </li>
+            <li>
+              <a href={getLocalePath('/partenaires/', lang)}
+                 class:list={['block rounded-lg px-4 py-3 transition-colors', isActiveSection('/partenaires/') ? 'bg-primary-500 text-white' : 'hover:bg-neutral-50']}>
+                {i18n.nav.partners}
               </a>
             </li>
             <li>

@@ -35,6 +35,7 @@ const routeMap: Record<string, Record<Lang, string>> = {
   '/services/coaching-executif/': { fr: '/services/coaching-executif/', de: '/de/leistungen/executive-coaching/', en: '/en/services/executive-coaching/', it: '/it/servizi/coaching-dirigenti/' },
   '/blog/': { fr: '/blog/', de: '/de/blog/', en: '/en/blog/', it: '/it/blog/' },
   '/publications/': { fr: '/publications/', de: '/de/publikationen/', en: '/en/publications/', it: '/it/pubblicazioni/' },
+  '/partenaires/': { fr: '/partenaires/', de: '/de/partner/', en: '/en/partners/', it: '/it/partner/' },
   '/a-propos/': { fr: '/a-propos/', de: '/de/ueber-mich/', en: '/en/about/', it: '/it/chi-sono/' },
   '/contact/': { fr: '/contact/', de: '/de/kontakt/', en: '/en/contact/', it: '/it/contatto/' },
   '/mentions-legales/': { fr: '/mentions-legales/', de: '/de/impressum/', en: '/en/legal/', it: '/it/note-legali/' },
