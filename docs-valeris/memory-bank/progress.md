@@ -70,6 +70,17 @@
 - [x] **Diploma corrections**: MBA -> Master, added DEA/MPhil - 4 languages
 - [x] **Padding tuning**: balanced warm stone / white / teal spacing
 
+### 2026-03-28 - Sprint 3e: Proofreading & Editorial Polish
+- [x] **Proofreading Phase 1** (critiques): accents fr.json, leadership tecnologica, legal abbreviations, ligature oeuvre
+- [x] **Proofreading Phase 2** (importants): 19 corrections (gallicismes, faux amis, ponctuation, methodology names)
+- [x] **Proofreading Phase 3** (suggestions): hero headline, Gesamtpaket, UTF-8 umlauts, IT labels
+- [x] **Dash removal**: 33 separator dashes replaced with proper punctuation (4 languages)
+- [x] **Home services redesign**: clickable cards, icon left of title, extra paragraph, personalised title
+- [x] **Context Engineer**: coaching diagram Technical Lead -> Context Engineer (4 languages)
+- [x] **Hero subheadline**: line break, no dashes (4 languages)
+- [x] **Service taglines**: dashes -> commas (4 languages)
+- [x] **Proofreading report**: saved in docs-valeris/reviews/
+
 ## Upcoming
 
 ### Sprint 4: Launch Polish (April 2026 Week 1)

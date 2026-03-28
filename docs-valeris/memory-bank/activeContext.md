@@ -31,14 +31,15 @@
 5. ~~SVG icons on all CTA buttons~~ (done, 4 languages)
 6. ~~Bio updates~~ (done: 30 years, Master, DEA, UBP, PACA, photo caption)
 7. ~~"Pourquoi Valeris?" etymology section~~ (done, 4 languages)
-8. Complete CalDAV connection with Infomaniak KSuite
-8. Test contact form end-to-end
-9. Add robots.txt sitemap reference
-10. Configure www -> non-www redirect in Cloudflare
-11. Lighthouse full audit
-12. Privacy-respecting analytics (Plausible/Fathom)
-13. German and Italian translation review by native speakers
-14. Launch announcement
+8. ~~Proofreading committee~~ (done: 39 fixes across 3 phases, 4 languages)
+9. ~~Dash removal~~ (done: 33 separator dashes replaced with proper punctuation)
+10. ~~Home services redesign~~ (done: clickable cards, icons, extra content)
+11. ~~Context Engineer diagram~~ (done: Technical Lead -> Context Engineer, 4 languages)
+12. Complete CalDAV connection with Infomaniak KSuite
+13. Test contact form end-to-end
+14. Lighthouse full audit
+15. Privacy-respecting analytics (Plausible/Fathom)
+16. Launch announcement
 
 ## Blockers
 

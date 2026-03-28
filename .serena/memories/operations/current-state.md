@@ -1,34 +1,32 @@
-# Operations - Current State (2026-03-28 end of day final)
+# Operations - Current State (2026-03-28 end of day 2 final)
 
 ## Site
 - **URL**: https://valeris.fr (+ www.valeris.fr)
 - **Pages**: 44 (11 per language: FR/DE/EN/IT)
 - **Build**: ~2 seconds
 - **SEO score**: ~8/10
+- **Proofreading**: 39 corrections applied, 33 dashes removed
 
-## About Page Structure
-- "Pourquoi Valeris?" etymology (Latin valeo -> valeris) with logo + warm stone bg
-- "Lucas Challamel" teal rounded banner (bg-secondary-600)
-- Portrait + narrative, key numbers, career timeline, references, methodology, values
-- Diplomas: Master Finance (not MBA), Ingenieur & DEA (not just Ingenieur)
-- Bio: 30 years, CTO/CIO Advisory, Region PACA, Top 1% performer
+## Key Content Decisions
+- Hero: "Un leadership technologique qui fait la difference." (not "qui livre")
+- Coaching diagram: Technical Lead -> Context Engineer (not Orchestrateur -> Ingenieur Systeme)
+- EN methodology: Diagnostic, Scoping, Delivery & Transfer (not Framing, Support)
+- EN etymology: "you will thrive" (not "everything will be fine")
+- No separator dashes anywhere in content (replaced with commas, semicolons, colons, parentheses)
+- Lucas doesn't speak German (not mentioned on DE page)
+- IT: "Ginevra e Svizzera" (not "Svizzera romanda")
 
-## CTA Buttons (all with SVG icons)
-- Calendar icon: "Reserver un echange" -> cal.eu/valeris/30min-meet-and-greet
-- Envelope icon: "Contact" -> /contact/
-- LinkedIn icon: LinkedIn profile
-- Phone icon: +41 78 222 31 59
-- Download icon: "Recevoir le livre blanc" on publications
-
-## Infrastructure
-- Cloudflare Pages + Workers, DNS at Cloudflare
-- Resend verified (Ireland eu-west-1), Turnstile configured
-- Cal.eu (EU-hosted, GDPR), CalDAV in progress
-- 4 ADRs, 9 dev journal entries, 7 READMEs, 6 ops guides
+## Editorial Standards
+- No dashes as separators (client preference)
+- French accents on all FR text including meta descriptions
+- British/Australian English (organisation, programme)
+- Swiss German spelling (ss not sz)
+- Italian formal "voi" form
+- "Livre blanc" not "Whitepaper" in FR
 
 ## Remaining for Launch
 - CalDAV Infomaniak connection
 - Contact form e2e test
-- robots.txt sitemap reference
-- www -> non-www redirect
-- Analytics, translation review, launch
+- Lighthouse audit
+- Analytics (Plausible/Fathom)
+- Launch announcement
