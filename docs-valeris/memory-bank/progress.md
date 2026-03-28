@@ -51,6 +51,13 @@
 - [x] **PageSpeed**: critical fonts preloaded (/public/fonts/), CSS->font chain broken
 - [x] Estimated SEO score: 5.5/10 -> 8/10
 
+### 2026-03-28 - Sprint 3d: Cal.eu Booking
+- [x] **Cal.eu** account created (EU-hosted, GDPR compliant, cal.eu/valeris)
+- [x] Event: 30min-meet-and-greet
+- [x] Booking link integrated in CtaBanner (28 pages) and ContactForm
+- [x] ADR-004 written (Cal.eu over Calendly, link over embed)
+- [x] CalDAV connection with Infomaniak KSuite in progress
+
 ## Upcoming
 
 ### Sprint 4: Launch Polish (April 2026 Week 1)
