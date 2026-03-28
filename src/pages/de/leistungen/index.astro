@@ -3,7 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Section from '../../../components/ui/Section.astro';
 import Row from '../../../components/ui/Row.astro';
 import Col from '../../../components/ui/Col.astro';
-import Button from '../../../components/ui/Button.astro';
+
 import Feature from '../../../components/ui/Feature.astro';
 import { t } from '../../../i18n';
 
@@ -68,20 +68,20 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     <Row classes="mb-16">
       <Col span="1" />
       <Col span="5">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Das Was</p>
-        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">
-          {i18n.services.aiGovernance.name}
-        </h2>
-        <p class="mb-4 text-neutral-500">
-          {i18n.services.aiGovernance.tagline}
-        </p>
-        <p class="mb-6 text-neutral-600">
-          Was sollen wir mit KI tun? Reifegrad-Diagnose auf 7 Achsen, Governance-Framework gemäss ISO 42001, KI-Souveränitätsstrategie, Aktivierungs-Sprint mit integrierter Governance.
-        </p>
-        <p class="mb-2 text-sm text-neutral-400">Ab CHF 8 500</p>
-        <Button type="link" style="primary" variation="link" link="/de/leistungen/ki-governance/">
-          Dieses Angebot entdecken &rarr;
-        </Button>
+        <a href="/de/leistungen/ki-governance/" class="group block">
+          <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Das Was</p>
+          <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900 group-hover:text-primary-500">
+            {i18n.services.aiGovernance.name}
+          </h2>
+          <p class="mb-4 text-neutral-500">
+            {i18n.services.aiGovernance.tagline}
+          </p>
+          <p class="mb-6 text-neutral-600">
+            Was sollen wir mit KI tun? Reifegrad-Diagnose auf 7 Achsen, Governance-Framework gemäss ISO 42001, KI-Souveränitätsstrategie, Aktivierungs-Sprint mit integrierter Governance.
+          </p>
+          <p class="mb-2 text-sm text-neutral-400">Ab CHF 8 500</p>
+          <span class="font-bold text-primary-500">Dieses Angebot entdecken &rarr;</span>
+        </a>
       </Col>
       <Col span="5">
         <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
@@ -104,20 +104,20 @@ import CtaBanner from '../../../components/CtaBanner.astro';
         </div>
       </Col>
       <Col span="5">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Das Wie</p>
-        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">
-          {i18n.services.teamPerformance.name}
-        </h2>
-        <p class="mb-4 text-neutral-500">
-          {i18n.services.teamPerformance.tagline}
-        </p>
-        <p class="mb-6 text-neutral-600">
-          Wie liefern wir wirklich? Flash-Diagnose, eingebettetes Coach & Craft Coaching auf echten Sprints, Specification-Driven Development (SDD), messbare DORA-Metriken ab Monat 3.
-        </p>
-        <p class="mb-2 text-sm text-neutral-400">Ab CHF 5 500</p>
-        <Button type="link" style="primary" variation="link" link="/de/leistungen/team-performance/">
-          Dieses Angebot entdecken &rarr;
-        </Button>
+        <a href="/de/leistungen/team-performance/" class="group block">
+          <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Das Wie</p>
+          <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900 group-hover:text-primary-500">
+            {i18n.services.teamPerformance.name}
+          </h2>
+          <p class="mb-4 text-neutral-500">
+            {i18n.services.teamPerformance.tagline}
+          </p>
+          <p class="mb-6 text-neutral-600">
+            Wie liefern wir wirklich? Flash-Diagnose, eingebettetes Coach & Craft Coaching auf echten Sprints, Specification-Driven Development (SDD), messbare DORA-Metriken ab Monat 3.
+          </p>
+          <p class="mb-2 text-sm text-neutral-400">Ab CHF 5 500</p>
+          <span class="font-bold text-primary-500">Dieses Angebot entdecken &rarr;</span>
+        </a>
       </Col>
       <Col span="1" />
     </Row>
@@ -126,20 +126,20 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     <Row>
       <Col span="1" />
       <Col span="5">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Das Wer</p>
-        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">
-          {i18n.services.executiveCoaching.name}
-        </h2>
-        <p class="mb-4 text-neutral-500">
-          {i18n.services.executiveCoaching.tagline}
-        </p>
-        <p class="mb-6 text-neutral-600">
-          Wer hält alles zusammen? Ausgebildet im High-Performance-Coaching (Vantaset, 9 Monate), dann Coach von 100+ Mitarbeitenden. Clarity Session, 6-Monats-Programm, 100-Tage-Beschleuniger.
-        </p>
-        <p class="mb-2 text-sm text-neutral-400">Ab CHF 1 500</p>
-        <Button type="link" style="primary" variation="link" link="/de/leistungen/executive-coaching/">
-          Dieses Angebot entdecken &rarr;
-        </Button>
+        <a href="/de/leistungen/executive-coaching/" class="group block">
+          <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Das Wer</p>
+          <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900 group-hover:text-primary-500">
+            {i18n.services.executiveCoaching.name}
+          </h2>
+          <p class="mb-4 text-neutral-500">
+            {i18n.services.executiveCoaching.tagline}
+          </p>
+          <p class="mb-6 text-neutral-600">
+            Wer hält alles zusammen? Ausgebildet im High-Performance-Coaching (Vantaset, 9 Monate), dann Coach von 100+ Mitarbeitenden. Clarity Session, 6-Monats-Programm, 100-Tage-Beschleuniger.
+          </p>
+          <p class="mb-2 text-sm text-neutral-400">Ab CHF 1 500</p>
+          <span class="font-bold text-primary-500">Dieses Angebot entdecken &rarr;</span>
+        </a>
       </Col>
       <Col span="5">
         <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">

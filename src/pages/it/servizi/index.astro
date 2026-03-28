@@ -3,7 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Section from '../../../components/ui/Section.astro';
 import Row from '../../../components/ui/Row.astro';
 import Col from '../../../components/ui/Col.astro';
-import Button from '../../../components/ui/Button.astro';
+
 import Feature from '../../../components/ui/Feature.astro';
 import { t } from '../../../i18n';
 
@@ -65,12 +65,14 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     <Row classes="mb-16">
       <Col span="1" />
       <Col span="5">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Il cosa</p>
-        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">{i18n.services.aiGovernance.name}</h2>
-        <p class="mb-4 text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
-        <p class="mb-6 text-neutral-600">Cosa dobbiamo fare con l'IA? Diagnosi di maturità su 7 assi, quadro di governance allineato ISO 42001, strategia di sovranità IA, sprint di attivazione con governance integrata.</p>
-        <p class="mb-2 text-sm text-neutral-400">A partire da CHF 8 500</p>
-        <Button type="link" style="primary" variation="link" link="/it/servizi/governance-ia/">Scoprite questa offerta &rarr;</Button>
+        <a href="/it/servizi/governance-ia/" class="group block">
+          <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Il cosa</p>
+          <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900 group-hover:text-primary-500">{i18n.services.aiGovernance.name}</h2>
+          <p class="mb-4 text-neutral-500">{i18n.services.aiGovernance.tagline}</p>
+          <p class="mb-6 text-neutral-600">Cosa dobbiamo fare con l'IA? Diagnosi di maturità su 7 assi, quadro di governance allineato ISO 42001, strategia di sovranità IA, sprint di attivazione con governance integrata.</p>
+          <p class="mb-2 text-sm text-neutral-400">A partire da CHF 8 500</p>
+          <span class="font-bold text-primary-500">Scoprite questa offerta &rarr;</span>
+        </a>
       </Col>
       <Col span="5">
         <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
@@ -92,12 +94,14 @@ import CtaBanner from '../../../components/CtaBanner.astro';
         </div>
       </Col>
       <Col span="5">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Il come</p>
-        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">{i18n.services.teamPerformance.name}</h2>
-        <p class="mb-4 text-neutral-500">{i18n.services.teamPerformance.tagline}</p>
-        <p class="mb-6 text-neutral-600">Come consegniamo realmente? Diagnosi flash, coaching integrato Coach & Craft su sprint reali, Specification-Driven Development (SDD), metriche DORA misurabili dal mese 3.</p>
-        <p class="mb-2 text-sm text-neutral-400">A partire da CHF 5 500</p>
-        <Button type="link" style="primary" variation="link" link="/it/servizi/performance-team/">Scoprite questa offerta &rarr;</Button>
+        <a href="/it/servizi/performance-team/" class="group block">
+          <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Il come</p>
+          <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900 group-hover:text-primary-500">{i18n.services.teamPerformance.name}</h2>
+          <p class="mb-4 text-neutral-500">{i18n.services.teamPerformance.tagline}</p>
+          <p class="mb-6 text-neutral-600">Come consegniamo realmente? Diagnosi flash, coaching integrato Coach & Craft su sprint reali, Specification-Driven Development (SDD), metriche DORA misurabili dal mese 3.</p>
+          <p class="mb-2 text-sm text-neutral-400">A partire da CHF 5 500</p>
+          <span class="font-bold text-primary-500">Scoprite questa offerta &rarr;</span>
+        </a>
       </Col>
       <Col span="1" />
     </Row>
@@ -105,12 +109,14 @@ import CtaBanner from '../../../components/CtaBanner.astro';
     <Row>
       <Col span="1" />
       <Col span="5">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Il chi</p>
-        <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900">{i18n.services.executiveCoaching.name}</h2>
-        <p class="mb-4 text-neutral-500">{i18n.services.executiveCoaching.tagline}</p>
-        <p class="mb-6 text-neutral-600">Chi tiene tutto insieme? Formato al coaching di alta performance (Vantaset, 9 mesi), poi coach di 100+ collaboratori. Sessione di chiarezza, programma 6 mesi, acceleratore 100 giorni.</p>
-        <p class="mb-2 text-sm text-neutral-400">A partire da CHF 1 500</p>
-        <Button type="link" style="primary" variation="link" link="/it/servizi/coaching-dirigenti/">Scoprite questa offerta &rarr;</Button>
+        <a href="/it/servizi/coaching-dirigenti/" class="group block">
+          <p class="mb-2 text-sm font-bold uppercase tracking-widest text-secondary-500">Il chi</p>
+          <h2 class="mb-4 font-headings text-2xl font-bold text-neutral-900 group-hover:text-primary-500">{i18n.services.executiveCoaching.name}</h2>
+          <p class="mb-4 text-neutral-500">{i18n.services.executiveCoaching.tagline}</p>
+          <p class="mb-6 text-neutral-600">Chi tiene tutto insieme? Formato al coaching di alta performance (Vantaset, 9 mesi), poi coach di 100+ collaboratori. Sessione di chiarezza, programma 6 mesi, acceleratore 100 giorni.</p>
+          <p class="mb-2 text-sm text-neutral-400">A partire da CHF 1 500</p>
+          <span class="font-bold text-primary-500">Scoprite questa offerta &rarr;</span>
+        </a>
       </Col>
       <Col span="5">
         <div class="rounded-lg border border-neutral-100 bg-neutral-50 p-8">
