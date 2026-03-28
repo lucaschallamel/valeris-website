@@ -41,7 +41,7 @@
   "services": {
     "aiGovernance": {
       "name": "Activation IA & Gouvernance",
-      "tagline": "De la curiosité IA à la confiance IA - une adoption responsable qui livre."
+      "tagline": "De la curiosité IA à la confiance IA - une adoption responsable qui fait la différence."
     },
     "teamPerformance": {
       "name": "Performance des Équipes d'Ingénierie",
@@ -53,7 +53,7 @@
     }
   },
   "hero": {
-    "headline": "Un leadership technologique qui livre.",
+    "headline": "Un leadership technologique qui fait la différence.",
     "subheadline": "J'aide les entreprises suisses à réussir leur transformation technologique - pas seulement la stratégie, mais l'exécution."
   },
   "about": {

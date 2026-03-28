@@ -21,7 +21,7 @@
     "blog": "Blog",
     "publications": "Publikationen",
     "partners": "Partner",
-    "about": "Ueber mich",
+    "about": "Über mich",
     "contact": "Kontakt"
   },
   "footer": {
@@ -35,7 +35,7 @@
     "noArticles": "Noch keine Artikel vorhanden."
   },
   "cta": {
-    "primary": "Gespraech vereinbaren",
+    "primary": "Gespräch vereinbaren",
     "secondary": "Mehr erfahren"
   },
   "services": {
@@ -57,7 +57,7 @@
     "subheadline": "Ich helfe Schweizer Unternehmen, ihre Technologie-Transformation erfolgreich umzusetzen - nicht nur die Strategie, sondern auch die Umsetzung."
   },
   "about": {
-    "title": "Ueber mich",
+    "title": "Über mich",
     "methodology": "Meine Methode"
   },
   "contact": {
@@ -65,8 +65,8 @@
     "expectation": "Ein 30-minuetiges Gespraech, kein Verkaufspitch. Wir besprechen Ihre Situation und ich sage Ihnen ehrlich, ob ich helfen kann.",
     "form": {
       "serviceInterest": "Welche Dienstleistung interessiert Sie?",
-      "selectService": "Dienstleistung auswaehlen",
-      "noPreference": "Keine Praeferenz",
+      "selectService": "Dienstleistung auswählen",
+      "noPreference": "Keine Präferenz",
       "whitepaper": "Whitepaper: KI-Souveraenität (Schweiz)",
       "firstName": "Vorname",
       "lastName": "Nachname",
