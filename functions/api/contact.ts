@@ -43,6 +43,7 @@ const SERVICE_LABELS: Record<string, string> = {
   'ai-governance': 'Activation IA & Gouvernance',
   'team-performance': 'Performance des Equipes',
   'executive-coaching': 'Coaching de Dirigeants Techniques',
+  'whitepaper-ai-sovereignty': 'Whitepaper: Souverainete IA (Suisse)',
   'no-preference': 'Pas de preference',
 };
 
