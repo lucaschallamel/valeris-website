@@ -8,8 +8,9 @@ Resend handles transactional email delivery for the contact form. Emails are sen
 |-----------|-------|
 | Service | Resend (resend.com) |
 | Plan | Free tier (100 emails/day) |
-| Sender domain | `valeris.fr` (verified) |
+| Sender domain | `valeris.fr` (verified 2026-03-28) |
 | Sender address | `contact@valeris.fr` |
+| Server region | Ireland (eu-west-1, European Union) |
 | API endpoint | `https://api.resend.com/emails` |
 | Integration | Cloudflare Pages Function (`/api/contact`) |
 
