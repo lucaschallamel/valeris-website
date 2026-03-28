@@ -25,7 +25,7 @@
     "contact": "Kontakt"
   },
   "footer": {
-    "copyright": "Valeris Coaching - Genf, Schweiz",
+    "copyright": "Valeris Coaching, Genf, Schweiz",
     "legal": "Impressum"
   },
   "blog": {
@@ -41,11 +41,11 @@
   "services": {
     "aiGovernance": {
       "name": "KI-Aktivierung & Governance",
-      "tagline": "Von KI-Neugier zu KI-Vertrauen - verantwortungsvolle Einfuehrung, die liefert."
+      "tagline": "Von KI-Neugier zu KI-Vertrauen, verantwortungsvolle Einfuehrung, die liefert."
     },
     "teamPerformance": {
       "name": "Engineering-Team-Performance",
-      "tagline": "Bessere Software beginnt mit einem besseren Team - nicht einem besseren Tool."
+      "tagline": "Bessere Software beginnt mit einem besseren Team, nicht einem besseren Tool."
     },
     "executiveCoaching": {
       "name": "Coaching fuer technische Fuehrungskraefte",

@@ -25,7 +25,7 @@
     "contact": "Contact"
   },
   "footer": {
-    "copyright": "Valeris Coaching - Geneva, Switzerland",
+    "copyright": "Valeris Coaching, Geneva, Switzerland",
     "legal": "Legal"
   },
   "blog": {
@@ -41,11 +41,11 @@
   "services": {
     "aiGovernance": {
       "name": "AI Activation & Governance",
-      "tagline": "From AI curiosity to AI confidence - responsible adoption that actually ships."
+      "tagline": "From AI curiosity to AI confidence, responsible adoption that actually ships."
     },
     "teamPerformance": {
       "name": "Engineering Team Performance",
-      "tagline": "Better software starts with a better team - not a better tool."
+      "tagline": "Better software starts with a better team, not a better tool."
     },
     "executiveCoaching": {
       "name": "Technical Executive Coaching",

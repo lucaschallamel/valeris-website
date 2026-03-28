@@ -25,7 +25,7 @@
     "contact": "Contatto"
   },
   "footer": {
-    "copyright": "Valeris Coaching - Ginevra, Svizzera",
+    "copyright": "Valeris Coaching, Ginevra, Svizzera",
     "legal": "Note legali"
   },
   "blog": {
@@ -41,11 +41,11 @@
   "services": {
     "aiGovernance": {
       "name": "Attivazione IA & Governance",
-      "tagline": "Dalla curiosità IA alla fiducia IA - un'adozione responsabile che produce risultati."
+      "tagline": "Dalla curiosità IA alla fiducia IA, un'adozione responsabile che produce risultati."
     },
     "teamPerformance": {
       "name": "Performance dei Team di Ingegneria",
-      "tagline": "Un software migliore inizia con un team migliore - non con uno strumento migliore."
+      "tagline": "Un software migliore inizia con un team migliore, non con uno strumento migliore."
     },
     "executiveCoaching": {
       "name": "Coaching per Dirigenti Tecnici",
