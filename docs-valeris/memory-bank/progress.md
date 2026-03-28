@@ -36,14 +36,30 @@
 - [x] **About page**: trilingue/triculturel, offshore teams, anonymised references, removed logos
 - [x] 44 pages, all deployed to valeris.fr
 
+### 2026-03-28 - Sprint 3c: SEO, Documentation, PageSpeed
+- [x] **SEO audit**: comprehensive analysis (score 5.5/10 before)
+- [x] **Canonical URLs**: self-referencing on all 44 pages
+- [x] **Open Graph**: og:type, og:url, og:title, og:description, og:site_name, og:locale (fr_CH/de_CH/it_CH/en)
+- [x] **Twitter Card**: summary card on all pages
+- [x] **JSON-LD**: ProfessionalService (address Geneva, geo, phone, price range, languages, founder)
+- [x] **Person schema** on about pages, **Service schema** on service pages
+- [x] **Unique meta descriptions**: 11 page types x 4 languages (150-160 chars with geographic keywords)
+- [x] **SeoSchema.astro** component created
+- [x] **Documentation**: 7 READMEs created/updated, CLAUDE.md complete rewrite
+- [x] **Partners operations guide** created
+- [x] **Resend Ireland** (eu-west-1) documented in legal pages (4 languages)
+- [x] **PageSpeed**: critical fonts preloaded (/public/fonts/), CSS->font chain broken
+- [x] Estimated SEO score: 5.5/10 -> 8/10
+
 ## Upcoming
 
 ### Sprint 4: Launch Polish (April 2026 Week 1)
-- [ ] Integrate diffusion images (hero home)
-- [ ] Lighthouse optimisation (target 95+)
+- [ ] Test contact form end-to-end (Resend verified)
+- [ ] Add robots.txt sitemap reference
+- [ ] www -> non-www redirect in Cloudflare
+- [ ] Lighthouse full audit
 - [ ] Cal.com booking widget
 - [ ] Privacy-respecting analytics (Plausible/Fathom)
-- [ ] Test contact form end-to-end (Resend domain now verified)
 
 ### Sprint 5: Review & Launch (April 2026 Week 2)
 - [ ] German translation review by native speaker
@@ -55,4 +71,6 @@
 - 26 Foxi components not yet Tailwind v4 adapted (fix when used)
 - Substack podcast mapping is manual
 - Publications lead capture flow not yet built (D1 + R2 + Resend)
-- Some partner logos low-res (source higher quality when available)
+- Some partner logos low-res
+- robots.txt sitemap reference missing
+- www vs non-www redirect not configured

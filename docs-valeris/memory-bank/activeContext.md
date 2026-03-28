@@ -2,45 +2,39 @@
 
 ## Current Phase
 
-**Phase 2: Polish & Launch** (March-April 2026) - Content complete, infrastructure operational, visual polish in progress
+**Phase 2: Launch Preparation** (March-April 2026) - SEO optimised, documentation complete, ready for final polish
 
 ## Current Focus
 
-- 44 pages live in 4 languages (FR/DE/EN/IT)
-- Partners page: 18 partners, 5 categories, filterable cards with logos
-- Legal page complete (nLPD + RGPD + LCEN, SIRET 419 129 101 00038)
-- Visual diagrams (CSS/SVG) on all service pages
-- MetricBar components on performance and coaching pages
+- 44 pages live in 4 languages, all with full SEO (canonical, OG, JSON-LD, unique meta descriptions)
 - Site live at valeris.fr via Cloudflare Pages
+- Resend domain verified, contact form ready for e2e test
+- PageSpeed: fonts preloaded, dependency chain broken
+- Documentation complete (7 READMEs, CLAUDE.md, 6 operations guides, 8 dev journal entries)
 
 ## Recent Decisions
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
-| 2026-03-28 | Partners page with PartnersGrid component | Shared component, 18 partners, 5 categories, 4 languages |
-| 2026-03-28 | Astro added as technology partner | Powers valeris.fr |
-| 2026-03-28 | TOGAF + ISO 42001 as standards partners | Reference frameworks |
-| 2026-03-28 | GAICC + IAPP + ICF as certification partners | Certification ecosystem |
-| 2026-03-28 | Valeris = French SIRET company (Evian-les-Bains) | Existing legal entity |
-| 2026-03-28 | Dual nLPD + RGPD legal framework | Swiss activity + French entity |
-| 2026-03-28 | Remove DADA acronym reference | Acronym doesn't match the 4 steps |
-| 2026-03-28 | CSS/SVG for all diagrams, WebP for photos | Performance, no bitmap diagrams |
+| 2026-03-28 | JSON-LD ProfessionalService on all pages | Rich results, local pack eligibility |
+| 2026-03-28 | og:locale fr_CH/de_CH/it_CH | Counteracts .fr ccTLD geographic signal |
+| 2026-03-28 | 11 unique meta descriptions per language | 150-160 chars with geographic keywords |
+| 2026-03-28 | Fonts in /public/ with preload | Stable URLs, breaks CSS->font chain |
+| 2026-03-28 | Resend server Ireland (eu-west-1) documented | Legal compliance, EU data residency |
 
 ## Next Steps
 
-1. ~~Partners page~~ (done, 18 partners)
-2. ~~Legal page~~ (done, 4 languages)
-3. ~~Visual assets Sprint A+B~~ (done)
-4. ~~Mobile hamburger menu~~ (done)
-5. ~~DE/IT translations completed to 100%~~ (done, audited)
-6. ~~Watermark, whitepaper option, external links~~ (done)
-7. Integrate diffusion images (hero home)
-8. Test contact form end-to-end (Resend verified)
-9. Lighthouse optimisation (target 95+)
-10. Cal.com booking widget
-11. Privacy-respecting analytics (Plausible/Fathom)
-12. German and Italian translation review by native speakers
-13. Launch announcement
+1. ~~SEO quick wins~~ (done)
+2. ~~Documentation overhaul~~ (done)
+3. ~~PageSpeed fonts~~ (done)
+4. Test contact form end-to-end
+5. Add robots.txt sitemap reference
+6. Configure www -> non-www redirect in Cloudflare
+7. Lighthouse full audit
+8. Cal.com booking widget
+9. Privacy-respecting analytics (Plausible/Fathom)
+10. German and Italian translation review by native speakers
+11. Launch announcement
 
 ## Blockers
 
@@ -50,6 +44,6 @@
 
 | Risk | Severity | Mitigation |
 |------|----------|------------|
+| .fr domain for Swiss practice | Medium | og:locale fr_CH, JSON-LD address Geneva, content signals |
 | German translation quality | Medium | Professional review needed |
 | Italian translation quality | Medium | Professional review needed |
-| Missing diffusion images | Low | Placeholders in place, Lucas generating |
