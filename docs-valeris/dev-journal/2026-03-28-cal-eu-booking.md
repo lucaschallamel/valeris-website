@@ -1,10 +1,10 @@
 ---
 entry_date: 2026-03-28
 author: Lucas Challamel
-focus_area: Cal.eu online booking integration
+focus_area: Cal.eu booking, CTA icons, bio updates, Pourquoi Valeris, UI polish
 status: complete
-session_duration: ~30 min
-tags: [cal-eu, booking, caldav, infomaniak, gdpr]
+session_duration: ~4 hours
+tags: [cal-eu, booking, caldav, infomaniak, gdpr, icons, svg, bio, etymology, about-page, padding]
 ---
 
 ## Why (High-Level Context)
@@ -87,14 +87,33 @@ Infomaniak KSuite CalDAV connection:
 **Contact page**:
 - LinkedIn button upgraded to same size/weight as booking button (was smaller/lighter)
 
+### 7. "Pourquoi Valeris?" Section (About page)
+
+New section at the top of the About page explaining the name origin:
+
+- **Etymology**: Latin _valeo_ (to be well, to be strong) -> _valeris_ (you will be strong, you will be well)
+- **Layout**: logo fleur+feuilles (h-40/h-48) left, text right, warm stone background (bg-neutral-50)
+- **Lucas Challamel**: teal rounded rectangle banner (bg-secondary-600) with name, title, bio
+- **Line break** before "Base a Geneve" for visual emphasis
+- **Padding tuned**: balanced spacing between warm stone band and teal banner (~50/50 split)
+- **All accents** corrected in French text
+- **Propagated** to DE ("Warum Valeris?"), EN ("Why Valeris?"), IT ("Perche Valeris?")
+
+### 8. Diploma Corrections (About page, 4 languages)
+
+- MBA Finance & Economie -> Master Finance & Economie (Sciences Po Grenoble is not an MBA)
+- Diplome d'Ingenieur -> Diplome d'Ingenieur & DEA (Diplome d'Etudes Approfondies)
+- EN: Engineering Degree & MPhil, DE: Ingenieurdiplom & DEA (Forschungsdiplom), IT: Diploma di Ingegnere & DEA
+
 ---
 
 ## Final State & Next Steps
 
 **Current State**:
-- 44 pages, 4 languages, all cosmetic changes fully propagated
+- 44 pages, 4 languages, all changes fully propagated
 - Booking URL live: `cal.eu/valeris/30min-meet-and-greet`
 - SVG icons on all CTA buttons across the entire site
+- "Pourquoi Valeris?" etymology section on all About pages
 - ADR-004 written and indexed
 
 **Next Steps**:
@@ -102,7 +121,8 @@ Infomaniak KSuite CalDAV connection:
 - [ ] Test contact form and booking flow end-to-end
 - [ ] Update legal page to mention Cal.eu as data processor (EU)
 - [ ] Lighthouse audit
-- [ ] Analytics setup
+- [ ] Analytics setup (Plausible/Fathom)
+- [ ] German and Italian translation review by native speakers
 
 **Knowledge Captured**:
 - Infomaniak CalDAV uses `https://sync.infomaniak.com/`, not `caldav.infomaniak.com`
@@ -112,9 +132,12 @@ Infomaniak KSuite CalDAV connection:
 - Heroicons outline SVGs work perfectly as inline monochrome button icons
 - LinkedIn logo SVG (filled) from Simple Icons works well alongside outline Heroicons
 - Always audit propagation across all 4 languages after FR changes
+- Section padding tuning requires iterative visual feedback - "both" is often too much
+- Latin etymology of Valeris: valeo -> valeris = "tu seras fort" (2nd person future)
+- DEA (Diplome d'Etudes Approfondies) translates to MPhil in English, Forschungsdiplom in German
 
 ---
 
-**Session Summary**: Selected Cal.eu (GDPR-compliant, EU-hosted), created booking page, integrated into all CTA banners and contact page.
+**Session Summary**: Cal.eu booking integration, SVG icons on all CTA buttons, biography updates (30 years, Master, DEA, UBP, PACA), "Pourquoi Valeris?" etymology section, padding adjustments. All propagated to 4 languages.
 
-**Estimated Impact**: High
+**Estimated Impact**: Very High

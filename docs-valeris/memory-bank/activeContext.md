@@ -30,7 +30,8 @@
 4. ~~Cal.eu booking~~ (done)
 5. ~~SVG icons on all CTA buttons~~ (done, 4 languages)
 6. ~~Bio updates~~ (done: 30 years, Master, DEA, UBP, PACA, photo caption)
-7. Complete CalDAV connection with Infomaniak KSuite
+7. ~~"Pourquoi Valeris?" etymology section~~ (done, 4 languages)
+8. Complete CalDAV connection with Infomaniak KSuite
 8. Test contact form end-to-end
 9. Add robots.txt sitemap reference
 10. Configure www -> non-www redirect in Cloudflare

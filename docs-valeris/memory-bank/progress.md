@@ -65,6 +65,10 @@
 - [x] **Region PACA** (anonymised reference) - 4 languages
 - [x] **Contact page** LinkedIn button same size as booking button
 - [x] **Publications** download icon on white paper button - 4 languages
+- [x] **"Pourquoi Valeris?"** etymology section: Latin valeo -> valeris, logo + text layout - 4 languages
+- [x] **Teal banner** for Lucas Challamel intro (rounded rectangle, bg-secondary-600) - 4 languages
+- [x] **Diploma corrections**: MBA -> Master, added DEA/MPhil - 4 languages
+- [x] **Padding tuning**: balanced warm stone / white / teal spacing
 
 ## Upcoming
 
