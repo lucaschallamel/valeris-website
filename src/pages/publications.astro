@@ -5,7 +5,9 @@ import Row from '../components/ui/Row.astro';
 import Col from '../components/ui/Col.astro';
 import Button from '../components/ui/Button.astro';
 import Feature from '../components/ui/Feature.astro';
+import { Image } from 'astro:assets';
 import { t } from '../i18n';
+import wpCover from '../assets/wp_ai_sovereignty_ch.webp';
 
 const i18n = t('fr');
 ---
@@ -60,13 +62,13 @@ const i18n = t('fr');
               <p class="mt-3 text-xs text-neutral-400">Gratuit. Envoi par email après inscription.</p>
             </Col>
             <Col span="5">
-              <!-- TODO: Remplacer par une couverture du livre blanc -->
-              <div class="flex h-full min-h-64 items-center justify-center rounded-lg bg-neutral-100">
-                <div class="text-center">
-                  <p class="text-4xl mb-2">📄</p>
-                  <p class="text-sm text-neutral-400">[Couverture du livre blanc]</p>
-                </div>
-              </div>
+              <Image
+                src={wpCover}
+                alt="Souveraineté IA - Livre Blanc pour la Confédération Helvétique"
+                class="rounded-lg shadow-lg"
+                width={500}
+                quality={90}
+              />
             </Col>
           </Row>
         </div>
