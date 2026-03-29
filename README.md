@@ -91,7 +91,7 @@ Secrets (configured via `wrangler pages secret put`):
 
 - **Architecture decisions**: [`docs-valeris/architecture/ADR/`](docs-valeris/architecture/ADR/)
 - **Operations guides**: [`docs-valeris/operations/`](docs-valeris/operations/)
-- **Development journal**: [`docs-valeris/dev-journal/`](docs-valeris/dev-journal/)
+- **Development journal**: [`docs-valeris/dev-journal/`](docs-valeris/dev-journal/) (12 entries)
 - **Memory bank**: [`docs-valeris/memory-bank/`](docs-valeris/memory-bank/)
 
 ## Licence

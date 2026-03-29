@@ -26,5 +26,19 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [sitemap(), mdx(), icon()],
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'fr',
+        locales: {
+          fr: 'fr-CH',
+          de: 'de-CH',
+          en: 'en',
+          it: 'it-CH',
+        },
+      },
+    }),
+    mdx(),
+    icon(),
+  ],
 });
