@@ -68,3 +68,34 @@ With the Astro + Cloudflare Pages stack in place (ADR-001, ADR-002), the site ne
 - Foxi components can be replaced incrementally if a custom design system emerges
 - Substack federation can be replaced with local MDX content later
 - Resend can be swapped for any email API (standard REST interface)
+
+## Update 2026-04-10: RSS rollover risk and the dual-array safety net
+
+### Context
+
+Substack's public RSS feed serves only the **20 most recent posts**. Articles published after that threshold silently disappear from the feed. The original implementation of `fetchSubstackPosts()` in `src/lib/substack.ts` assumed this was acceptable because older articles could be added to a `manualPosts` fallback array.
+
+In practice, `manualPosts` was seeded once in 2024 with 11 early episodes and then never maintained. By April 2026, every article published since mid-2024 lived **only** in the RSS feed, with no safety net. Each new publication silently dropped the oldest article in the feed from `valeris.fr/blog`.
+
+### Hardening
+
+1. **Backfilled `manualPosts`** with full `SubstackPost` entries for every article currently in the live RSS feed (20 articles as of 2026-04-10). The merge logic in `fetchSubstackPosts()` (line 233) deduplicates by slug and prefers RSS when both sources have the same article, so descriptions and images stay fresh while `manualPosts` acts as the permanent archive.
+
+2. **Clarified the dual-array pattern** in `docs-valeris/operations/substack-integration.md`:
+
+   | Array | File | Purpose |
+   |-------|------|---------|
+   | `manualPosts` | `src/lib/substack.ts` | Safety net. Full post data. Survives RSS rollover. |
+   | `manualMapping` | `src/lib/podcasts.ts` | Categoriser only. Slug -> podcast slug. Does NOT bring articles back. |
+
+   Adding a slug to `manualMapping` alone is insufficient to preserve an article. Only `manualPosts` does that.
+
+3. **Reframed the maintenance routine as proactive**: every new article must be added to `manualPosts` at publication time, not "when you notice it rolled off". Reactive workflows rely on human vigilance that fails silently.
+
+4. **Pre-deploy audit snippet** documented in the operations guide, printing any slug currently in RSS that is missing from `manualPosts`. Catches gaps before they cost an article.
+
+### Decision revision
+
+The original decision (ADR-003 point 2) remains correct: Substack RSS federation is still the right choice for blog content. The update does not supersede the ADR; it hardens the implementation and documents the constraint that was implicit before.
+
+**Status**: Still **Accepted**, with the hardening above applied.

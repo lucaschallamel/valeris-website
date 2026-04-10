@@ -1,11 +1,19 @@
-# Operations - Current State (2026-03-29)
+# Operations - Current State (2026-04-10)
 
 ## Site
 - **URL**: https://valeris.fr (+ www.valeris.fr)
 - **Pages**: 44 (11 per language: FR/DE/EN/IT)
 - **Build**: ~2 seconds
 - **SEO score**: ~9/10
-- **Dev journal**: 12 entries, 3 days
+- **Dev journal**: 14 entries
+
+## Blog
+- **31 articles** rendered on all 4 language blog pages
+- Hybrid data source: live Substack RSS (20 most recent) + `manualPosts` safety net (all 31 protected)
+- Latest post: `ai-love-and-the-llm-harness` (2026-04-10, The AIM)
+- Rollover-safe: every article in the archive has a `manualPosts` entry in `src/lib/substack.ts`
+- Maintenance routine documented in `docs-valeris/operations/substack-integration.md` (proactive, add at publish time)
+- See Serena memory `architecture/blog-rollover-safety` for the full architecture
 
 ## SEO - Complete
 - Google Search Console: verified (DNS), sitemap submitted
@@ -35,3 +43,6 @@
 - Lighthouse audit
 - Analytics (Plausible/Fathom)
 - Launch announcement
+
+## Optional hardening
+- Wire the pre-deploy blog audit into `npm run predeploy` so a deploy cannot proceed with an at-risk blog article

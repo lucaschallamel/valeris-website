@@ -81,11 +81,21 @@
 - [x] **Service taglines**: dashes -> commas (4 languages)
 - [x] **Proofreading report**: saved in docs-valeris/reviews/
 
+### 2026-04-10 - Blog RSS rollover hardening
+- [x] **Investigation**: mapped the hybrid RSS + `manualPosts` data flow in `src/lib/substack.ts`
+- [x] **Gap analysis**: discovered zero overlap between `manualPosts` (11 legacy entries) and the 20 articles currently in the RSS feed. Every post since mid-2024 was one publication away from silent loss.
+- [x] **Backfill**: added 20 new `manualPosts` entries covering the full current RSS feed, including the freshly published `ai-love-and-the-llm-harness`. Descriptions cleaned (stripped `Listen now |` preambles, fixed truncations), image URLs normalised.
+- [x] **Categoriser**: added `ai-love-and-the-llm-harness -> the-aim` to `manualMapping` for explicit categorisation
+- [x] **Operations doc rewrite**: `docs-valeris/operations/substack-integration.md` now has a `Blog Maintenance` section with proactive routine, `manualPosts`/`manualMapping` comparison table, pre-deploy audit snippet, build-time safety net notes
+- [x] **ADR-003 update**: added `Update 2026-04-10` section documenting the rollover risk and dual-array safety pattern
+- [x] **Build and deploy**: 44 pages, 31 articles per language blog page, new post live in all 4 languages (FR/DE/EN/IT)
+- [x] **Result**: blog archive is now resilient to RSS rollover; every article in the archive has a safety-net entry in `manualPosts`
+
 ## Upcoming
 
 ### Sprint 4: Launch Polish (April 2026 Week 1)
 - [ ] Test contact form end-to-end (Resend verified)
-- [ ] Add robots.txt sitemap reference
+- [x] ~~Add robots.txt sitemap reference~~ (done 2026-03-29)
 - [ ] www -> non-www redirect in Cloudflare
 - [ ] Lighthouse full audit
 - [ ] Cal.com booking widget
@@ -97,10 +107,13 @@
 - [ ] Mobile responsive testing across devices
 - [ ] Launch announcement + Substack cross-promotion
 
+### Optional hardening
+- [ ] Wire the pre-deploy blog audit into `npm run predeploy` so a deploy cannot proceed with an at-risk article
+
 ## Technical Debt
 - 26 Foxi components not yet Tailwind v4 adapted (fix when used)
-- Substack podcast mapping is manual
+- Substack podcast mapping is manual (by design; `manualMapping` in `podcasts.ts`)
+- Blog rollover protection is manual (add to `manualPosts` at publish time per operations doc)
 - Publications lead capture flow not yet built (D1 + R2 + Resend)
 - Some partner logos low-res
-- robots.txt sitemap reference missing
 - www vs non-www redirect not configured

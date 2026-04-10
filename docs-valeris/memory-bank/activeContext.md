@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-**Phase 2: Launch Preparation** (March-April 2026) - SEO optimised, documentation complete, ready for final polish
+**Phase 2: Launch + Ongoing Maintenance** (March-April 2026) - Site live, SEO complete, documentation complete, now in content and hardening mode
 
 ## Current Focus
 
@@ -10,7 +10,8 @@
 - Site live at valeris.fr via Cloudflare Pages
 - Resend domain verified, contact form ready for e2e test
 - PageSpeed: fonts preloaded, dependency chain broken
-- Documentation complete (7 READMEs, CLAUDE.md, 6 operations guides, 8 dev journal entries)
+- Blog: 31 articles federated from Substack, rollover-safe via `manualPosts` backfill
+- Documentation complete (7 READMEs, CLAUDE.md, 7 operations guides, 14 dev journal entries)
 
 ## Recent Decisions
 
@@ -21,6 +22,8 @@
 | 2026-03-28 | 11 unique meta descriptions per language | 150-160 chars with geographic keywords |
 | 2026-03-28 | Fonts in /public/ with preload | Stable URLs, breaks CSS->font chain |
 | 2026-03-28 | Resend server Ireland (eu-west-1) documented | Legal compliance, EU data residency |
+| 2026-04-10 | Backfill `manualPosts` to full RSS coverage | Closes silent rollover gap; RSS is sliding window, `manualPosts` is source of truth |
+| 2026-04-10 | Proactive blog maintenance (add at publish time) | Replaces reactive "add when rolled off" routine that relied on failing human vigilance |
 
 ## Next Steps
 

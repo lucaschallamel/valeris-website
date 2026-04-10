@@ -69,6 +69,7 @@ export const podcasts: Podcast[] = [
 // Manual mapping: article slug -> podcast slug
 // For articles that can't be auto-detected by keywords
 const manualMapping: Record<string, string> = {
+  'ai-love-and-the-llm-harness': 'the-aim',
   'the-9-ai-conversations-people-avoid': 'the-aim',
   'your-consulting-firm-claims-to-be': 'drive-and-thrive',
   'the-byoa-manifesto-why-knowledge': 'the-aim',

@@ -23,3 +23,4 @@ Each entry follows the pattern: `YYYY-MM-DD-session-description.md`
 | [2026-03-28](2026-03-28-abstract-backgrounds.md) | Abstract diffusion images on all hero banners, randomised, 0.1 opacity |
 | [2026-03-28](2026-03-28-retrospective.md) | Retrospective: zero to production in under 24 hours, methodology and lessons learned |
 | [2026-03-29](2026-03-29-seo-search-engine-submission.md) | Search engine submission (Google + Bing), robots.txt, sitemap hreflang, OG social image |
+| [2026-04-10](2026-04-10-blog-rss-rollover-hardening.md) | Blog RSS rollover safety: backfilled 20 articles into `manualPosts`, proactive maintenance routine, ADR-003 update |
